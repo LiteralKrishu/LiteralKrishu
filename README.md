@@ -1,6 +1,6 @@
 ## 💫 About Me
 
-- 👨‍💻 I’m currently working on an **Emotion Detector** using **OpenCV**
+- 👨‍💻 I’m currently working on an **Stress Level Detection Project** using **OpenCV, TensorFlow**
 - 🧠 I’m currently learning **AI/ML** and **Web Development**
 - 🤝 I’m looking to collaborate on **multi-stage projects** that require a **Python developer**
 - 🔍 I’m seeking help with **AI/ML** concepts and **API integration**
