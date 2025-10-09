@@ -1,4 +1,4 @@
-## 💫 About Me
+## 💫 About Me - [[My Portfolio](https://literalkrishu-portfolio.vercel.app/)]
 
 - 👨‍💻 I’m currently working on an **Automating 2D Animations** using **Manim**
 - 🧠 I’m currently learning **AI/ML** and **Web Development**
@@ -6,8 +6,6 @@
 - 🔍 I’m seeking help with **AI/ML** concepts and **API integration**
 - 📫 How to reach me: **Instagram / E-mail**
 - 🔠 Pronouns: **He/Him**
-
-[![My Portfolio](https://literalkrishu-portfolio.vercel.app/)]
 
 ## 🌐 Socials:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/https://discord.gg/jAs4YA6XzH) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/@literalkrishu) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/sousnigdho-das-b1740b371) [![Stack Overflow](https://img.shields.io/badge/-Stackoverflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/20320448) [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@@literalkrishu) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:sousnigdhodas@gmail.com) 
