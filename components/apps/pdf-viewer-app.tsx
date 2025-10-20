@@ -53,12 +53,4 @@ export function PDFViewerApp() {
       </div>
     </motion.div>
   )
-      </div>
-    </motion.div>
-  )
-      </div>
-    </motion.div>      
-      </div>
-    </motion.div>
-  )
 }
