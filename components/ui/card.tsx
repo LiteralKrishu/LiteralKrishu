@@ -1,92 +1,76 @@
-import * as React from 'react'
+'use client';
 
-import { cn } from '@/lib/utils'
+import React from 'react';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
-function Card({ className, ...props }: React.ComponentProps<'div'>) {
+interface CardProps {
+  children: React.ReactNode;
+  title?: string;
+  serial?: string;
+  accent?: 'accent' | 'magenta' | 'green' | 'default';
+  className?: string;
+  showCorners?: boolean;
+}
+
+export default function Card({
+  children,
+  title,
+  serial,
+  accent = 'default',
+  className = '',
+  showCorners = true,
+}: CardProps) {
+  const borderAccents = {
+    default: 'border-accent/40',
+    accent: 'border-accent',
+    magenta: 'border-magenta',
+    green: 'border-green',
+  };
+
+  const textAccents = {
+    default: 'text-on-surface-variant',
+    accent: 'text-accent',
+    magenta: 'text-magenta',
+    green: 'text-green',
+  };
+
   return (
     <div
-      data-slot="card"
-      className={cn(
-        'bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm',
-        className,
+      className={twMerge(
+        clsx(
+          'bg-surface border border-outline-variant/15 p-6 relative shadow-[0_0_15px_rgba(0,0,0,0.4)]',
+          className
+        )
       )}
-      {...props}
-    />
-  )
-}
-
-function CardHeader({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="card-header"
-      className={cn(
-        '@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6',
-        className,
+    >
+      {/* HUD Brackets */}
+      {showCorners && (
+        <>
+          <div className={`hud-corner hud-corner-tl ${borderAccents[accent]}`} />
+          <div className={`hud-corner hud-corner-tr ${borderAccents[accent]}`} />
+          <div className={`hud-corner hud-corner-bl ${borderAccents[accent]}`} />
+          <div className={`hud-corner hud-corner-br ${borderAccents[accent]}`} />
+        </>
       )}
-      {...props}
-    />
-  )
-}
 
-function CardTitle({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="card-title"
-      className={cn('leading-none font-semibold', className)}
-      {...props}
-    />
-  )
-}
-
-function CardDescription({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="card-description"
-      className={cn('text-muted-foreground text-sm', className)}
-      {...props}
-    />
-  )
-}
-
-function CardAction({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="card-action"
-      className={cn(
-        'col-start-2 row-span-2 row-start-1 self-start justify-self-end',
-        className,
+      {/* Header element if title or serial is provided */}
+      {(title || serial) && (
+        <div className="flex justify-between items-start mb-4 border-b border-outline-variant/10 pb-2">
+          {title && (
+            <h3 className={`font-mono text-xs uppercase tracking-widest font-bold ${textAccents[accent]}`}>
+              {title}
+            </h3>
+          )}
+          {serial && (
+            <span className="font-mono text-[9px] text-outline-variant tracking-wider uppercase">
+              {serial}
+            </span>
+          )}
+        </div>
       )}
-      {...props}
-    />
-  )
-}
 
-function CardContent({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="card-content"
-      className={cn('px-6', className)}
-      {...props}
-    />
-  )
-}
-
-function CardFooter({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      data-slot="card-footer"
-      className={cn('flex items-center px-6 [.border-t]:pt-6', className)}
-      {...props}
-    />
-  )
-}
-
-export {
-  Card,
-  CardHeader,
-  CardFooter,
-  CardTitle,
-  CardAction,
-  CardDescription,
-  CardContent,
+      {children}
+    </div>
+  );
 }
