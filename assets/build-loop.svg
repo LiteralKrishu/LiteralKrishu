@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title description">
+  <title id="title">Sousnigdho Das build loop</title>
+  <desc id="description">A build loop connecting signals and context to architecture, product, validation, and delivery.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#00b8b8"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="250" rx="18" fill="#0d1117"/>
+  <rect x="1" y="1" width="1198" height="248" rx="17" fill="none" stroke="#30363d" stroke-width="2"/>
+  <text x="52" y="48" fill="#8b949e" font-family="Andale Mono, monospace" font-size="14" letter-spacing="2.4">HOW I LIKE TO WORK</text>
+  <text x="52" y="79" fill="#f0f6fc" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">From a real signal to a system people can use</text>
+
+  <g stroke="#00b8b8" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M230 157H284"/>
+    <path d="M446 157H500"/>
+    <path d="M662 157H716"/>
+    <path d="M878 157H932"/>
+  </g>
+
+  <g font-family="Andale Mono, monospace" text-anchor="middle">
+    <g>
+      <rect x="68" y="120" width="162" height="74" rx="8" fill="#161b22" stroke="#30363d"/>
+      <text x="149" y="151" fill="#00d4d4" font-size="14" letter-spacing="1.5">01 / OBSERVE</text>
+      <text x="149" y="176" fill="#8b949e" font-size="12">signal + context</text>
+    </g>
+    <g>
+      <rect x="284" y="120" width="162" height="74" rx="8" fill="#161b22" stroke="#30363d"/>
+      <text x="365" y="151" fill="#00d4d4" font-size="14" letter-spacing="1.5">02 / SHAPE</text>
+      <text x="365" y="176" fill="#8b949e" font-size="12">scope + architecture</text>
+    </g>
+    <g>
+      <rect x="500" y="120" width="162" height="74" rx="8" fill="#161b22" stroke="#30363d"/>
+      <text x="581" y="151" fill="#00d4d4" font-size="14" letter-spacing="1.5">03 / BUILD</text>
+      <text x="581" y="176" fill="#8b949e" font-size="12">model + product</text>
+    </g>
+    <g>
+      <rect x="716" y="120" width="162" height="74" rx="8" fill="#161b22" stroke="#30363d"/>
+      <text x="797" y="151" fill="#00d4d4" font-size="14" letter-spacing="1.5">04 / VERIFY</text>
+      <text x="797" y="176" fill="#8b949e" font-size="12">tests + evidence</text>
+    </g>
+    <g>
+      <rect x="932" y="120" width="200" height="74" rx="8" fill="#161b22" stroke="#30363d"/>
+      <text x="1032" y="151" fill="#00d4d4" font-size="14" letter-spacing="1.5">05 / SHIP</text>
+      <text x="1032" y="176" fill="#8b949e" font-size="12">delivery + operation</text>
+    </g>
+  </g>
+</svg>

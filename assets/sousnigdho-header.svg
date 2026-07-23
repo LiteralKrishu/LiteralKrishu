@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title description">
+  <title id="title">Sousnigdho Das</title>
+  <desc id="description">Profile header for Sousnigdho Das, AI/ML developer, full-stack engineer, and Chief Operating Officer at Vedonyx.</desc>
+  <rect width="1200" height="360" rx="24" fill="#0d1117"/>
+  <rect x="1" y="1" width="1198" height="358" rx="23" fill="none" stroke="#30363d" stroke-width="2"/>
+
+  <g stroke="#21262d" stroke-width="1" opacity="0.8">
+    <path d="M0 72H1200M0 144H1200M0 216H1200M0 288H1200"/>
+    <path d="M120 0V360M240 0V360M360 0V360M480 0V360M600 0V360M720 0V360M840 0V360M960 0V360M1080 0V360"/>
+  </g>
+
+  <g fill="none" stroke="#00b8b8" stroke-width="2">
+    <path d="M48 56V32H72"/>
+    <path d="M1128 32H1152V56"/>
+    <path d="M48 304V328H72"/>
+    <path d="M1128 328H1152V304"/>
+  </g>
+
+  <circle cx="86" cy="99" r="6" fill="#3fb950"/>
+  <text x="104" y="105" fill="#8b949e" font-family="Andale Mono, monospace" font-size="16" letter-spacing="3">PROFILE / ONLINE</text>
+
+  <text x="82" y="194" fill="#f0f6fc" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" letter-spacing="-2">Sousnigdho Das</text>
+  <text x="86" y="238" fill="#00d4d4" font-family="Andale Mono, monospace" font-size="19" letter-spacing="2">BUILDING SYSTEMS THAT SPEAK, SEE, AND SCALE</text>
+
+  <g font-family="Andale Mono, monospace" font-size="14" letter-spacing="1.5">
+    <rect x="84" y="276" width="188" height="42" rx="6" fill="#161b22" stroke="#30363d"/>
+    <text x="108" y="302" fill="#c9d1d9">COO / VEDONYX</text>
+
+    <rect x="288" y="276" width="205" height="42" rx="6" fill="#161b22" stroke="#30363d"/>
+    <text x="312" y="302" fill="#c9d1d9">SAFECITY / LEAD</text>
+
+    <rect x="509" y="276" width="252" height="42" rx="6" fill="#161b22" stroke="#30363d"/>
+    <text x="533" y="302" fill="#c9d1d9">B.TECH CSE / AI-ML</text>
+  </g>
+
+  <g transform="translate(940 102)">
+    <rect width="176" height="116" rx="12" fill="#161b22" stroke="#30363d"/>
+    <path d="M30 82L63 49L86 69L122 32L146 55" fill="none" stroke="#00b8b8" stroke-width="3"/>
+    <circle cx="63" cy="49" r="5" fill="#3fb950"/>
+    <circle cx="86" cy="69" r="5" fill="#00b8b8"/>
+    <circle cx="122" cy="32" r="5" fill="#3fb950"/>
+    <text x="30" y="101" fill="#8b949e" font-family="Andale Mono, monospace" font-size="11" letter-spacing="1.5">SIGNAL → SYSTEM</text>
+  </g>
+</svg>
