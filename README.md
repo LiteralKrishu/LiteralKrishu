@@ -14,9 +14,9 @@
 
 ## About
 
-I am **Sousnigdho Das**. I like working in the messy middle between an idea and something people can actually use: deciding what to build, shaping the architecture, writing the code, and keeping the team moving.
+I like working in the messy middle between an idea and something people can actually use: deciding what to build, shaping the architecture, writing the code, and keeping the team moving.
 
-I work as the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with StackOverHack, and pursue **B.Tech CSE (AI/ML) at Newton School of Technology**. Most of my current work sits where multimodal systems, full-stack products, and product operations meet.
+Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with StackOverHack, and pursuing **B.Tech CSE (AI/ML) at Newton School of Technology**. Most of my current work sits where multimodal systems, full-stack products, and product operations meet.
 
 ## Find me online
 
