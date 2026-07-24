@@ -7,7 +7,13 @@ import AnimatedContent from '@/components/animations/AnimatedContent';
 import DecryptedText from '@/components/animations/DecryptedText';
 import Magnet from '@/components/animations/Magnet';
 import SpotlightCard from '@/components/animations/SpotlightCard';
-import { EDUCATION_SUMMARY, GITHUB_URL, LINKEDIN_URL, UNSTOP_URL } from '@/app/data/portfolio';
+import {
+  EDUCATION_SUMMARY,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  STACKOVERHACK_LINKEDIN_URL,
+  UNSTOP_URL,
+} from '@/app/data/portfolio';
 
 export default function Identity() {
   return (
@@ -152,6 +158,12 @@ export default function Identity() {
             <Link href={GITHUB_URL} target="_blank" rel="me noreferrer" className="flex w-full items-center justify-center gap-2 border border-accent bg-background/30 px-5 py-3 font-mono text-xs tracking-widest text-accent backdrop-blur-sm transition-all duration-300 btn-cut glitch-hover sm:w-auto">
               <Github className="w-4 h-4" />
               GITHUB @LITERALKRISHU
+            </Link>
+          </Magnet>
+          <Magnet className="w-full sm:w-auto">
+            <Link href={STACKOVERHACK_LINKEDIN_URL} target="_blank" rel="noreferrer" className="flex w-full items-center justify-center gap-2 border border-green bg-background/30 px-5 py-3 font-mono text-xs tracking-widest text-green backdrop-blur-sm transition-all duration-300 btn-cut glitch-hover sm:w-auto">
+              <Network className="w-4 h-4" />
+              STACKOVERHACK
             </Link>
           </Magnet>
           <Magnet className="w-full sm:w-auto">

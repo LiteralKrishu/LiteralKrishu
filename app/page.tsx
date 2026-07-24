@@ -10,6 +10,7 @@ import {
   PROFILE_DESCRIPTION,
   PROFILE_LAST_REVIEWED,
   SITE_URL,
+  STACKOVERHACK_LINKEDIN_URL,
   UNSTOP_URL,
   VEDONYX_PROFILE_URL,
   VEDONYX_URL,
@@ -41,6 +42,11 @@ const profileSchema = {
     affiliation: {
       '@type': 'CollegeOrUniversity',
       name: 'Newton School of Technology',
+    },
+    memberOf: {
+      '@type': 'Organization',
+      name: 'StackOverHack',
+      sameAs: STACKOVERHACK_LINKEDIN_URL,
     },
     knowsAbout: [
       'Artificial intelligence',

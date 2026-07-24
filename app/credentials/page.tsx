@@ -11,7 +11,7 @@ import {
 } from '@/app/data/portfolio';
 
 const pageDescription =
-  'Hackathons, coding challenges, and quizzes that Sousnigdho Das has participated in, with certificates and event links from Unstop.';
+  'Hackathons, coding challenges, and quizzes that Sousnigdho Das has participated in, with certificates, event pages, and related LinkedIn posts where available.';
 
 export const metadata: Metadata = {
   title: 'Hackathons & Certificates',
@@ -44,7 +44,20 @@ const credentialsSchema = {
         '@id': `${SITE_URL}/credentials#credential-${index + 1}`,
         name: credential.title,
         url: `${SITE_URL}/credentials#credential-${index + 1}`,
-        sameAs: credential.certificateUrl,
+        sameAs: [
+          credential.certificateUrl,
+          credential.eventUrl,
+          ...(credential.linkedinPosts?.map((post) => post.url) ?? []),
+        ],
+        ...(credential.team
+          ? {
+              about: {
+                '@type': 'Organization',
+                name: credential.team.label,
+                sameAs: credential.team.url,
+              },
+            }
+          : {}),
         credentialCategory: 'Certificate of Participation',
         recognizedBy: {
           '@type': 'Organization',
@@ -76,7 +89,7 @@ export default function CredentialsPage() {
               Hackathons &amp; Certificates
             </h1>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-on-surface-variant">
-              I learn best by building under pressure. These are the hackathons, challenges, and quizzes I have taken part in. Competitive placements live separately under Wins &amp; Milestones.
+              I learn best by building under pressure. These are the hackathons, challenges, and quizzes I have taken part in. Each entry links back to its certificate and event page, with my related LinkedIn posts included where available. Competitive placements live separately under Wins &amp; Milestones.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -137,6 +150,29 @@ export default function CredentialsPage() {
                   Event page
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
+                {credential.team && (
+                  <a
+                    href={credential.team.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-primary hover:text-accent"
+                  >
+                    Team: {credential.team.label}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                )}
+                {credential.linkedinPosts?.map((post) => (
+                  <a
+                    key={post.url}
+                    href={post.url}
+                    target="_blank"
+                    rel="me noreferrer"
+                    className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-green hover:text-primary"
+                  >
+                    LinkedIn: {post.label}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                ))}
               </div>
             </SpotlightCard>
           </AnimatedContent>
@@ -144,7 +180,7 @@ export default function CredentialsPage() {
       </div>
 
       <p className="mt-8 max-w-4xl text-xs leading-relaxed text-outline">
-        Dates shown here are the dates Unstop recorded the certificates, which may differ from the event dates. I only list a placement when the organiser published one.
+        Dates shown here are the dates Unstop recorded the certificates, which may differ from the event dates. I only list a placement when the organiser published one, and I only attach a LinkedIn post when I can match it to the exact credential.
       </p>
     </div>
   );

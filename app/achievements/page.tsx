@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Award, ExternalLink } from 'lucide-react';
 import AnimatedContent from '@/components/animations/AnimatedContent';
 import SpotlightCard from '@/components/animations/SpotlightCard';
-import { achievements, SITE_URL } from '@/app/data/portfolio';
+import { achievements, SITE_URL, STACKOVERHACK_LINKEDIN_URL } from '@/app/data/portfolio';
 
 export const metadata: Metadata = {
   title: 'Wins & Milestones',
@@ -34,9 +34,20 @@ export default function AchievementsPage() {
               Hackathons are where I learn fastest: short timelines, ambitious ideas, and teammates who make the difficult parts possible. These are a few moments I&apos;m proud of.
             </p>
           </div>
-          <Link href="/archive" className="font-mono text-[10px] uppercase tracking-widest text-accent hover:text-primary">
-            See the projects →
-          </Link>
+          <div className="flex flex-wrap gap-x-5 gap-y-3">
+            <a
+              href={STACKOVERHACK_LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-magenta hover:text-primary"
+            >
+              StackOverHack on LinkedIn
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+            <Link href="/archive" className="font-mono text-[10px] uppercase tracking-widest text-accent hover:text-primary">
+              See the projects →
+            </Link>
+          </div>
         </header>
       </AnimatedContent>
 

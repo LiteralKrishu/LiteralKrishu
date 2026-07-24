@@ -16,7 +16,7 @@
 
 I like working in the messy middle between an idea and something people can actually use: deciding what to build, shaping the architecture, writing the code, and keeping the team moving.
 
-Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with StackOverHack, and pursuing **B.Tech CSE (AI/ML) at Newton School of Technology**. Most of my current work sits where multimodal systems, full-stack products, and product operations meet.
+Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with [StackOverHack](https://www.linkedin.com/company/stackoverhack/), and pursuing **B.Tech CSE (AI/ML) at Newton School of Technology**. Most of my current work sits where multimodal systems, full-stack products, and product operations meet.
 
 ## Find me online
 
@@ -24,6 +24,7 @@ Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with St
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00B8B8?style=for-the-badge&logo=vercel&logoColor=white)](https://literalkrishu-portfolio.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sousnigdho_Das-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sousnigdho-das/)
+[![StackOverHack](https://img.shields.io/badge/LinkedIn-StackOverHack-228B22?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/stackoverhack/)
 [![Vedonyx](https://img.shields.io/badge/Vedonyx-COO-6D28D9?style=for-the-badge&logo=briefcase&logoColor=white)](https://www.vedonyx.com/team)
 [![Unstop](https://img.shields.io/badge/Unstop-Certificates-1C4980?style=for-the-badge&logo=files&logoColor=white)](https://unstop.com/u/sousndas69815)
 [![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sousnigdhodas@gmail.com)

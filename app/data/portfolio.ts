@@ -1,10 +1,12 @@
 export const SITE_URL = "https://sousnigdhodas.vedonyx.in";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/sousnigdho-das/";
+export const STACKOVERHACK_LINKEDIN_URL =
+  "https://www.linkedin.com/company/stackoverhack/";
 export const GITHUB_URL = "https://github.com/LiteralKrishu";
 export const UNSTOP_URL = "https://unstop.com/u/sousndas69815";
 export const VEDONYX_URL = "https://www.vedonyx.com/";
 export const VEDONYX_PROFILE_URL = "https://www.vedonyx.com/team/sousnigdho-das";
-export const PROFILE_LAST_REVIEWED = "2026-07-22";
+export const PROFILE_LAST_REVIEWED = "2026-07-24";
 export const EDUCATION_SUMMARY =
   "Pursuing B.Tech CSE (AI/ML) at Newton School of Technology";
 
@@ -69,6 +71,10 @@ export const projects: PortfolioProject[] = [
         url: "https://github.com/LiteralKrishu/SafeCity",
       },
       {
+        label: "StackOverHack on LinkedIn",
+        url: STACKOVERHACK_LINKEDIN_URL,
+      },
+      {
         label: "Official SmallAI programme",
         url: "https://smallai2026.thescrs.org/2nd-smallai-hackathon-program-schedule/",
       },
@@ -112,6 +118,10 @@ export const projects: PortfolioProject[] = [
       {
         label: "Public TransparAI repository",
         url: "https://github.com/LiteralKrishu/TransparAI",
+      },
+      {
+        label: "StackOverHack on LinkedIn",
+        url: STACKOVERHACK_LINKEDIN_URL,
       },
       {
         label: "Official SFLC.in hackathon recap",
@@ -247,6 +257,8 @@ export interface Credential {
   certificateRecordDate: string;
   certificateUrl: string;
   eventUrl: string;
+  team?: EvidenceLink;
+  linkedinPosts?: EvidenceLink[];
   note?: string;
 }
 
@@ -258,6 +270,20 @@ export const credentials: Credential[] = [
     certificateRecordDate: "29 January 2026",
     certificateUrl: IIT_MANDI_UNSTOP_CERTIFICATE_URL,
     eventUrl: "https://unstop.com/hackathons/multi-modality-iit-mandi-1573803",
+    team: {
+      label: "StackOverHack",
+      url: STACKOVERHACK_LINKEDIN_URL,
+    },
+    linkedinPosts: [
+      {
+        label: "Third-place result",
+        url: IIT_MANDI_RESULT_REPOST_URL,
+      },
+      {
+        label: "Prize certificate",
+        url: IIT_MANDI_CERTIFICATE_POST_URL,
+      },
+    ],
     note: "This certificate marks my participation. The separate organiser announcement and prize certificate document our team's third-place finish.",
   },
   {
