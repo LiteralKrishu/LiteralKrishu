@@ -22,7 +22,7 @@ Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with [S
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00B8B8?style=for-the-badge&logo=vercel&logoColor=white)](https://literalkrishu-portfolio.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00B8B8?style=for-the-badge&logo=vercel&logoColor=white)](https://sousnigdhodas.vedonyx.in/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sousnigdho_Das-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sousnigdho-das/)
 [![StackOverHack](https://img.shields.io/badge/LinkedIn-StackOverHack-228B22?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/stackoverhack/)
 [![Vedonyx](https://img.shields.io/badge/Vedonyx-COO-6D28D9?style=for-the-badge&logo=briefcase&logoColor=white)](https://www.vedonyx.com/team)
