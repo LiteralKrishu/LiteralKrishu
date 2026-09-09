@@ -94,6 +94,7 @@ export const projects: PortfolioProject[] = [
     sourceNote:
       "The organiser and certificates use a few versions of our team name. The organiser confirms the team placement; my IIT Mandi lead role comes from my own account, while the SmallAI programme separately names me as SafeCity's team leader.",
     repositoryUrl: "https://github.com/LiteralKrishu/SafeCity",
+    liveUrl: "https://safecity.stackoverhack.vedonyx.in/",
     programmingLanguages: ["TypeScript"],
   },
   {
@@ -135,6 +136,7 @@ export const projects: PortfolioProject[] = [
     sourceNote:
       "SFLC.in confirms our team's third-place finish but does not name the submitted project. TransparAI is a team repository, so I do not present every line of code as my individual work.",
     repositoryUrl: "https://github.com/LiteralKrishu/TransparAI",
+    liveUrl: "https://transparai.streamlit.app/",
     programmingLanguages: ["Python"],
   },
   {

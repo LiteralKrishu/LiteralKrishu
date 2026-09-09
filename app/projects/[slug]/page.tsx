@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ExternalLink, FileCheck2, Github, Globe2 } from 'lucide-react';
 import AnimatedContent from '@/components/animations/AnimatedContent';
+import ProjectCover from '@/components/ui/ProjectCover';
 import SpotlightCard from '@/components/animations/SpotlightCard';
 import { getProject, projects, SITE_URL } from '@/app/data/portfolio';
 
@@ -35,9 +36,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const project = getProject(params.slug);
   if (!project) notFound();
 
-  const primaryUrl = project.repositoryUrl ?? project.liveUrl;
-  const PrimaryIcon = project.repositoryUrl ? Github : Globe2;
-  const primaryLabel = project.repositoryUrl ? 'View GitHub repository' : 'Visit live website';
+  const primaryUrl = project.liveUrl ?? project.repositoryUrl;
+  const PrimaryIcon = project.liveUrl ? Globe2 : Github;
+  const primaryLabel = project.liveUrl ? 'Open live website' : 'View GitHub repository';
 
   const sourceCodeSchema = project.repositoryUrl
     ? {
@@ -101,6 +102,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           )}
         </header>
       </AnimatedContent>
+
+      {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-detail-preview mt-8" aria-label={`Open ${project.shortTitle} live website`}><ProjectCover title={project.shortTitle} url={project.liveUrl} /></a>}
 
       <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
         <AnimatedContent delay={0.1}>

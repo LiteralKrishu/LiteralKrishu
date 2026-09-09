@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"components/interactive/SkillPlayground.tsx -> ./tech-cloud-scene\":{\"id\":\"components/interactive/SkillPlayground.tsx -> ./tech-cloud-scene\",\"files\":[\"static/chunks/_app-pages-browser_components_interactive_tech-cloud-scene_ts.js\"]}}"

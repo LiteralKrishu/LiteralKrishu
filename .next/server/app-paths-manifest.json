@@ -1,9 +1,10 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/credentials/page": "app/credentials/page.js",
   "/achievements/page": "app/achievements/page.js",
+  "/credentials/page": "app/credentials/page.js",
   "/identity/page": "app/identity/page.js",
-  "/archive/page": "app/archive/page.js",
   "/arsenal/page": "app/arsenal/page.js",
-  "/terminal/page": "app/terminal/page.js"
+  "/terminal/page": "app/terminal/page.js",
+  "/archive/page": "app/archive/page.js"
 }

@@ -32,10 +32,11 @@ export default function DecryptedText({
       return;
     }
 
+    let startTimer: number | undefined;
     const observer = new IntersectionObserver(
       entries => {
         if (entries[0]?.isIntersecting) {
-          window.setTimeout(() => setStarted(true), delay);
+          startTimer = window.setTimeout(() => setStarted(true), delay);
           observer.disconnect();
         }
       },
@@ -44,11 +45,13 @@ export default function DecryptedText({
 
     if (elementRef.current) observer.observe(elementRef.current);
 
-    return () => observer.disconnect();
+    return () => { observer.disconnect(); window.clearTimeout(startTimer); };
   }, [delay, text]);
 
   useEffect(() => {
     if (!started) return;
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionQuery.matches) { setDisplayText(text); return; }
 
     let frame = 0;
     const timer = window.setInterval(() => {
@@ -69,7 +72,9 @@ export default function DecryptedText({
       }
     }, speed);
 
-    return () => window.clearInterval(timer);
+    const stopIfReduced = () => { if (motionQuery.matches) { window.clearInterval(timer); setDisplayText(text); } };
+    motionQuery.addEventListener('change', stopIfReduced);
+    return () => { window.clearInterval(timer); motionQuery.removeEventListener('change', stopIfReduced); };
   }, [iterations, original, speed, started, text]);
 
   return (

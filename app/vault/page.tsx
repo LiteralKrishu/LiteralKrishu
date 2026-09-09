@@ -53,6 +53,7 @@ export default function Vault() {
             <Info className="w-4 h-4" />
             The palette
           </h3>
+          <p className="mb-5 text-sm leading-relaxed text-on-surface-variant">The original console palette is preserved below. The current interface adds purple dark mode and a vibrant light mode.</p>
           <div className="flex flex-col gap-4">
             {colorsList.map((c, index) => (
               <AnimatedContent key={c.name} delay={0.08 + index * 0.04} y={12} className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-outline-variant/10 pb-3 gap-2">

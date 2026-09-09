@@ -11,7 +11,7 @@ export default function SpotlightCard({
   className = '',
 }: SpotlightCardProps) {
   return (
-    <div className={`relative overflow-hidden rounded-lg border border-outline-variant/20 bg-surface p-6 shadow-sm ${className}`}>
+    <div className={`glass-panel relative overflow-hidden rounded-lg border border-outline-variant/20 bg-surface p-6 shadow-sm ${className}`}>
       {children}
     </div>
   );

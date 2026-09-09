@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import SkillPlayground from '@/components/interactive/SkillPlayground';
 import { Cpu } from 'lucide-react';
 import AnimatedContent from '@/components/animations/AnimatedContent';
 import DecryptedText from '@/components/animations/DecryptedText';
@@ -72,11 +73,12 @@ export default function Arsenal() {
       </header>
       </AnimatedContent>
 
+      <div className="mb-10"><SkillPlayground /></div>
       {/* Bento Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 flex-grow">
         {/* Toolkit */}
         <AnimatedContent delay={0.06} className="col-span-1 md:col-span-8">
-        <SpotlightCard className="h-full md:p-8 flex flex-col group overflow-hidden" spotlightColor="rgba(0, 255, 0, 0.08)">
+        <SpotlightCard className="arsenal-toolkit h-full md:p-8 flex flex-col group overflow-hidden" spotlightColor="rgba(0, 255, 0, 0.08)">
           <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           {/* Corner Accents */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-accent"></div>
@@ -109,7 +111,7 @@ export default function Arsenal() {
 
         {/* Current focus */}
         <AnimatedContent delay={0.12} className="col-span-1 md:col-span-4">
-        <SpotlightCard className="h-full group flex flex-col" spotlightColor="rgba(255, 0, 255, 0.1)">
+        <SpotlightCard className="arsenal-focus h-full group flex flex-col" spotlightColor="rgba(255, 0, 255, 0.1)">
           <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-magenta"></div>
           <div className="flex justify-between items-start mb-6">
             <h2 className="font-mono text-xs text-magenta uppercase tracking-widest font-bold">Right now</h2>
@@ -134,7 +136,7 @@ export default function Arsenal() {
 
         {/* Selected builds */}
         <AnimatedContent delay={0.18} className="col-span-1 md:col-span-6">
-        <SpotlightCard className="h-full group">
+        <SpotlightCard className="arsenal-builds h-full group">
           <div className="flex justify-between items-start mb-6">
             <h2 className="font-mono text-xs text-accent uppercase tracking-widest font-bold">Selected builds</h2>
             <span className="font-mono text-[9px] text-outline-variant">03 PROJECTS</span>
@@ -152,7 +154,7 @@ export default function Arsenal() {
 
         {/* Working style */}
         <AnimatedContent delay={0.24} className="col-span-1 md:col-span-6">
-        <SpotlightCard className="h-full clip-card group" spotlightColor="rgba(0, 255, 0, 0.08)">
+        <SpotlightCard className="arsenal-working-style h-full clip-card group" spotlightColor="rgba(0, 255, 0, 0.08)">
           <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-green"></div>
           <div className="flex justify-between items-start mb-6">
             <h2 className="font-mono text-xs text-green uppercase tracking-widest font-bold">How I like to work</h2>

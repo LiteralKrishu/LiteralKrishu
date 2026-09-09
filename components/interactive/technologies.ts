@@ -1,0 +1,22 @@
+// Playground labels are separate from the portfolio's stated professional skills.
+export const technologies = [
+  { name: 'TypeScript', logo: '/images/tech/typescript.svg', mark: 'TS', color: '#5e8ce8' },
+  { name: 'Python', logo: '/images/tech/python.svg', mark: 'Py', color: '#e9bf55' },
+  { name: 'React', logo: '/images/tech/react.svg', mark: 'React', color: '#65c9e2' },
+  { name: 'Node.js', logo: '/images/tech/nodejs.svg', mark: 'Node', color: '#84ba72' },
+  { name: 'JavaScript', logo: '/images/tech/javascript.svg', mark: 'JS', color: '#f0d45c' },
+  { name: 'SQL', logo: '/images/tech/sql.svg', mark: 'SQL', color: '#7cb7df' },
+  { name: 'Next.js', logo: '/images/tech/nextjs.svg', mark: 'N', color: '#bbb3d6' },
+  { name: 'HTML', logo: '/images/tech/html5.svg', mark: '</>', color: '#ed967b' },
+  { name: 'CSS', logo: '/images/tech/css3.svg', mark: 'CSS', color: '#8c9eee' },
+  { name: 'Java', logo: '/images/tech/java.svg', mark: 'Java', color: '#edb184' },
+  { name: 'C++', logo: '/images/tech/cplusplus.svg', mark: 'C++', color: '#71a9d4' },
+  { name: 'Go', logo: '/images/tech/go.svg', mark: 'Go', color: '#78d1cd' },
+  { name: 'Rust', logo: '/images/tech/rust.svg', mark: 'Rs', color: '#d8a184' },
+  { name: 'PHP', logo: '/images/tech/php.svg', mark: 'php', color: '#b1a2df' },
+  { name: 'Docker', logo: '/images/tech/docker.svg', mark: 'Docker', color: '#72b7ea' },
+  { name: 'Git', logo: '/images/tech/git.svg', mark: 'Git', color: '#e99b89' },
+  { name: 'Streamlit', logo: '/images/tech/streamlit.svg', mark: 'St', color: '#ee9caf' },
+  { name: 'Multimodal systems', logo: '/images/tech/ai.svg', mark: 'AI', color: '#a7d9b4' },
+  { name: 'Planning', logo: '/images/tech/planning.svg', mark: 'Plan', color: '#dbc5f2' },
+] as const;

@@ -330,11 +330,11 @@ export default function Terminal() {
 
   const lineClass: Record<LineType, string> = {
     system: 'text-accent',
-    input: 'text-white font-semibold',
+    input: 'text-primary font-semibold',
     output: 'text-on-surface-variant',
     error: 'text-error font-semibold',
     success: 'text-green font-semibold',
-    muted: 'text-outline-variant'
+    muted: 'text-outline'
   };
 
   return (
@@ -363,9 +363,9 @@ export default function Terminal() {
         <AnimatedContent className="min-w-0" y={22}>
         <div
           onClick={focusInput}
-          className="group flex min-h-[560px] w-full min-w-0 max-w-full flex-col overflow-hidden rounded-xl border border-white/10 bg-[#151515]/85 shadow-[0_24px_80px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl"
+          className="group flex min-h-[560px] w-full min-w-0 max-w-full flex-col overflow-hidden rounded-xl border border-outline-variant/25 bg-surface/85 shadow-[0_24px_80px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur-xl"
         >
-          <div className="flex min-h-11 items-center justify-between border-b border-white/10 bg-[#262626]/90 px-4">
+          <div className="flex min-h-11 items-center justify-between border-b border-outline-variant/25 bg-surface-container/90 px-4">
             <div className="flex items-center gap-2">
               <span className="h-3 w-3 rounded-full bg-[#ff5f57] shadow-[0_0_0_1px_rgba(0,0,0,0.2)]">
                 <X className="m-auto h-2.5 w-2.5 text-black/0 group-hover:text-black/50" />
@@ -378,7 +378,7 @@ export default function Terminal() {
               </span>
             </div>
 
-            <div className="hidden items-center gap-2 rounded-md border border-white/10 bg-black/20 px-3 py-1 font-mono text-[11px] text-white/70 sm:flex">
+            <div className="hidden items-center gap-2 rounded-md border border-outline-variant/25 bg-background/20 px-3 py-1 font-mono text-[11px] text-on-surface-variant sm:flex">
               <Folder className="h-3.5 w-3.5 text-accent" />
               zsh - portfolio-os
             </div>
@@ -389,7 +389,7 @@ export default function Terminal() {
                 event.stopPropagation();
                 void copyContact();
               }}
-              className="flex items-center gap-1.5 rounded-md border border-white/10 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-outline-variant transition-colors hover:border-accent/40 hover:text-accent"
+              className="flex items-center gap-1.5 rounded-md border border-outline-variant/25 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-outline-variant transition-colors hover:border-accent/40 hover:text-accent"
               title="Copy LinkedIn profile"
             >
               <Copy className="h-3.5 w-3.5" />
@@ -397,7 +397,7 @@ export default function Terminal() {
             </button>
           </div>
 
-          <div className="technical-grid relative min-w-0 flex-1 overflow-y-auto bg-[#0b0b0b] px-4 py-5 font-mono text-[12px] leading-relaxed md:px-6 md:text-[13px]">
+          <div className="technical-grid relative min-w-0 flex-1 overflow-y-auto bg-background px-4 py-5 font-mono text-[12px] leading-relaxed md:px-6 md:text-[13px]">
             <div className="pointer-events-none absolute inset-0 scanlines opacity-40"></div>
             <div className="relative z-10 space-y-1.5">
               {lines.map((line, index) => (
@@ -409,8 +409,8 @@ export default function Terminal() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="min-w-0 border-t border-white/10 bg-[#101010] px-4 py-3 md:px-5">
-            <div className="flex min-h-11 items-center gap-2 rounded-lg border border-white/10 bg-black/45 px-3 shadow-[inset_0_0_18px_rgba(0,0,0,0.45)]">
+          <form onSubmit={handleSubmit} className="min-w-0 border-t border-outline-variant/25 bg-surface-container-low px-4 py-3 md:px-5">
+            <div className="flex min-h-11 items-center gap-2 rounded-lg border border-outline-variant/25 bg-background/45 px-3 shadow-[inset_0_0_18px_rgba(0,0,0,0.45)]">
               <ChevronRight className="h-4 w-4 shrink-0 text-accent" />
               <span className="hidden shrink-0 font-mono text-[11px] text-outline-variant sm:inline">{prompt}</span>
               <input

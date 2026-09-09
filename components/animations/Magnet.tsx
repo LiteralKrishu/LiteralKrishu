@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion';
 
 interface MagnetProps {
   children: React.ReactNode;
@@ -10,6 +10,7 @@ interface MagnetProps {
 }
 
 export default function Magnet({ children, className = '', strength = 0.24 }: MagnetProps) {
+  const reducedMotion = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -17,7 +18,7 @@ export default function Magnet({ children, className = '', strength = 0.24 }: Ma
   const springY = useSpring(y, { stiffness: 180, damping: 16, mass: 0.3 });
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
+    if (!ref.current || reducedMotion) return;
 
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -35,7 +36,7 @@ export default function Magnet({ children, className = '', strength = 0.24 }: Ma
   return (
     <motion.div
       ref={ref}
-      style={{ x: springX, y: springY }}
+      style={{ x: reducedMotion ? 0 : springX, y: reducedMotion ? 0 : springY }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={className}

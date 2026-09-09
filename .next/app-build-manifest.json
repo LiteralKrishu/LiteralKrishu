@@ -1,9 +1,15 @@
 {
   "pages": {
-    "/page": [
+    "/arsenal/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/css/app/arsenal/page.css",
+      "static/chunks/app/arsenal/page.js"
+    ],
+    "/arsenal/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/arsenal/layout.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -31,25 +37,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/archive/layout.js"
     ],
-    "/arsenal/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/arsenal/page.js"
-    ],
-    "/arsenal/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/arsenal/layout.js"
-    ],
-    "/credentials/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/credentials/page.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/achievements/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/achievements/page.js"
+    ],
+    "/credentials/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/credentials/page.js"
     ],
     "/terminal/page": [
       "static/chunks/webpack.js",
@@ -60,6 +62,26 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/terminal/layout.js"
+    ],
+    "/vault/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/vault/page.js"
+    ],
+    "/vault/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/vault/layout.js"
+    ],
+    "/projects/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/projects/[slug]/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

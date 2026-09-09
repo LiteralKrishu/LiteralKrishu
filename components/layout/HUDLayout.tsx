@@ -1,243 +1,111 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import AnimatedMobileMenu, { menuItemMotion } from './AnimatedMobileMenu';
+import ScrollEffects from '@/components/animations/ScrollEffects';
 import { usePathname } from 'next/navigation';
-import {
-  Award,
-  BadgeCheck,
-  BriefcaseBusiness,
-  Github,
-  Linkedin,
-  Menu,
-  Network,
-  Power,
-  ShieldCheck,
-  Signal,
-  Terminal as TerminalIcon,
-  X,
-} from 'lucide-react';
+import { ArrowUpRight, Award, BadgeCheck, BriefcaseBusiness, Github, Linkedin, Menu, Network, Power, ShieldCheck, Terminal, X, Sun, Moon, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 import { GITHUB_URL, LINKEDIN_URL, UNSTOP_URL } from '@/app/data/portfolio';
 
-interface HUDLayoutProps {
-  children: React.ReactNode;
-}
-
-const navItems = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/identity' },
-  { label: 'Work', path: '/archive' },
-  { label: 'Skills', path: '/arsenal' },
-  { label: 'Wins', path: '/achievements' },
-  { label: 'Certificates', path: '/credentials' },
-];
-
-const sidebarLinks = [
+const sections = [
   { label: 'Home', path: '/', icon: Power },
   { label: 'About', path: '/identity', icon: ShieldCheck },
   { label: 'Work', path: '/archive', icon: BriefcaseBusiness },
   { label: 'Skills', path: '/arsenal', icon: Network },
   { label: 'Wins', path: '/achievements', icon: Award },
   { label: 'Certificates', path: '/credentials', icon: BadgeCheck },
-  { label: 'Terminal', path: '/terminal', icon: TerminalIcon },
+  { label: 'Terminal', path: '/terminal', icon: Terminal },
 ];
 
-export default function HUDLayout({ children }: HUDLayoutProps) {
+export default function HUDLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentTime, setCurrentTime] = useState('00:00:00');
+  const reducedMotion = useReducedMotion();
+  const [collapsed, setCollapsed] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
+  const menuButton = useRef<HTMLButtonElement>(null);
+  const menu = useRef<HTMLDivElement>(null);
+  const progress = useRef<HTMLDivElement>(null);
 
+  useEffect(() => { setTheme(document.documentElement.dataset.theme || 'dark'); }, []);
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
   useEffect(() => {
-    const updateTime = () => setCurrentTime(new Date().toTimeString().split(' ')[0]);
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
+    let pending = 0;
+    const update = () => {
+      pending = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (progress.current) progress.current.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+    };
+    const onScroll = () => { if (!pending) pending = requestAnimationFrame(update); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+    return () => { cancelAnimationFrame(pending); window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', onScroll); };
+  }, [pathname]);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    menu.current?.querySelector<HTMLElement>('button')?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setMenuOpen(false); menuButton.current?.focus(); }
+      if (event.key !== 'Tab') return;
+      const items = Array.from(menu.current?.querySelectorAll<HTMLElement>('a, button') || []) as HTMLElement[];
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    const onResize = () => { if (window.innerWidth >= 1024) setMenuOpen(false); };
+    document.addEventListener('keydown', onKey);
+    window.addEventListener('resize', onResize);
+    return () => { document.body.style.overflow = previous; document.removeEventListener('keydown', onKey); window.removeEventListener('resize', onResize); };
+  }, [menuOpen]);
 
-  const isCurrentPath = (path: string) => {
-    if (path === '/') return pathname === '/';
-    if (path === '/archive') return pathname === '/archive' || pathname.startsWith('/projects/');
-    return pathname === path;
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    document.documentElement.style.colorScheme = next;
+    try { localStorage.setItem('portfolio-theme', next); } catch { /* Theme still works when storage is unavailable. */ }
+    setTheme(next);
   };
+  const current = (path: string) => path === '/' ? pathname === '/' : pathname === path || (path === '/archive' && pathname.startsWith('/projects/'));
+  const navigation = (mobile = false) => sections.map(({ label, path, icon: Icon }, index) => {
+    const link = <Link key={path} href={path} aria-label={label} title={collapsed && !mobile ? label : undefined} aria-current={current(path) ? 'page' : undefined} onClick={() => setMenuOpen(false)} className={`shell-nav-link ${current(path) ? 'is-active' : ''}`}>
+      <Icon size={18} /><span>{label}</span><small>{String(index + 1).padStart(2, '0')}</small>
+    </Link>;
+    return mobile ? <motion.div key={path} variants={reducedMotion ? undefined : menuItemMotion}>{link}</motion.div> : (
+      <div key={path} className="sidebar-nav-item" style={{ '--nav-order': index } as React.CSSProperties}>{link}</div>
+    );
+  });
 
   return (
-    <div className="relative flex min-h-screen max-w-[100vw] flex-col overflow-x-hidden bg-background font-sans text-on-surface">
-      <div className="noise-texture pointer-events-none fixed inset-0 z-0" />
-
-      <header className="fixed top-0 z-50 flex h-14 w-full max-w-[100vw] items-center justify-between border-b border-outline-variant/25 bg-background/95 px-4 backdrop-blur-md sm:px-6">
-        <div className="flex min-w-0 items-center gap-8">
-          <Link href="/" className="shrink-0 font-syne text-sm font-black tracking-[-0.03em] text-primary transition-colors duration-150 hover:text-accent sm:text-lg">
-            SOUSNIGDHO<span className="text-accent">.OS</span>
-          </Link>
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
-            {navItems.map((item) => {
-              const isActive = isCurrentPath(item.path);
-              return (
-                <Link
-                  key={item.label}
-                  href={item.path}
-                  aria-current={isActive ? 'page' : undefined}
-                  className={`rounded-md px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] transition-colors duration-150 ${
-                    isActive
-                      ? 'bg-accent/10 text-accent'
-                      : 'text-on-surface-variant hover:bg-surface-container-high/40 hover:text-primary'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+    <div className={`site-shell ${collapsed ? 'sidebar-collapsed' : ''}`}>
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <div className="ambient-glow" aria-hidden="true" />
+      <div className="ambient-grid" aria-hidden="true" />
+      <header className="shell-header">
+        <Link href="/" className="shell-brand">SOUSNIGDHO<span>.OS</span><span className="brand-dot" /></Link>
+        <span className="header-caption">A little code. A lot of curiosity.</span>
+        <div className="header-actions">
+          <button type="button" onClick={toggleTheme} className="theme-toggle" aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}><Sun size={16} className={theme === 'light' ? 'selected' : ''} /><Moon size={16} className={theme === 'dark' ? 'selected' : ''} /></button>
+          <a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="contact-button">Let&apos;s talk <ArrowUpRight size={16} /></a>
+          <button ref={menuButton} className="mobile-menu-button icon-button" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
         </div>
-
-        <div className="flex items-center gap-3">
-          <a
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="me noreferrer"
-            className="hidden min-h-9 items-center rounded-md border border-outline-variant/30 px-3 font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant transition-colors duration-150 hover:border-accent hover:text-accent lg:flex"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="me noreferrer"
-            className="hidden min-h-9 items-center gap-2 rounded-md border border-outline-variant/30 px-3 font-mono text-[10px] uppercase tracking-[0.14em] text-on-surface-variant transition-colors duration-150 hover:border-accent hover:text-accent lg:flex"
-          >
-            <Github className="size-3.5" />
-            GitHub
-          </a>
-          <Link
-            href="/terminal"
-            aria-label="Open interactive terminal"
-            className="flex size-9 items-center justify-center rounded-md text-on-surface-variant transition-colors duration-150 hover:bg-surface-container-high/40 hover:text-accent"
-          >
-            <TerminalIcon className="size-4" />
-          </Link>
-          <button
-            type="button"
-            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            aria-expanded={mobileMenuOpen}
-            className="flex size-9 items-center justify-center rounded-md text-on-surface-variant transition-colors duration-150 hover:bg-surface-container-high/40 hover:text-accent md:hidden"
-            onClick={() => setMobileMenuOpen((open) => !open)}
-          >
-            {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
-        </div>
+        <div ref={progress} className="reading-progress" aria-hidden="true" />
       </header>
-
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 top-14 z-40 flex flex-col border-b border-outline-variant/25 bg-background/95 p-6 backdrop-blur-md md:hidden">
-          <nav className="mt-6 flex flex-col" aria-label="Mobile navigation">
-            {navItems.map((item) => {
-              const isActive = isCurrentPath(item.path);
-              return (
-                <Link
-                  key={item.label}
-                  href={item.path}
-                  aria-current={isActive ? 'page' : undefined}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`border-b border-outline-variant/15 py-4 font-syne text-xl font-semibold transition-colors duration-150 ${
-                    isActive ? 'text-accent' : 'text-primary hover:text-accent'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-          <div className="mt-auto space-y-6 border-t border-outline-variant/20 pt-6">
-            <div className="flex flex-wrap gap-x-5 gap-y-3 font-mono text-[10px] uppercase tracking-[0.14em]">
-              <a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="text-on-surface-variant hover:text-accent">LinkedIn</a>
-              <a href={GITHUB_URL} target="_blank" rel="me noreferrer" className="text-on-surface-variant hover:text-accent">GitHub</a>
-              <a href={UNSTOP_URL} target="_blank" rel="me noreferrer" className="text-on-surface-variant hover:text-accent">Unstop</a>
-            </div>
-            <div className="flex justify-between font-mono text-[10px] uppercase tracking-[0.12em] text-outline">
-              <span>{currentTime} IST</span>
-              <span>COO / Vedonyx</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <aside
-        className={`fixed left-0 top-14 z-30 hidden h-[calc(100vh-56px-32px)] flex-col overflow-hidden border-r border-outline-variant/25 bg-surface-container-lowest/80 lg:flex ${
-          sidebarOpen ? 'w-60' : 'w-16'
-        }`}
-      >
-        <div className="flex items-center gap-3 border-b border-outline-variant/20 p-4">
-          <span className="flex size-8 shrink-0 items-center justify-center rounded-md border border-accent/30 bg-accent/5 font-mono text-[10px] font-bold text-accent">
-            SD
-          </span>
-          {sidebarOpen && (
-            <div className="min-w-0">
-              <span className="block truncate font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-primary">Sousnigdho Das</span>
-              <span className="mt-1 flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.1em] text-on-surface-variant">
-                <span className="size-1.5 rounded-full bg-green" />
-                COO at Vedonyx
-              </span>
-            </div>
-          )}
-        </div>
-
-        <nav className="flex flex-1 flex-col gap-1 py-5" aria-label="Section navigation">
-          {sidebarLinks.map((link) => {
-            const Icon = link.icon;
-            const isActive = isCurrentPath(link.path);
-            return (
-              <Link
-                key={link.label}
-                href={link.path}
-                title={sidebarOpen ? undefined : link.label}
-                aria-current={isActive ? 'page' : undefined}
-                className={`mx-2 flex min-h-10 items-center gap-3 rounded-md px-3 transition-colors duration-150 ${
-                  isActive
-                    ? 'bg-accent/10 text-accent'
-                    : 'text-on-surface-variant hover:bg-surface-container-high/40 hover:text-primary'
-                }`}
-              >
-                <Icon className="size-4 shrink-0" />
-                {sidebarOpen && <span className="font-mono text-[10px] uppercase tracking-[0.14em]">{link.label}</span>}
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="border-t border-outline-variant/20 p-3">
-          <button
-            type="button"
-            onClick={() => setSidebarOpen((open) => !open)}
-            aria-label={sidebarOpen ? 'Collapse sidebar' : 'Expand sidebar'}
-            className="min-h-9 w-full rounded-md border border-outline-variant/30 px-2 font-mono text-[9px] uppercase tracking-[0.12em] text-on-surface-variant transition-colors duration-150 hover:border-accent hover:text-accent"
-          >
-            {sidebarOpen ? 'Collapse panel' : 'Expand'}
-          </button>
-        </div>
+      <aside className="shell-sidebar">
+        <Link href="/identity" className="sidebar-profile" aria-label="About Sousnigdho Das"><Image src="/images/sousnigdho-das.png" alt="" width={42} height={42} className="profile-photo sidebar-profile-photo" /><span className="sidebar-profile-copy"><strong>Sousnigdho Das</strong><small><i /> COO at Vedonyx</small></span></Link>
+        <p className="sidebar-label">Explore</p>
+        <nav id="sidebar-navigation" aria-label="Primary navigation">{navigation()}</nav>
+        <div className="sidebar-bottom"><div className="sidebar-note"><span className="status-dot" /> Open to meaningful work</div><button className="collapse-button" aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-expanded={!collapsed} aria-controls="sidebar-navigation" onClick={() => setCollapsed(!collapsed)}>{collapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}<span>Collapse panel</span></button></div>
       </aside>
-
-      <div className={`flex min-w-0 max-w-[100vw] flex-grow flex-col overflow-x-hidden pb-8 pt-14 ${sidebarOpen ? 'lg:pl-60' : 'lg:pl-16'}`}>
-        <main className="relative z-10 flex min-w-0 max-w-full flex-1 flex-col overflow-x-hidden">
-          {children}
-        </main>
+      <AnimatePresence>{menuOpen && <AnimatedMobileMenu key="mobile-menu" menuRef={menu}><div className="mobile-navigation-heading"><p className="eyebrow">Explore the portfolio</p><button className="icon-button" aria-label="Close menu" onClick={() => { setMenuOpen(false); menuButton.current?.focus(); }}><X size={22} /></button></div><nav aria-label="Mobile navigation">{navigation(true)}</nav><a className="mobile-contact" href={LINKEDIN_URL} target="_blank" rel="me noreferrer">Let&apos;s talk on LinkedIn <ArrowUpRight size={18} /></a></AnimatedMobileMenu>}</AnimatePresence>
+      <ScrollEffects /><div className="shell-content"><main id="main-content" tabIndex={-1}>{children}</main>
+        <footer className="shell-footer"><div><Link href="/" className="footer-signature">Sousnigdho<span> ↗</span></Link><p>© 2026 Sousnigdho Das <span className="footer-status">· Still building</span></p></div><div className="footer-links"><a href={LINKEDIN_URL} target="_blank" rel="me noreferrer"><Linkedin size={15} />LinkedIn</a><a href={GITHUB_URL} target="_blank" rel="me noreferrer"><Github size={15} />GitHub</a><a href={UNSTOP_URL} target="_blank" rel="me noreferrer">Unstop <ArrowUpRight size={14} /></a><Link href="/vault">Behind the interface <ArrowUpRight size={14} /></Link></div></footer>
       </div>
-
-      <footer className="fixed bottom-0 z-50 hidden h-8 w-full items-center justify-between border-t border-outline-variant/25 bg-background/95 px-6 font-mono text-[9px] uppercase tracking-[0.1em] text-outline sm:flex">
-        <span>© 2026 Sousnigdho Das</span>
-        <div className="hidden items-center gap-5 sm:flex">
-          <a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="flex items-center gap-1.5 transition-colors duration-150 hover:text-accent">
-            <Linkedin className="size-3" /> LinkedIn
-          </a>
-          <a href={GITHUB_URL} target="_blank" rel="me noreferrer" className="flex items-center gap-1.5 transition-colors duration-150 hover:text-accent">
-            <Github className="size-3" /> GitHub
-          </a>
-          <Link href="/vault" className="hidden transition-colors duration-150 hover:text-accent lg:block">Behind the interface</Link>
-          <span className="flex items-center gap-1.5 text-on-surface-variant">
-            <Signal className="size-3 text-green" /> Still building
-          </span>
-        </div>
-      </footer>
     </div>
   );
 }
