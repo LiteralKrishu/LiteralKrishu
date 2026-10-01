@@ -44,7 +44,7 @@ Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with [S
 
 | Project | What it does | My part |
 | --- | --- | --- |
-| [SafeCity](https://github.com/LiteralKrishu/SafeCity) | Combines audio, motion, contextual signals, and temporal fusion into a production-grade tiered safety workflow that runs on-device. | Team lead; architecture, orchestration, and development |
+| [SafeCity](https://github.com/LiteralKrishu/SafeCity) · [Live site](https://safe-city-one.vercel.app/) | Combines audio, motion, contextual signals, and temporal fusion into a production-grade tiered safety workflow that runs on-device. | Team lead; architecture, orchestration, and development |
 | [TransparAI](https://github.com/LiteralKrishu/TransparAI) | Helps people examine public-procurement data for unusual patterns, concentration, and delays. | StackOverHack team member; dashboard and hackathon work |
 | [Glow Glitter](https://www.glowglitter.in/) | Turns a luxury soap brand into a polished ecommerce experience. | Shared design direction with Harshit Gupta; the wider Vedonyx team built it |
 
@@ -73,7 +73,12 @@ Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with [S
 
 <div align="center">
 
-[<img src="https://github-readme-activity-graph.vercel.app/graph?username=LiteralKrishu&bg_color=0d1117&color=c9d1d9&line=00b8b8&point=3fb950&area=true&hide_border=false&custom_title=Contribution%20Activity" width="97%" alt="Sousnigdho Das GitHub contribution activity graph" />](https://github.com/LiteralKrishu?tab=overview)
+<a href="https://github.com/LiteralKrishu?tab=overview">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://ghchart.xqsit94.in/dark:00b8b8/LiteralKrishu" />
+    <img src="https://ghchart.xqsit94.in/light:00b8b8/LiteralKrishu" width="97%" alt="Sousnigdho Das GitHub contribution chart" />
+  </picture>
+</a>
 
 </div>
 

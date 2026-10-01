@@ -94,7 +94,7 @@ export const projects: PortfolioProject[] = [
     sourceNote:
       "The organiser and certificates use a few versions of our team name. The organiser confirms the team placement; my IIT Mandi lead role comes from my own account, while the SmallAI programme separately names me as SafeCity's team leader.",
     repositoryUrl: "https://github.com/LiteralKrishu/SafeCity",
-    liveUrl: "https://safecity.stackoverhack.vedonyx.in/",
+    liveUrl: "https://safe-city-one.vercel.app/",
     programmingLanguages: ["TypeScript"],
   },
   {
