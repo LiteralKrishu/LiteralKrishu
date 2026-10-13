@@ -7,13 +7,13 @@ import { achievements, SITE_URL, STACKOVERHACK_LINKEDIN_URL } from '@/app/data/p
 
 export const metadata: Metadata = {
   title: 'Wins & Milestones',
-  description: 'Hackathon results, project milestones, and collaborative recognition from the work of Sousnigdho Das and Team StackOverHack.',
+  description: 'Hackathon results and project milestones for Sousnigdho Das and StackOverHack, with links to the original announcements.',
   alternates: { canonical: '/achievements' },
   openGraph: {
     type: 'website',
     url: `${SITE_URL}/achievements`,
     title: 'Wins & Milestones | Sousnigdho Das',
-    description: 'Hackathon results, project milestones, and collaborative recognition from the work of Sousnigdho Das and Team StackOverHack.',
+    description: 'Hackathon results and project milestones for Sousnigdho Das and StackOverHack, with links to the original announcements.',
   },
 };
 
@@ -31,7 +31,7 @@ export default function AchievementsPage() {
               Wins &amp; Milestones
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-on-surface-variant">
-              Hackathons are where I learn fastest: short timelines, ambitious ideas, and teammates who make the difficult parts possible. These are a few moments I&apos;m proud of.
+              Hackathons have pushed me to make decisions quickly and work closely with a team. Here are the results I can link back to an organiser or programme.
             </p>
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-3">

@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://literalkrishu-portfolio.vercel.app/">
+<a href="https://sousnigdhodas.vedonyx.in/">
   <img src="./assets/sousnigdho-header.svg" width="100%" alt="Sousnigdho Das, AI/ML developer, full-stack engineer, and COO at Vedonyx" />
 </a>
 
@@ -14,9 +14,9 @@
 
 ## About
 
-I like working in the messy middle between an idea and something people can actually use: deciding what to build, shaping the architecture, writing the code, and keeping the team moving.
+I like taking an idea far enough that someone can use it. That usually means writing code, making product decisions, and helping the team get unstuck.
 
-Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with [StackOverHack](https://www.linkedin.com/company/stackoverhack/), and pursuing **B.Tech CSE (AI/ML) at Newton School of Technology**. Most of my current work sits where multimodal systems, full-stack products, and product operations meet.
+I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOverHack](https://www.linkedin.com/company/stackoverhack/), and study **B.Tech CSE (AI/ML) at Newton School of Technology**. The projects below are the ones I point people to first.
 
 ## Find me online
 
@@ -31,26 +31,28 @@ Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with [S
 
 </div>
 
-## Current coordinates
+## What I'm doing now
 
 | Area | What I am doing |
 | --- | --- |
-| Building | Leading SafeCity as a production-grade, on-device multimodal personal-safety system |
-| Operating | Working across product direction, delivery, and team coordination at Vedonyx |
-| Learning | Pursuing B.Tech CSE (AI/ML) at Newton School of Technology |
-| Exploring | Multimodal inference, full-stack systems, privacy-aware products, and civic technology |
+| Building | Leading SafeCity, a phone-based safety prototype |
+| At work | Helping Vedonyx decide what to build and get it shipped |
+| Studying | B.Tech CSE (AI/ML) at Newton School of Technology |
+| Curious about | On-device AI, privacy, and useful public-interest software |
 
 ## Selected work
 
 | Project | What it does | My part |
 | --- | --- | --- |
-| [SafeCity](https://github.com/LiteralKrishu/SafeCity) · [Live site](https://safe-city-one.vercel.app/) | Combines audio, motion, contextual signals, and temporal fusion into a production-grade tiered safety workflow that runs on-device. | Team lead; architecture, orchestration, and development |
-| [TransparAI](https://github.com/LiteralKrishu/TransparAI) | Helps people examine public-procurement data for unusual patterns, concentration, and delays. | StackOverHack team member; dashboard and hackathon work |
-| [Glow Glitter](https://www.glowglitter.in/) | Turns a luxury soap brand into a polished ecommerce experience. | Shared design direction with Harshit Gupta; the wider Vedonyx team built it |
+| [SafeCity](https://github.com/LiteralKrishu/SafeCity) · [Site](https://safe-city-one.vercel.app/) | Phone-based safety prototype that uses sound, motion, and other cues to flag possible distress. | Team lead; architecture, backend, and development |
+| [TransparAI](https://github.com/LiteralKrishu/TransparAI) | Streamlit dashboard that flags unusual patterns in public procurement data for people to review. | Built with StackOverHack for the SFLC.in hackathon |
+| [SAATHI frontend](https://github.com/LiteralKrishu/saathi) | React screens for case intake and coordination, connected to the Django API. | Frontend and API integration with StackOverHack |
+| [SAATHI backend](https://github.com/LiteralKrishu/saathi-backend) | Django API behind SAATHI, with role checks and documented endpoints. | Backend and API work with StackOverHack |
+| [NykaaCopilot](https://github.com/LiteralKrishu/NykaaCopilot) | Matches colors from a makeup photo to a sample catalog and previews them in a 2D try-on. | Built the Next.js demo and its analysis and try-on flow |
 
 <div align="center">
 
-<img src="./assets/build-loop.svg" width="97%" alt="Sousnigdho Das build loop from signal and context through architecture, product, validation, and delivery" />
+<img src="./assets/build-loop.svg" width="97%" alt="How I take an idea to a working release: ask, plan, build, test, and ship" />
 
 </div>
 
@@ -84,6 +86,6 @@ Working as **Chief Operating Officer at Vedonyx** & lead of **SafeCity** with [S
 
 <div align="center">
 
-<sub>Still building. If something here overlaps with what you are working on, feel free to reach out.</sub>
+<sub>If something here connects with what you're working on, send me a message.</sub>
 
 </div>

@@ -291,7 +291,17 @@
 .sheet-back { transform: translate(-46%, -62%) rotate(6deg); opacity: .45; background: #5e81b044; }
 .sheet-front { padding: 15px 18px; }
 .sheet-header { display: flex; justify-content: space-between; color: #c2e8ff; font-size: 13px; }.chart-bars { height: 70px; display: flex; align-items: flex-end; gap: 10px; margin-top: 15px; }.chart-bars i { display: block; flex: 1; border-radius: 3px 3px 0 0; background: linear-gradient(#96c8ff, #5d71d388); box-shadow: inset 1px 0 #e8f3ff66; }.sheet-lines { display: flex; gap: 10px; margin-top: 14px; }.sheet-lines i { height: 3px; width: 65%; background: #91b5d055; }.sheet-lines i:last-child { width: 20%; }.data-orb { width: 45px; height: 45px; position: absolute; right: 14%; bottom: 14%; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #e4f8ff, #62adcd 45%, #1c3f83 85%); box-shadow: 4px 10px 25px #0004; }
-.visual-glow-glitter { background: radial-gradient(ellipse at center, #ad624366, transparent 70%), #2d1b24; }.glow-halo { position: absolute; width: 220px; height: 220px; border: 1px solid #ebba9a55; border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%) rotateX(25deg); box-shadow: 0 0 0 22px #e6bd962; }.glow-monogram { position: absolute; left: 50%; top: 45%; transform: translate(-65%, -50%) rotate(-12deg); font: italic 145px Georgia, serif; color: #ecc9aa; text-shadow: 1px 1px #ffeada, 2px 2px #bc8977, 3px 3px #986d5e, 4px 4px #795746, 9px 15px 25px #1f101a77; }.glow-monogram span { position: absolute; left: 75px; top: 30px; font-size: 105px; color: #cfa199; }.glow-name { position: absolute; bottom: 18%; left: 50%; transform: translateX(-50%); font-family: Georgia, serif; letter-spacing: 4px; font-size: 10px; color: #e8c3b2; white-space: nowrap; }.glow-spark { position: absolute; color: #f5d4bd; }.spark-one { top: 22%; right: 22%; }.spark-two { bottom: 28%; left: 21%; }
+.visual-saathi { background: radial-gradient(ellipse at center, #4f7c7155, transparent 72%), #112c2b; }
+.visual-saathi-backend { background: radial-gradient(ellipse at center, #457bb055, transparent 72%), #112138; }
+.visual-nykaa-copilot { background: radial-gradient(ellipse at center, #a6508755, transparent 72%), #321629; }
+.concept-panel { position: absolute; z-index: 1; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(35px) rotate(-4deg); width: min(72%, 260px); min-height: 172px; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; text-align: center; border: 1px solid #ffffff55; border-radius: 18px; background: #ffffff16; box-shadow: 14px 22px 40px #0004, inset 0 1px #ffffff33; backdrop-filter: blur(10px); color: #f7f0ff; }
+.concept-icon { display: flex; color: #c8ebf3; margin-bottom: 4px; }
+.visual-saathi .concept-icon { color: #99e3ce; }.visual-nykaa-copilot .concept-icon { color: #ffc5e7; }
+.concept-panel strong { font-size: 20px; font-weight: 600; letter-spacing: -.5px; }
+.concept-panel small { font-family: monospace; font-size: 9px; letter-spacing: 1.5px; color: #e5d8ed; }
+.concept-orbit { position: absolute; top: 50%; left: 50%; width: 310px; height: 310px; border: 1px solid #ffffff3d; border-radius: 50%; transform: translate(-50%, -50%) rotateX(65deg); }
+.concept-orbit-two { width: 250px; height: 250px; transform: translate(-50%, -50%) rotateY(65deg); opacity: .6; }
+.project-detail-visual { height: 360px; border-radius: 16px; }
 .home-contact { position: relative; margin: 70px 0 30px; padding: 50px 40px; background: linear-gradient(125deg, rgb(var(--accent) / .1), rgb(var(--magenta) / .035)); border-block: 1px solid rgb(var(--outline-variant) / .18); overflow: hidden; }
 .home-contact h2 { font-size: clamp(32px, 4vw, 58px); line-height: 1.13; font-weight: 500; letter-spacing: -2px; color: rgb(var(--primary)); margin: 18px 0 25px; }.contact-star { position: absolute; right: 9%; top: 20%; color: rgb(var(--accent)); font-size: 160px; line-height: 1; text-shadow: 4px 5px 0 rgb(var(--accent) / .15), 8px 10px 0 rgb(var(--accent) / .1); transform: rotate(-12deg); }
 .profile-note { display: flex; align-items: center; justify-content: space-between; gap: 30px; font-size: 10px; color: rgb(var(--outline)); line-height: 1.8; padding: 0 0 25px; }.profile-note p { max-width: 590px; }.profile-note > span { white-space: nowrap; }
@@ -308,10 +318,15 @@
 [data-theme='light'] .data-sheet { background: linear-gradient(140deg, #ffffffbb, #abcdf6bb); border-color: #fff; box-shadow: 10px 25px 30px #477baa22; }
 [data-theme='light'] .sheet-header { color: #315c9b; }
 [data-theme='light'] .chart-bars i { background: linear-gradient(#799fed, #7c6bda); }
-[data-theme='light'] .visual-glow-glitter { background: radial-gradient(ellipse at center, #fbd5bd88, transparent 70%), #fff0e7; }
-[data-theme='light'] .glow-monogram { color: #c77d62; text-shadow: 1px 1px #ffeada, 2px 2px #b87561, 3px 3px #ae6854, 4px 4px #9c5344, 9px 15px 25px #985c4833; }
-[data-theme='light'] .glow-monogram span { color: #d9957c; }
-[data-theme='light'] .glow-name, [data-theme='light'] .glow-spark { color: #985637; }
+[data-theme='light'] .visual-saathi { background: radial-gradient(ellipse at center, #a6e9d488, transparent 72%), #dbf4eb; }
+[data-theme='light'] .visual-saathi-backend { background: radial-gradient(ellipse at center, #b5d9f788, transparent 72%), #dfecfa; }
+[data-theme='light'] .visual-nykaa-copilot { background: radial-gradient(ellipse at center, #ffd0e988, transparent 72%), #fbe4f1; }
+[data-theme='light'] .concept-panel { background: #ffffffbd; border-color: #ffffff; color: #263247; box-shadow: 14px 22px 40px #493f6522; }
+[data-theme='light'] .concept-panel small { color: #6d6281; }
+[data-theme='light'] .concept-icon { color: #426e9a; }
+[data-theme='light'] .visual-saathi .concept-icon { color: #338e76; }
+[data-theme='light'] .visual-nykaa-copilot .concept-icon { color: #a24b82; }
+[data-theme='light'] .concept-orbit { border-color: #6b558433; }
 [data-theme='light'] .focus-card:nth-child(2) { background: #edf4ff; }
 [data-theme='light'] .focus-card:nth-child(3) { background: #fff0e8; }
 [data-theme='light'] .home-contact { background: linear-gradient(115deg, #eee1ff, #fbe6ef 55%, #fff0d9); }

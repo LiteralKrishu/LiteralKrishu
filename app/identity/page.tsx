@@ -48,16 +48,16 @@ export default function Identity() {
           
           <div className="mb-6 space-y-4 text-sm leading-relaxed text-text-primary md:text-base">
             <p>
-              I&apos;m Sousnigdho—an AI/ML developer, full-stack engineer, and the COO at Vedonyx. I like staying close to both the code and the decisions around it, so my days move between building products, solving technical problems, and helping teams turn plans into shipped work.
+              I&apos;m Sousnigdho. I work as COO at Vedonyx, but I still like writing code. I enjoy the stretch between a rough idea and something that runs: deciding what matters, building it, and helping the team get it out.
             </p>
             <p>
-              Alongside Vedonyx, I&apos;m pursuing a B.Tech in Computer Science and Engineering with a specialization in AI and Machine Learning at Newton School of Technology. I learn fastest when coursework turns into something I can test, break, and improve.
+              I&apos;m also studying computer science and AI/ML at Newton School of Technology. Hackathons and side projects give me somewhere to test what I learn.
             </p>
             <p>
-              I lead SafeCity with StackOverHack, where we have built a production-grade safety system that brings audio, motion, vision, and context together for real-time distress detection and tiered alerts. I&apos;ve also worked on TransparAI and shared Glow Glitter&apos;s design direction with Harshit Gupta.
+              I lead SafeCity with StackOverHack. It&apos;s a phone-based safety prototype that looks for signs of possible distress. Our other public work includes TransparAI and SAATHI. I also built NykaaCopilot, a makeup look demo.
             </p>
             <p>
-              This portfolio is where I keep the projects, experiments, and milestones I want to build on next.
+              This site is a record of what I&apos;ve built and what I&apos;m still learning.
             </p>
           </div>
           
@@ -91,17 +91,17 @@ export default function Identity() {
             <div className="relative">
               <div className="absolute w-2 h-2 bg-magenta rounded-full -left-[21px] top-1.5 shadow-[0_0_8px_rgba(255,0,255,0.8)]"></div>
               <h4 className="font-mono text-xs text-primary font-bold uppercase tracking-wider">{EDUCATION_SUMMARY}</h4>
-              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Learning through coursework, hackathons, and hands-on projects</p>
+              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Taking what I learn into projects and hackathons</p>
             </div>
             <div className="relative">
               <div className="absolute w-2 h-2 bg-outline rounded-full -left-[21px] top-1.5"></div>
               <h4 className="font-mono text-xs text-primary font-bold uppercase tracking-wider">Chief Operating Officer — Vedonyx</h4>
-              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Keeping ownership clear and delivery moving</p>
+              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Helping the team make decisions and ship</p>
             </div>
             <div className="relative">
               <div className="absolute w-2 h-2 bg-outline rounded-full -left-[21px] top-1.5"></div>
               <h4 className="font-mono text-xs text-primary font-bold uppercase tracking-wider">Team Leader — StackOverHack / SafeCity</h4>
-              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Building the production-grade system with StackOverHack</p>
+              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Building the safety prototype with StackOverHack</p>
             </div>
             <div className="relative">
               <div className="absolute w-2 h-2 bg-outline rounded-full -left-[21px] top-1.5"></div>
@@ -123,7 +123,7 @@ export default function Identity() {
             <span className="w-2 h-2 rounded-full bg-green animate-pulse shadow-[0_0_8px_rgba(0,255,0,0.8)]"></span>
           </div>
           <p className="font-mono text-xs text-accent border border-outline-variant/20 p-4 bg-background/50 leading-relaxed">
-            &gt; Running operations at Vedonyx, leading SafeCity with StackOverHack, and keeping my hands in the code.
+            &gt; Working at Vedonyx, leading SafeCity with StackOverHack, and still writing code.
           </p>
         </SpotlightCard>
         </AnimatedContent>

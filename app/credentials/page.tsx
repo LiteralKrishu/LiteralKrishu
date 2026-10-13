@@ -11,7 +11,7 @@ import {
 } from '@/app/data/portfolio';
 
 const pageDescription =
-  'Hackathons, coding challenges, and quizzes that Sousnigdho Das has participated in, with certificates, event pages, and related LinkedIn posts where available.';
+  'Hackathons, coding challenges, and quizzes Sousnigdho Das has taken part in, with certificates and event links.';
 
 export const metadata: Metadata = {
   title: 'Hackathons & Certificates',
@@ -89,7 +89,7 @@ export default function CredentialsPage() {
               Hackathons &amp; Certificates
             </h1>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-on-surface-variant">
-              I learn best by building under pressure. These are the hackathons, challenges, and quizzes I have taken part in. Each entry links back to its certificate and event page, with my related LinkedIn posts included where available. Competitive placements live separately under Wins &amp; Milestones.
+              These are the hackathons, challenges, and quizzes I&apos;ve taken part in. Each entry links to a certificate and an event page. I keep competition results on the Wins page.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -180,7 +180,7 @@ export default function CredentialsPage() {
       </div>
 
       <p className="mt-8 max-w-4xl text-xs leading-relaxed text-outline">
-        Dates shown here are the dates Unstop recorded the certificates, which may differ from the event dates. I only list a placement when the organiser published one, and I only attach a LinkedIn post when I can match it to the exact credential.
+        Certificate dates come from Unstop and may differ from event dates. I list placements only when an organiser published them.
       </p>
     </div>
   );

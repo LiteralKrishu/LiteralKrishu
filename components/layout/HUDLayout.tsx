@@ -88,7 +88,7 @@ export default function HUDLayout({ children }: { children: React.ReactNode }) {
       <div className="ambient-grid" aria-hidden="true" />
       <header className="shell-header">
         <Link href="/" className="shell-brand">SOUSNIGDHO<span>.OS</span><span className="brand-dot" /></Link>
-        <span className="header-caption">A little code. A lot of curiosity.</span>
+        <span className="header-caption">Code and work in progress.</span>
         <div className="header-actions">
           <button type="button" onClick={toggleTheme} className="theme-toggle" aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`} title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}><Sun size={16} className={theme === 'light' ? 'selected' : ''} /><Moon size={16} className={theme === 'dark' ? 'selected' : ''} /></button>
           <a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="contact-button">Let&apos;s talk <ArrowUpRight size={16} /></a>
@@ -100,7 +100,7 @@ export default function HUDLayout({ children }: { children: React.ReactNode }) {
         <Link href="/identity" className="sidebar-profile" aria-label="About Sousnigdho Das"><Image src="/images/sousnigdho-das.png" alt="" width={42} height={42} className="profile-photo sidebar-profile-photo" /><span className="sidebar-profile-copy"><strong>Sousnigdho Das</strong><small><i /> COO at Vedonyx</small></span></Link>
         <p className="sidebar-label">Explore</p>
         <nav id="sidebar-navigation" aria-label="Primary navigation">{navigation()}</nav>
-        <div className="sidebar-bottom"><div className="sidebar-note"><span className="status-dot" /> Open to meaningful work</div><button className="collapse-button" aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-expanded={!collapsed} aria-controls="sidebar-navigation" onClick={() => setCollapsed(!collapsed)}>{collapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}<span>Collapse panel</span></button></div>
+        <div className="sidebar-bottom"><div className="sidebar-note"><span className="status-dot" /> Open to new projects</div><button className="collapse-button" aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-expanded={!collapsed} aria-controls="sidebar-navigation" onClick={() => setCollapsed(!collapsed)}>{collapsed ? <PanelLeftOpen size={17} /> : <PanelLeftClose size={17} />}<span>Collapse panel</span></button></div>
       </aside>
       <AnimatePresence>{menuOpen && <AnimatedMobileMenu key="mobile-menu" menuRef={menu}><div className="mobile-navigation-heading"><p className="eyebrow">Explore the portfolio</p><button className="icon-button" aria-label="Close menu" onClick={() => { setMenuOpen(false); menuButton.current?.focus(); }}><X size={22} /></button></div><nav aria-label="Mobile navigation">{navigation(true)}</nav><a className="mobile-contact" href={LINKEDIN_URL} target="_blank" rel="me noreferrer">Let&apos;s talk on LinkedIn <ArrowUpRight size={18} /></a></AnimatedMobileMenu>}</AnimatePresence>
       <ScrollEffects /><div className="shell-content"><main id="main-content" tabIndex={-1}>{children}</main>

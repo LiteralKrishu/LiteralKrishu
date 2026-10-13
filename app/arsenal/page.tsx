@@ -11,17 +11,17 @@ export default function Arsenal() {
   const toolkit = [
     {
       name: 'Code & Web',
-      detail: 'The stack I reach for when an idea needs to become a usable product.',
+      detail: 'I use these for most of my web and app work.',
       items: ['TypeScript', 'Python', 'Next.js / React', 'Streamlit']
     },
     {
       name: 'Applied AI',
-      detail: 'I enjoy systems where several signals have to work together and a human still makes the final call.',
+      detail: 'I work on projects where sensor data or model output needs careful human review.',
       items: ['Multimodal systems', 'Signal-driven safety', 'Human-in-the-loop tools']
     },
     {
       name: 'Product Delivery',
-      detail: 'Building is also about deciding what matters, making ownership clear, and helping a team finish well.',
+      detail: 'I help teams choose the next task, assign it clearly, and finish it.',
       items: ['Planning', 'Clear ownership', 'Cross-functional delivery']
     }
   ];
@@ -29,24 +29,28 @@ export default function Arsenal() {
   const selectedBuilds = [
     {
       name: 'SafeCity',
-      detail: 'A production-grade multimodal safety system I lead with StackOverHack.'
+      detail: 'An on-device multimodal safety prototype I lead with StackOverHack.'
     },
     {
       name: 'TransparAI',
-      detail: 'An open-source procurement-transparency tool built with Python and Streamlit.'
+      detail: 'A Streamlit dashboard for reviewing public procurement data.'
     },
     {
-      name: 'Glow Glitter',
-      detail: 'An ecommerce experience whose design direction I shared with Harshit Gupta.'
+      name: 'SAATHI',
+      detail: 'A React and Django case-coordination prototype.'
+    },
+    {
+      name: 'NykaaCopilot',
+      detail: 'A makeup look demo with color matching and 2D try-on.'
     }
   ];
 
   const workingStyle = [
-    'Start with the problem, not the stack',
-    'Give every task a clear owner',
-    'Ship small, visible steps',
-    'Keep the people doing the work in the loop',
-    'Share credit clearly'
+    'Ask what needs solving first',
+    'Make ownership clear',
+    'Show working versions early',
+    'Keep the team in the loop',
+    'Give people credit'
   ];
 
   return (
@@ -63,7 +67,7 @@ export default function Arsenal() {
             <DecryptedText text="What I Work With" delay={120} />
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-on-surface-variant">
-            I&apos;m happiest when I can follow an idea from the first sketch to a working system. My recent work brings together full-stack engineering, applied AI, and the operational side of helping a team ship.
+            I write code and help teams decide what to build next. These are the tools I use, the projects they&apos;re part of, and a few habits that keep the work moving.
           </p>
         </div>
         <div className="font-mono text-[10px] text-on-surface-variant flex flex-col items-end">
@@ -120,15 +124,15 @@ export default function Arsenal() {
           <div className="flex-1 flex flex-col justify-center gap-4">
             <div className="bg-surface-container-high/40 p-3 border-l-2 border-magenta">
               <p className="font-mono text-xs text-primary font-bold uppercase tracking-wider">SafeCity</p>
-              <p className="font-sans text-xs text-on-surface-variant mt-1">Leading SafeCity with StackOverHack and shaping its production architecture and multimodal system design.</p>
+              <p className="font-sans text-xs text-on-surface-variant mt-1">Leading the SafeCity prototype with StackOverHack and working on the app and backend.</p>
             </div>
             <div className="bg-surface-container-high/40 p-3 border-l-2 border-magenta">
               <p className="font-mono text-xs text-primary font-bold uppercase tracking-wider">Vedonyx</p>
-              <p className="font-sans text-xs text-on-surface-variant mt-1">Running operations while staying close to product and engineering decisions.</p>
+              <p className="font-sans text-xs text-on-surface-variant mt-1">Working with the team on product decisions and delivery.</p>
             </div>
             <div className="bg-surface-container-high/40 p-3 border-l-2 border-magenta">
               <p className="font-mono text-xs text-primary font-bold uppercase tracking-wider">Next</p>
-              <p className="font-sans text-xs text-on-surface-variant mt-1">Turning more experiments into products people can actually try.</p>
+              <p className="font-sans text-xs text-on-surface-variant mt-1">Making more of the work available to try and inspect.</p>
             </div>
           </div>
         </SpotlightCard>
@@ -139,7 +143,7 @@ export default function Arsenal() {
         <SpotlightCard className="arsenal-builds h-full group">
           <div className="flex justify-between items-start mb-6">
             <h2 className="font-mono text-xs text-accent uppercase tracking-widest font-bold">Selected builds</h2>
-            <span className="font-mono text-[9px] text-outline-variant">03 PROJECTS</span>
+            <span className="font-mono text-[9px] text-outline-variant">04 BUILDS</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {selectedBuilds.map(item => (

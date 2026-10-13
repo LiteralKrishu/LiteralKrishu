@@ -32,7 +32,7 @@ const fileSystem = {
   'about.txt': [
     'Sousnigdho Das',
     'AI/ML developer, full-stack engineer, and COO at Vedonyx.',
-    'I build intelligent systems that speak, see, and scale.',
+    'I write code and help teams ship it.',
     'I lead SafeCity with StackOverHack and publish code as @LiteralKrishu.'
   ],
   'skills.json': [
@@ -56,9 +56,9 @@ const routes: Record<string, string> = {
 };
 
 const bootLines: TerminalLine[] = [
-  { text: 'Hey, I’m Sousnigdho. Welcome to the slightly nerdier way around my portfolio.', type: 'muted' },
+  { text: 'Hey, I’m Sousnigdho. You can look around this site with a few commands.', type: 'muted' },
   { text: 'Portfolio OS 1.0.0', type: 'system' },
-  { text: 'Loading projects, experiments, and build notes ...', type: 'system' },
+  { text: 'Loading projects and notes ...', type: 'system' },
   { text: 'Type "help", or start with "profile".', type: 'success' },
   { text: '', type: 'output' }
 ];
@@ -174,10 +174,10 @@ export default function Terminal() {
           { text: 'Useful commands', type: 'system' },
           { text: '  profile            The short version of who I am.', type: 'output' },
           { text: '  focus              What I build and how I work.', type: 'output' },
-          { text: '  projects           Things I have built with good people.', type: 'output' },
-          { text: '  achievements       Milestones I am proud of.', type: 'output' },
+          { text: '  projects           Code and projects you can look through.', type: 'output' },
+          { text: '  achievements       Hackathon results and programme listings.', type: 'output' },
           { text: '  credentials        Hackathons and challenges I have taken part in.', type: 'output' },
-          { text: '  approach           How I like to run projects.', type: 'output' },
+          { text: '  approach           How I work with a team.', type: 'output' },
           { text: '  links              Show contact and route shortcuts.', type: 'output' },
           { text: '  open <route>       Navigate: home, identity, arsenal, archive, achievements, credentials, terminal.', type: 'output' },
           { text: '  cat <file>         Read about.txt, skills.json, or routes.md.', type: 'output' },
@@ -194,7 +194,7 @@ export default function Terminal() {
           { text: 'I’m Sousnigdho Das.', type: 'system' },
           { text: 'AI/ML developer, full-stack engineer, and COO at Vedonyx.', type: 'output' },
           { text: 'I lead SafeCity with StackOverHack and keep my public code at @LiteralKrishu.', type: 'output' },
-          { text: 'I have also worked on TransparAI and shared Glow Glitter’s design direction with Harshit Gupta.', type: 'success' }
+          { text: 'I have also worked on TransparAI, SAATHI, and NykaaCopilot.', type: 'success' }
         ]);
         break;
       case 'skills':
@@ -205,27 +205,27 @@ export default function Terminal() {
           { text: '  Engineering      Full-stack products and applied AI', type: 'output' },
           { text: '  Operations       Teams, priorities, and delivery at Vedonyx', type: 'output' },
           { text: '  Current build    SafeCity with StackOverHack', type: 'output' },
-          { text: '  Design           Shared direction for Glow Glitter', type: 'output' }
+          { text: '  Other work       SAATHI case coordination and NykaaCopilot', type: 'output' }
         ]);
         break;
       case 'projects':
         appendLines([
           inputLine,
-          { text: 'Things I have helped build', type: 'system' },
-          { text: '  SafeCity       Production-grade multimodal safety system I lead with StackOverHack', type: 'output' },
+          { text: 'Projects', type: 'system' },
+          { text: '  SafeCity       Multimodal safety prototype I lead with StackOverHack', type: 'output' },
           { text: '  TransparAI     Open-source procurement-transparency prototype', type: 'output' },
-          { text: '  Glow Glitter   Ecommerce design direction shared with Harshit Gupta', type: 'success' },
-          { text: 'Run "open archive" for the build stories and project links.', type: 'muted' }
+          { text: '  SAATHI         Case-coordination frontend and backend', type: 'success' },
+          { text: '  NykaaCopilot   Makeup look analysis and browser-side try-on', type: 'success' },
+          { text: 'Run "open archive" for code links and my role in each project.', type: 'muted' }
         ]);
         break;
       case 'achievements':
         appendLines([
           inputLine,
-          { text: 'A few milestones I’m proud of', type: 'system' },
+          { text: 'Results and listings', type: 'system' },
           { text: '  2025  Our StackOverHack team finished third at SFLC.in', type: 'output' },
           { text: '  2025  Our SafeCity team finished third at TIH–IIT Mandi', type: 'output' },
           { text: '  2026  The SmallAI programme named me as SafeCity team leader', type: 'output' },
-          { text: '  2026  Harshit and I shared Glow Glitter’s design direction', type: 'success' },
           { text: 'Run "open achievements" for the original announcements.', type: 'muted' }
         ]);
         break;
@@ -233,10 +233,10 @@ export default function Terminal() {
       case 'certificates':
         appendLines([
           inputLine,
-          { text: 'Hackathons and challenges I have shown up for', type: 'system' },
+          { text: 'Hackathons and challenges', type: 'system' },
           { text: '  Seven certificates are collected under /credentials.', type: 'output' },
           { text: '  IIT Mandi, IIT Madras, ATLAS SkillTech, CodeTantra2K25, and more.', type: 'output' },
-          { text: '  I keep participation separate from placements because they tell different stories.', type: 'success' },
+          { text: '  Participation and placements are listed separately.', type: 'success' },
           { text: 'Run "open credentials" for certificates and event links.', type: 'muted' }
         ]);
         break;
@@ -249,7 +249,7 @@ export default function Terminal() {
           { text: '  1. Give every task a clear owner.', type: 'output' },
           { text: '  2. Make the next priority obvious.', type: 'output' },
           { text: '  3. Ship in small, visible steps.', type: 'output' },
-          { text: '  4. Close the loop.', type: 'success' }
+          { text: '  4. Check that the work actually landed.', type: 'success' }
         ]);
         break;
       case 'links':
@@ -281,7 +281,7 @@ export default function Terminal() {
         appendLines([
           inputLine,
           { text: 'Hidden artwork index unlocked.', type: 'success' },
-          { text: 'Hint: the strongest interfaces feel like tools first, posters second.', type: 'output' }
+          { text: 'Hint: try the projects before reading about the interface.', type: 'output' }
         ]);
         break;
       default:
@@ -351,7 +351,7 @@ export default function Terminal() {
           </div>
           <p className="mt-2 max-w-full break-words font-mono text-[10px] uppercase tracking-widest text-on-surface-variant">
             <span className="sm:hidden">My work // one command at a time</span>
-            <span className="hidden sm:inline">A more playful way through my work, projects, milestones, and links</span>
+            <span className="hidden sm:inline">Type a command to see my projects, results, or contact links</span>
           </p>
         </div>
         <div className="font-mono text-[10px] uppercase tracking-widest text-outline-variant">

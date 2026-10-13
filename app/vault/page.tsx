@@ -32,7 +32,7 @@ export default function Vault() {
             <DecryptedText text="Behind the Interface" delay={120} />
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-on-surface-variant">
-            I wanted this portfolio to feel like a working console: a little playful, quick to move through, and close to the tools I spend my time in.
+            I spend a lot of time in terminals, so I borrowed that feel for this site. I also wanted the projects to be easy to find.
           </p>
         </div>
         <div className="font-mono text-[10px] text-on-surface-variant flex flex-col items-end">
@@ -53,7 +53,7 @@ export default function Vault() {
             <Info className="w-4 h-4" />
             The palette
           </h3>
-          <p className="mb-5 text-sm leading-relaxed text-on-surface-variant">The original console palette is preserved below. The current interface adds purple dark mode and a vibrant light mode.</p>
+          <p className="mb-5 text-sm leading-relaxed text-on-surface-variant">These are the colors I started with. The site now has a purple dark mode and a lighter version too.</p>
           <div className="flex flex-col gap-4">
             {colorsList.map((c, index) => (
               <AnimatedContent key={c.name} delay={0.08 + index * 0.04} y={12} className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-outline-variant/10 pb-3 gap-2">
@@ -79,13 +79,13 @@ export default function Vault() {
             <h3 className="font-mono text-xs text-magenta uppercase tracking-widest mb-4 font-bold">Why a console?</h3>
             <div className="space-y-4 text-sm leading-relaxed text-on-surface-variant">
               <p>
-                Most of my work lives somewhere between a terminal, a product discussion, and a half-finished experiment. The visual language here brings those worlds together.
+                The terminal is familiar to me, and it gives the site a little personality. I kept the main navigation plain so you can get to the work quickly.
               </p>
               <p>
-                The neon HUD is the playful part. The practical part is simpler: clear routes, visible context, and a fast path to the projects themselves.
+                The brighter details are just decoration. The project pages carry the real story.
               </p>
               <p className="font-mono text-xs uppercase tracking-widest text-green">
-                BUILD THE USEFUL VERSION FIRST // THEN MAKE IT MEMORABLE
+                MAKE IT USEFUL // THEN MAKE IT FUN
               </p>
             </div>
           </SpotlightCard>

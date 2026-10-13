@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ExternalLink, FileCheck2, Github, Globe2 } from 'lucide-react';
 import AnimatedContent from '@/components/animations/AnimatedContent';
 import ProjectCover from '@/components/ui/ProjectCover';
+import ProjectVisual from '@/components/ui/ProjectVisual';
 import SpotlightCard from '@/components/animations/SpotlightCard';
 import { getProject, projects, SITE_URL } from '@/app/data/portfolio';
 
@@ -104,11 +105,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </AnimatedContent>
 
       {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-detail-preview mt-8" aria-label={`Open ${project.shortTitle} live website`}><ProjectCover title={project.shortTitle} url={project.liveUrl} /></a>}
+      {!project.liveUrl && <ProjectVisual slug={project.slug} title={project.shortTitle} className="project-detail-visual mt-8" />}
 
       <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
         <AnimatedContent delay={0.1}>
           <SpotlightCard className="h-full">
-            <h2 className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">What we built</h2>
+            <h2 className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">What it does</h2>
             <div className="mt-6 space-y-5">
               {project.details.map((detail) => (
                 <div key={detail} className="flex gap-3">
@@ -118,7 +120,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               ))}
             </div>
             <div className="mt-8 border-t border-outline-variant/20 pt-6">
-              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-outline">My part</span>
+              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-outline">My role</span>
               <p className="mt-2 text-pretty text-sm leading-7 text-primary">{project.role}</p>
             </div>
           </SpotlightCard>
@@ -126,7 +128,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
         <AnimatedContent delay={0.16}>
           <SpotlightCard className="h-full">
-            <h2 className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">Evidence and links</h2>
+            <h2 className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-accent">Links and sources</h2>
             <div className="mt-5 space-y-3">
               {project.sources.map((source) => (
                 <a
@@ -142,7 +144,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               ))}
             </div>
             <div className="mt-6 border-l-2 border-accent/60 pl-4">
-              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-accent">Source note</span>
+              <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-accent">About these sources</span>
               <p className="mt-2 text-pretty text-xs leading-6 text-outline">{project.sourceNote}</p>
             </div>
           </SpotlightCard>
