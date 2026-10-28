@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { HeartHandshake, ScanFace, ServerCog, Layers3 } from 'lucide-react';
+import { Bug, HeartHandshake, ScanFace, ServerCog, Layers3 } from 'lucide-react';
 
 const visuals = {
   saathi: { icon: HeartHandshake, label: 'CASE COORDINATION', note: 'People → support' },
   'saathi-backend': { icon: ServerCog, label: 'COORDINATION API', note: 'Records → action' },
   'nykaa-copilot': { icon: ScanFace, label: 'MAKEUP LOOK EXPLORER', note: 'Inspiration → preview' },
+  wobble: { icon: Bug, label: 'PYTEST FLAKE HUNTER', note: 'Find the flaky test' },
 } as const;
 
 export default function ProjectVisual({ slug, title, className = '' }: { slug: string; title: string; className?: string }) {

@@ -49,6 +49,7 @@ I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOve
 | [SAATHI frontend](https://github.com/LiteralKrishu/saathi) | React screens for case intake and coordination, connected to the Django API. | Frontend and API integration with StackOverHack |
 | [SAATHI backend](https://github.com/LiteralKrishu/saathi-backend) | Django API behind SAATHI, with role checks and documented endpoints. | Backend and API work with StackOverHack |
 | [NykaaCopilot](https://github.com/LiteralKrishu/NykaaCopilot) | Matches colors from a makeup photo to a sample catalog and previews them in a 2D try-on. | Built the Next.js demo and its analysis and try-on flow |
+| [Wobble](https://github.com/LiteralKrishu/Wobble) | Python CLI that finds pytest failures caused by test order and checks proposed fixes. | Built the test hunt, Docker runner, and repair flow with StackOverHack |
 
 <div align="center">
 
@@ -67,6 +68,7 @@ I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOve
 
 ## Highlights
 
+- **Hacktoberfest 2026 Hack Day, NST–ADYPU:** StackOverHack won with [Wobble](https://github.com/LiteralKrishu/Wobble) at the [Pune Hack Day](https://events.mlh.com/events/15121-hacktoberfest-hack-day-pune-x-nst-adypu-powered-by-nstsdc).
 - **Team Lead, SafeCity:** named as StackOverHack's team leader in the [2nd SmallAI Hackathon programme](https://smallai2026.thescrs.org/2nd-smallai-hackathon-program-schedule/).
 - **Third Prize, TIH–IIT Mandi:** SafeCity's corresponding team finished third in the [Multimodal AI Hackathon](https://www.linkedin.com/posts/ihubiitmandi_multimodalai-hackathon-iitmandi-activity-7406989681428656128-irXj).
 - **Third Place, SFLC.in Hackathon 2025:** StackOverHack placed third in SFLC.in's [open-source hackathon](https://sflc.in/sflc-in-hackathon-2025-celebrating-open-collaboration-and-digital-freedom/).

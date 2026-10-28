@@ -194,7 +194,7 @@ export default function Terminal() {
           { text: 'I’m Sousnigdho Das.', type: 'system' },
           { text: 'AI/ML developer, full-stack engineer, and COO at Vedonyx.', type: 'output' },
           { text: 'I lead SafeCity with StackOverHack and keep my public code at @LiteralKrishu.', type: 'output' },
-          { text: 'I have also worked on TransparAI, SAATHI, and NykaaCopilot.', type: 'success' }
+          { text: 'I have also worked on TransparAI, SAATHI, NykaaCopilot, and Wobble.', type: 'success' }
         ]);
         break;
       case 'skills':
@@ -205,7 +205,7 @@ export default function Terminal() {
           { text: '  Engineering      Full-stack products and applied AI', type: 'output' },
           { text: '  Operations       Teams, priorities, and delivery at Vedonyx', type: 'output' },
           { text: '  Current build    SafeCity with StackOverHack', type: 'output' },
-          { text: '  Other work       SAATHI case coordination and NykaaCopilot', type: 'output' }
+          { text: '  Other work       SAATHI, NykaaCopilot, and Wobble', type: 'output' }
         ]);
         break;
       case 'projects':
@@ -216,6 +216,7 @@ export default function Terminal() {
           { text: '  TransparAI     Open-source procurement-transparency prototype', type: 'output' },
           { text: '  SAATHI         Case-coordination frontend and backend', type: 'success' },
           { text: '  NykaaCopilot   Makeup look analysis and browser-side try-on', type: 'success' },
+          { text: '  Wobble         Finds pytest failures caused by test order', type: 'success' },
           { text: 'Run "open archive" for code links and my role in each project.', type: 'muted' }
         ]);
         break;
@@ -226,6 +227,7 @@ export default function Terminal() {
           { text: '  2025  Our StackOverHack team finished third at SFLC.in', type: 'output' },
           { text: '  2025  Our SafeCity team finished third at TIH–IIT Mandi', type: 'output' },
           { text: '  2026  The SmallAI programme named me as SafeCity team leader', type: 'output' },
+          { text: '  2026  StackOverHack won at NST–ADYPU Hacktoberfest Hack Day with Wobble', type: 'success' },
           { text: 'Run "open achievements" for the original announcements.', type: 'muted' }
         ]);
         break;

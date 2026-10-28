@@ -7,13 +7,13 @@ import { achievements, SITE_URL, STACKOVERHACK_LINKEDIN_URL } from '@/app/data/p
 
 export const metadata: Metadata = {
   title: 'Wins & Milestones',
-  description: 'Hackathon results and project milestones for Sousnigdho Das and StackOverHack, with links to the original announcements.',
+  description: 'Hackathon results and project milestones for Sousnigdho Das and StackOverHack, with links to the projects and available event records.',
   alternates: { canonical: '/achievements' },
   openGraph: {
     type: 'website',
     url: `${SITE_URL}/achievements`,
     title: 'Wins & Milestones | Sousnigdho Das',
-    description: 'Hackathon results and project milestones for Sousnigdho Das and StackOverHack, with links to the original announcements.',
+    description: 'Hackathon results and project milestones for Sousnigdho Das and StackOverHack, with links to the projects and available event records.',
   },
 };
 
@@ -31,7 +31,7 @@ export default function AchievementsPage() {
               Wins &amp; Milestones
             </h1>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-on-surface-variant">
-              Hackathons have pushed me to make decisions quickly and work closely with a team. Here are the results I can link back to an organiser or programme.
+              Hackathons have pushed me to make decisions quickly and work closely with a team. Here are the results, the projects behind them, and the sources I have.
             </p>
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-3">

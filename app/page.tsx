@@ -97,7 +97,7 @@ export default function Home() {
           <h1>Sousnigdho<br /><span>Das</span><span className="name-period">.</span></h1>
           <p className="hero-statement">I write code and help<br className="desktop-break" /> teams ship it.</p>
           <div className="hero-actions"><Link href="/archive" className="primary-button">View selected work <ArrowUpRight size={18} /></Link><Link href="/identity" className="secondary-button">About me <ArrowUpRight size={16} /></Link></div>
-          <p className="hero-description">At Vedonyx, I work across product and operations. With StackOverHack, I lead SafeCity and work on SAATHI. I also built NykaaCopilot and worked on TransparAI.</p>
+          <p className="hero-description">At Vedonyx, I work across product and operations. With StackOverHack, I lead SafeCity and build projects such as SAATHI and Wobble. I also built NykaaCopilot and worked on TransparAI.</p>
         </AnimatedContent>
         <AnimatedContent delay={0.1} className="hero-art">
           <div className="hero-art-top"><span className="eyebrow">Currently building</span><span className="small-star">✳</span></div>

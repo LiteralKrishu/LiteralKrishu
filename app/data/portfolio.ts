@@ -6,7 +6,7 @@ export const GITHUB_URL = "https://github.com/LiteralKrishu";
 export const UNSTOP_URL = "https://unstop.com/u/sousndas69815";
 export const VEDONYX_URL = "https://www.vedonyx.com/";
 export const VEDONYX_PROFILE_URL = "https://www.vedonyx.com/team/sousnigdho-das";
-export const PROFILE_LAST_REVIEWED = "2026-10-13";
+export const PROFILE_LAST_REVIEWED = "2026-10-28";
 export const EDUCATION_SUMMARY =
   "Pursuing B.Tech CSE (AI/ML) at Newton School of Technology";
 
@@ -245,6 +245,44 @@ export const projects: PortfolioProject[] = [
     repositoryUrl: "https://github.com/LiteralKrishu/NykaaCopilot",
     programmingLanguages: ["TypeScript"],
   },
+  {
+    slug: "wobble",
+    title: "Wobble — Pytest Flake Hunter",
+    shortTitle: "Wobble",
+    year: "2026",
+    status: "HACK DAY WINNER",
+    category: "PYTHON TESTING TOOL",
+    summary:
+      "Wobble reruns pytest tests in shuffled orders, finds failures that depend on test order, and narrows a failing run to the earlier tests that triggered it.",
+    seoDescription:
+      "Wobble is a Python CLI for finding order-dependent pytest failures. StackOverHack won at the 2026 Hacktoberfest Hack Day at NST–ADYPU with the project.",
+    role:
+      "I built the test hunt, Docker runner, local-model investigation, repair, and patch checks with StackOverHack.",
+    details: [
+      "It runs tests in new Python processes or disposable Docker containers and records the failures it sees.",
+      "It cuts a failing order down to the earlier tests needed to trigger the failure.",
+      "A local model can suggest experiments and patches. Wobble tests each patch in a copy before it reports a verified fix.",
+      "StackOverHack won at the Hacktoberfest 2026 Hack Day hosted at NST–ADYPU with Wobble.",
+    ],
+    sources: [
+      {
+        label: "Wobble repository and README",
+        url: "https://github.com/LiteralKrishu/Wobble",
+      },
+      {
+        label: "Original team repository",
+        url: "https://github.com/RajaShirjeel/Wobble",
+      },
+      {
+        label: "Hack Day event page",
+        url: "https://events.mlh.com/events/15121-hacktoberfest-hack-day-pune-x-nst-adypu-powered-by-nstsdc",
+      },
+    ],
+    sourceNote:
+      "The event page confirms the date and venue. Our team reported the win; the public event page does not list winners. This GitHub link is my fork of the team repository.",
+    repositoryUrl: "https://github.com/LiteralKrishu/Wobble",
+    programmingLanguages: ["Python"],
+  },
 ];
 
 export interface Achievement {
@@ -256,6 +294,24 @@ export interface Achievement {
 }
 
 export const achievements: Achievement[] = [
+  {
+    title: "Hacktoberfest 2026 Hack Day — StackOverHack",
+    date: "25 October 2026",
+    summary:
+      "StackOverHack won at the Hacktoberfest Hack Day at NST–ADYPU with Wobble, our tool for finding order-dependent pytest failures.",
+    sources: [
+      {
+        label: "Wobble repository",
+        url: "https://github.com/LiteralKrishu/Wobble",
+      },
+      {
+        label: "Hack Day event page",
+        url: "https://events.mlh.com/events/15121-hacktoberfest-hack-day-pune-x-nst-adypu-powered-by-nstsdc",
+      },
+    ],
+    note:
+      "The event page lists the Hack Day and venue. The team win comes from our account; the public event page does not list winners.",
+  },
   {
     title: "Third Place — SFLC.in Hackathon 2025",
     date: "31 October–2 November 2025",

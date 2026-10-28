@@ -54,7 +54,7 @@ export default function Identity() {
               I&apos;m also studying computer science and AI/ML at Newton School of Technology. Hackathons and side projects give me somewhere to test what I learn.
             </p>
             <p>
-              I lead SafeCity with StackOverHack. It&apos;s a phone-based safety prototype that looks for signs of possible distress. Our other public work includes TransparAI and SAATHI. I also built NykaaCopilot, a makeup look demo.
+              I lead SafeCity with StackOverHack. It&apos;s a phone-based safety prototype that looks for signs of possible distress. Our other public work includes TransparAI, SAATHI, and Wobble. I also built NykaaCopilot, a makeup look demo.
             </p>
             <p>
               This site is a record of what I&apos;ve built and what I&apos;m still learning.

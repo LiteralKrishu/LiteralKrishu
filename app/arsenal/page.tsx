@@ -42,6 +42,10 @@ export default function Arsenal() {
     {
       name: 'NykaaCopilot',
       detail: 'A makeup look demo with color matching and 2D try-on.'
+    },
+    {
+      name: 'Wobble',
+      detail: 'A Python CLI that finds order-dependent pytest failures.'
     }
   ];
 
@@ -143,7 +147,7 @@ export default function Arsenal() {
         <SpotlightCard className="arsenal-builds h-full group">
           <div className="flex justify-between items-start mb-6">
             <h2 className="font-mono text-xs text-accent uppercase tracking-widest font-bold">Selected builds</h2>
-            <span className="font-mono text-[9px] text-outline-variant">04 BUILDS</span>
+            <span className="font-mono text-[9px] text-outline-variant">05 BUILDS</span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {selectedBuilds.map(item => (

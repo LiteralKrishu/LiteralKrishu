@@ -294,9 +294,11 @@
 .visual-saathi { background: radial-gradient(ellipse at center, #4f7c7155, transparent 72%), #112c2b; }
 .visual-saathi-backend { background: radial-gradient(ellipse at center, #457bb055, transparent 72%), #112138; }
 .visual-nykaa-copilot { background: radial-gradient(ellipse at center, #a6508755, transparent 72%), #321629; }
+.visual-wobble { background: radial-gradient(ellipse at center, #b58a3955, transparent 72%), #332713; }
 .concept-panel { position: absolute; z-index: 1; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(35px) rotate(-4deg); width: min(72%, 260px); min-height: 172px; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; text-align: center; border: 1px solid #ffffff55; border-radius: 18px; background: #ffffff16; box-shadow: 14px 22px 40px #0004, inset 0 1px #ffffff33; backdrop-filter: blur(10px); color: #f7f0ff; }
 .concept-icon { display: flex; color: #c8ebf3; margin-bottom: 4px; }
 .visual-saathi .concept-icon { color: #99e3ce; }.visual-nykaa-copilot .concept-icon { color: #ffc5e7; }
+.visual-wobble .concept-icon { color: #ffe09b; }
 .concept-panel strong { font-size: 20px; font-weight: 600; letter-spacing: -.5px; }
 .concept-panel small { font-family: monospace; font-size: 9px; letter-spacing: 1.5px; color: #e5d8ed; }
 .concept-orbit { position: absolute; top: 50%; left: 50%; width: 310px; height: 310px; border: 1px solid #ffffff3d; border-radius: 50%; transform: translate(-50%, -50%) rotateX(65deg); }
@@ -321,11 +323,13 @@
 [data-theme='light'] .visual-saathi { background: radial-gradient(ellipse at center, #a6e9d488, transparent 72%), #dbf4eb; }
 [data-theme='light'] .visual-saathi-backend { background: radial-gradient(ellipse at center, #b5d9f788, transparent 72%), #dfecfa; }
 [data-theme='light'] .visual-nykaa-copilot { background: radial-gradient(ellipse at center, #ffd0e988, transparent 72%), #fbe4f1; }
+[data-theme='light'] .visual-wobble { background: radial-gradient(ellipse at center, #ffe3a688, transparent 72%), #fff3d9; }
 [data-theme='light'] .concept-panel { background: #ffffffbd; border-color: #ffffff; color: #263247; box-shadow: 14px 22px 40px #493f6522; }
 [data-theme='light'] .concept-panel small { color: #6d6281; }
 [data-theme='light'] .concept-icon { color: #426e9a; }
 [data-theme='light'] .visual-saathi .concept-icon { color: #338e76; }
 [data-theme='light'] .visual-nykaa-copilot .concept-icon { color: #a24b82; }
+[data-theme='light'] .visual-wobble .concept-icon { color: #996b1d; }
 [data-theme='light'] .concept-orbit { border-color: #6b558433; }
 [data-theme='light'] .focus-card:nth-child(2) { background: #edf4ff; }
 [data-theme='light'] .focus-card:nth-child(3) { background: #fff0e8; }
