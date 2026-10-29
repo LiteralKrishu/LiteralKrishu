@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { Bug, HeartHandshake, ScanFace, ServerCog, Layers3 } from 'lucide-react';
+import { Bug, HeartHandshake, ScanFace, ServerCog, Layers3, ShieldCheck, BarChart3 } from 'lucide-react';
 
 const visuals = {
+  safecity: { icon: ShieldCheck, label: 'MULTIMODAL SAFETY', note: 'Signals → support' },
+  transparai: { icon: BarChart3, label: 'PUBLIC DATA', note: 'Patterns → inquiry' },
   saathi: { icon: HeartHandshake, label: 'CASE COORDINATION', note: 'People → support' },
   'saathi-backend': { icon: ServerCog, label: 'COORDINATION API', note: 'Records → action' },
   'nykaa-copilot': { icon: ScanFace, label: 'MAKEUP LOOK EXPLORER', note: 'Inspiration → preview' },

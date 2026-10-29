@@ -2,9 +2,9 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { ArrowDown, ArrowUpRight, Code2, Compass, Layers3 } from 'lucide-react';
-import ProjectShowcase from '@/components/ui/ProjectShowcase';
-import { LINKEDIN_URL, PROFILE_LAST_REVIEWED } from '@/app/data/portfolio';
+import { ArrowDown, ArrowRight, ArrowUpRight, Code2, Compass, Layers3 } from 'lucide-react';
+import ProjectVisual from '@/components/ui/ProjectVisual';
+import { LINKEDIN_URL, PROFILE_LAST_REVIEWED, projects, type PortfolioProject } from '@/app/data/portfolio';
 
 const gateways = [
   { title: 'The work', description: 'Projects built with purpose and people.', path: '/archive', icon: Layers3 },
@@ -18,6 +18,16 @@ const motes = Array.from({ length: 28 }, (_, index) => ({
   animationDelay: `${-((index * 7) % 19) / 3}s`,
   animationDuration: `${4 + (index % 5)}s`,
 }));
+
+const featuredProjects = ['safecity', 'transparai', 'wobble']
+  .map(slug => projects.find(project => project.slug === slug))
+  .filter((project): project is PortfolioProject => project !== undefined);
+
+const practiceSteps = [
+  { number: '01', title: 'Find the real problem', description: 'Start with the people, the context, and the constraints.' },
+  { number: '02', title: 'Build a useful version', description: 'Make the smallest complete thing that can be tested.' },
+  { number: '03', title: 'Learn from the result', description: 'Review what worked, improve it, and help the team ship.' },
+];
 
 export default function FestivalHome() {
   const journey = useRef<HTMLElement>(null);
@@ -107,21 +117,27 @@ export default function FestivalHome() {
 
     <div className="festival-content">
       <section className="festival-introduction">
-        <div className="festival-section-index"><span>01</span><i />The story so far</div>
-        <div><h2>Curiosity is the<br />starting point.</h2><p>I&apos;m Sousnigdho, a developer and COO at Vedonyx. I work across AI, web, and product operations. With StackOverHack, I lead SafeCity and help turn rough ideas into working projects.</p><Link href="/identity" className="festival-text-link">More about me <ArrowUpRight size={17} /></Link></div>
+        <div className="festival-story-art" aria-hidden="true"><span className="festival-story-orbit" /><span className="festival-story-art-index">FIELD NOTE / 01</span><span className="festival-story-art-caption">Ideas find their shape through use.</span></div>
+        <div className="festival-story-copy"><div className="festival-section-index"><span>01</span><i />The story so far</div><p className="festival-chapter-kicker">The person behind the projects</p><h2>Curiosity,<br /><em>put to work.</em></h2><p>I&apos;m Sousnigdho, a developer and COO at Vedonyx. I work across AI, web, and product operations. With StackOverHack, I lead SafeCity and help turn rough ideas into working projects.</p><div className="festival-story-facts"><span>AI + web</span><span>Product operations</span><span>Team leadership</span></div><Link href="/identity" className="festival-text-link">More about me <ArrowUpRight size={17} /></Link></div>
       </section>
 
       <section id="selected-work" className="festival-work">
-        <div className="festival-section-heading"><div><div className="festival-section-index"><span>02</span><i />Selected work</div><h2>Built to be used.</h2></div><Link href="/archive" className="festival-text-link">All projects <ArrowUpRight size={17} /></Link></div>
-        <ProjectShowcase />
+        <div className="festival-section-heading"><div><div className="festival-section-index"><span>02</span><i />Selected work</div><p className="festival-chapter-kicker">A few things from the archive</p><h2>Built to be used.</h2><p className="festival-section-summary">Projects that connect the problem, the people, and the implementation.</p></div><Link href="/archive" className="festival-text-link">All projects <ArrowUpRight size={17} /></Link></div>
+        <div className="festival-featured-grid">{featuredProjects.map((project, index) => <article key={project.slug} className={'festival-featured-card' + (index === 0 ? ' festival-featured-primary' : '')}>
+          <Link href={`/projects/${project.slug}`} className="festival-featured-visual" aria-label={`Read about ${project.shortTitle}`}><ProjectVisual slug={project.slug} title={project.shortTitle} /><span className="festival-featured-visual-label">{project.category}</span></Link>
+          <div className="festival-featured-body"><div className="festival-featured-meta"><span>{String(index + 1).padStart(2, '0')} / {project.year}</span><span>{project.status}</span></div><h3><Link href={`/projects/${project.slug}`}>{project.shortTitle}</Link></h3><p>{project.summary}</p><Link href={`/projects/${project.slug}`} className="festival-featured-link">Explore project <ArrowUpRight size={16} /></Link></div>
+        </article>)}</div>
+        <Link href="/archive" className="festival-archive-link">Explore the full archive <ArrowRight size={18} /></Link>
       </section>
 
       <section className="festival-practice">
         <div className="festival-section-index"><span>03</span><i />The practice</div>
-        <div className="festival-practice-grid"><h2>Between an idea<br />and a release.</h2><div><p>I enjoy the work that connects the two: choosing the right problem, building a useful first version, and helping a team finish it.</p><div className="festival-practice-tags"><span>Applied AI</span><span>Full-stack development</span><span>Product delivery</span></div><Link href="/arsenal" className="festival-text-link">Explore my skills <ArrowUpRight size={17} /></Link></div></div>
+        <div className="festival-practice-head"><div><p className="festival-chapter-kicker">How the work moves</p><h2>Between an idea<br />and a release.</h2></div><p>I enjoy the work that connects the two: choosing the right problem, building a useful first version, and helping a team finish it.</p></div>
+        <div className="festival-process">{practiceSteps.map(step => <div key={step.number} className="festival-process-step"><span>{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></div>)}</div>
+        <Link href="/arsenal" className="festival-text-link">Explore my skills <ArrowUpRight size={17} /></Link>
       </section>
 
-      <section className="festival-contact"><div className="festival-section-index"><span>04</span><i />A new chapter</div><h2>Have something<br />in mind?</h2><p>I&apos;m open to thoughtful projects and conversations.</p><a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="festival-contact-link">Connect on LinkedIn <ArrowUpRight size={20} /></a></section>
+      <section className="festival-contact"><div className="festival-contact-panel"><div className="festival-section-index"><span>04</span><i />A new chapter</div><div className="festival-contact-inner"><div><p className="festival-chapter-kicker">The next horizon</p><h2>Have something<br /><em>in mind?</em></h2></div><div><p>I&apos;m open to thoughtful projects and conversations.</p><a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="festival-contact-link">Connect on LinkedIn <ArrowUpRight size={20} /></a></div></div><span className="festival-contact-foot">SOUSNIGDHO DAS / BUILDING WHAT COMES NEXT</span></div></section>
       <p className="festival-review">Project details link to public code, live work, or source records. Last reviewed {PROFILE_LAST_REVIEWED}.</p>
     </div>
   </div>;
