@@ -1,4 +1,4 @@
-import WobbleHome from '@/components/home/WobbleHome';
+import FestivalHome from '@/components/home/FestivalHome';
 import {
   GITHUB_URL, LINKEDIN_URL, PROFILE_DESCRIPTION, PROFILE_LAST_REVIEWED,
   SITE_URL, STACKOVERHACK_LINKEDIN_URL, UNSTOP_URL, VEDONYX_PROFILE_URL, VEDONYX_URL,
@@ -32,6 +32,6 @@ const profileSchema = {
 export default function Home() {
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema).replace(/</g, '\\u003c') }} />
-    <WobbleHome />
+    <FestivalHome />
   </>;
 }
