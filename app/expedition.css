@@ -45,12 +45,12 @@ body { background: #0d0b13; color: rgb(var(--on-surface)); font-family: Arial, H
 .expedition-footer div a:hover { color: #f2cb7e; }
 .expedition-footer small { grid-column: 1 / -1; color: #948780; font-size: 10px; margin-top: 23px; }
 
-.festival-journey { height: 220vh; --scene-scale: 1; --scene-shift: 0px; --title-opacity: 1; --gate-opacity: 0; --gate-shift: 60px; }
-.festival-stage { position: sticky; top: 0; height: 100vh; min-height: 650px; isolation: isolate; overflow: hidden; background: #251d32; }
+.festival-journey { height: 220vh; --scene-scale: 1; --scene-shift: 0px; --title-opacity: 1; --gate-opacity: 0; --gate-shift: 60px; --cue-opacity: 1; }
+.festival-stage { position: sticky; top: 0; height: 100vh; height: 100dvh; isolation: isolate; overflow: hidden; background: #251d32; }
 .festival-scene { position: absolute; inset: -3%; z-index: -3; background: url('/images/sky-citadel.webp') center 51% / cover no-repeat; transform: scale(var(--scene-scale)) translateY(var(--scene-shift)); will-change: transform; }
 .festival-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg,#120e1ebd 0%,#130f1b78 40%,#17101c1a 70%), linear-gradient(0deg,#110d1aca 0%,transparent 28%,transparent 63%,#0b0919a8 100%); }
 .festival-atmosphere { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 50% 40%,transparent 25%,#140e2766 100%); mix-blend-mode: multiply; }
-.festival-edition { position: absolute; top: 110px; left: max(10%, calc((100vw - 1150px)/2)); display: flex; align-items: center; gap: 20px; color: #f7e8d6; font: 11px Georgia,serif; letter-spacing: .13em; text-transform: uppercase; text-shadow: 0 2px 12px #0009; }
+.festival-edition { position: absolute; top: 110px; left: max(10%, calc((100vw - 1150px)/2)); display: flex; align-items: center; gap: 20px; color: #f7e8d6; font: 11px Georgia,serif; letter-spacing: .13em; text-transform: uppercase; text-shadow: 0 2px 12px #0009; opacity: var(--title-opacity); }
 .festival-edition span { color: #f2cb7e; }
 .festival-title { position: absolute; left: 50%; top: 48%; width: min(910px, calc(100% - 240px)); transform: translate(-50%,-50%); text-align: center; color: #fff5e6; opacity: var(--title-opacity); text-shadow: 0 3px 25px #1a1027bb; }
 .festival-overline { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .32em; margin-bottom: 24px; color: #ffead0; animation: festival-rise .9s .2s both; }
@@ -60,18 +60,18 @@ body { background: #0d0b13; color: rgb(var(--on-surface)); font-family: Arial, H
 .festival-title p { margin: 33px auto 22px; max-width: 470px; color: #fff1e0; font: 17px/1.55 Georgia,serif; animation: festival-rise 1s .5s both; }
 .festival-intro-link { display: inline-flex; align-items: center; gap: 13px; border-bottom: 1px solid #f3d7a6; padding: 8px 2px 10px; font-size: 11px; letter-spacing: .16em; font-weight: 700; text-transform: uppercase; animation: festival-rise 1s .65s both; }
 .festival-intro-link:hover { color: #f2cb7e; }
-.festival-scroll-cue { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: #fff4e4; font-size: 9px; text-transform: uppercase; letter-spacing: .25em; text-shadow: 0 2px 8px #000; }
+.festival-scroll-cue { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: #fff4e4; font-size: 9px; text-transform: uppercase; letter-spacing: .25em; text-shadow: 0 2px 8px #000; opacity: var(--cue-opacity); pointer-events: none; }
 .festival-scroll-cue i { display: block; height: 23px; width: 1px; background: #fff2df; }
-.festival-coordinate { position: absolute; right: 110px; bottom: 32px; font-size: 9px; letter-spacing: .13em; color: #ffebd3; }
+.festival-coordinate { position: absolute; right: 110px; bottom: 32px; font-size: 9px; letter-spacing: .13em; color: #ffebd3; opacity: var(--cue-opacity); }
 .festival-gates { position: absolute; left: 50%; top: 54%; width: min(1020px, calc(100% - 240px)); transform: translate(-50%,calc(-50% + var(--gate-shift))); opacity: var(--gate-opacity); pointer-events: none; }
 .festival-gates:not([inert]) { pointer-events: auto; }
-.festival-gates-heading { text-align: center; font: 38px Georgia,serif; color: #fff3e4; margin-bottom: 28px; text-shadow: 0 3px 20px #000; }
+.festival-gates-heading { text-align: center; font: 38px Georgia,serif; color: #fff3e4; margin-bottom: 20px; text-shadow: 0 3px 20px #000; }
 .festival-gates-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
-.festival-gate { position: relative; display: flex; flex-direction: column; min-height: 215px; padding: 24px 25px; background: linear-gradient(150deg,#242131e9,#12121dd9); border: 1px solid #f3d4a792; color: #fff1de; backdrop-filter: blur(18px); box-shadow: inset 0 0 0 5px #090b1b4d, 0 20px 55px #0c091688; clip-path: polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px); transition: transform .25s, border-color .25s, background .25s; }
+.festival-gate { position: relative; display: flex; flex-direction: column; min-height: 180px; padding: 22px 25px; background: linear-gradient(150deg,#242131e9,#12121dd9); border: 1px solid #f3d4a792; color: #fff1de; backdrop-filter: blur(18px); box-shadow: inset 0 0 0 5px #090b1b4d, 0 20px 55px #0c091688; clip-path: polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px); transition: transform .25s, border-color .25s, background .25s; }
 .festival-gate::after { content: ""; position: absolute; left: 15px; right: 15px; bottom: 13px; height: 1px; background: #e4b56a75; }
 .festival-gate:hover { transform: translateY(-9px); border-color: #ffe0a6; background: #33293ce8; }
 .festival-gate-top { display: flex; justify-content: space-between; color: #f2cb7e; }
-.festival-gate strong { font: 31px Georgia,serif; margin-top: auto; }
+.festival-gate strong { font: 31px Georgia,serif; margin-top: 26px; }
 .festival-gate > span { color: #d1c3ba; font-size: 12px; line-height: 1.45; margin-top: 9px; }
 .festival-content { position: relative; background: #100e18; padding: 0 max(10%, calc((100vw - 1180px)/2)); }
 .festival-content::before { content: ""; position: absolute; inset: 0 0 auto; height: 470px; pointer-events: none; background: linear-gradient(#292137 0%,transparent 100%); opacity: .55; }
@@ -158,6 +158,19 @@ body { background: #0d0b13; color: rgb(var(--on-surface)); font-family: Arial, H
   .festival-content { padding-inline: 10%; }
   .expedition-interior .expedition-main-wrap > main { padding-inline: 105px; }
 }
+@media (max-height: 650px) and (min-width: 801px) {
+  .expedition-rail-left { top: calc(50% + 8px); left: 12px; width: 54px; padding: 6px 4px; }
+  .expedition-rail-left a { min-height: 42px; }
+  .expedition-rail-left a span { display: none; }
+  .expedition-rail-left a svg { width: 18px; height: 18px; }
+  .expedition-rail-right { right: 12px; width: 52px; padding: 8px 4px; }
+  .expedition-rail-right a { min-height: 40px; }
+  .festival-gates { top: 51%; }
+  .festival-gates-heading { font-size: 30px; margin-bottom: 13px; }
+  .festival-gate { min-height: 145px; padding: 16px 20px; }
+  .festival-gate strong { font-size: 26px; margin-top: 14px; }
+  .festival-gate > span { margin-top: 5px; }
+}
 @media (max-width: 800px) {
   .expedition-header { height: 72px; grid-template-columns: 1fr auto auto; }
   .expedition-mark { font-size: 32px; }
@@ -179,7 +192,7 @@ body { background: #0d0b13; color: rgb(var(--on-surface)); font-family: Arial, H
 @media (max-width: 600px) {
   .expedition-header { padding-inline: 16px; }
   .expedition-contact { display: none; }
-  .festival-stage { min-height: 600px; }
+  .festival-stage { min-height: 0; }
   .festival-scene { background-position: 57% center; }
   .festival-shade { background: linear-gradient(90deg,#130e20b8,#130e2070 65%,#130e2066),linear-gradient(0deg,#100c1ad9,transparent 34%,#0b0919a8); }
   .festival-edition { top: 98px; font-size: 9px; max-width: 75%; line-height: 1.5; }
@@ -194,7 +207,7 @@ body { background: #0d0b13; color: rgb(var(--on-surface)); font-family: Arial, H
   .festival-gates-grid { grid-template-columns: 1fr; gap: 9px; }
   .festival-gate { min-height: 104px; padding: 15px 17px; }
   .festival-gate-top svg:first-child { width: 17px; height: 17px; }
-  .festival-gate strong { font-size: 22px; }
+  .festival-gate strong { font-size: 22px; margin-top: 9px; }
   .festival-gate > span { font-size: 10px; margin-top: 3px; }
   .festival-scroll-cue { bottom: 12px; }
   .festival-content { padding-inline: 22px; }
@@ -225,6 +238,14 @@ body { background: #0d0b13; color: rgb(var(--on-surface)); font-family: Arial, H
 }
 @media (max-width: 380px) {
   .festival-title h1 { font-size: clamp(42px,13.5vw,60px); }
+}
+@media (max-height: 600px) and (max-width: 600px) {
+  .festival-gates { top: calc(52% + 24px); }
+  .festival-gates-heading { font-size: 26px; margin-bottom: 10px; }
+  .festival-gates-grid { gap: 6px; }
+  .festival-gate { min-height: 95px; padding: 12px 14px; }
+  .festival-gate strong { font-size: 20px; margin-top: 6px; }
+  .festival-gate > span { font-size: 9px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .festival-title > *, .festival-intro-link { animation: none !important; }

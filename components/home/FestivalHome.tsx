@@ -29,6 +29,7 @@ export default function FestivalHome() {
         element.style.setProperty('--title-opacity', '1');
         element.style.setProperty('--gate-opacity', '1');
         element.style.setProperty('--gate-shift', '0px');
+        element.style.setProperty('--cue-opacity', '0');
         if (title) title.inert = true;
         if (gates) gates.inert = false;
         return;
@@ -40,6 +41,7 @@ export default function FestivalHome() {
       element.style.setProperty('--title-opacity', String(Math.max(0, Math.min(1, (0.6 - p) / 0.27))));
       element.style.setProperty('--gate-opacity', String(Math.max(0, Math.min(1, (p - 0.5) / 0.25))));
       element.style.setProperty('--gate-shift', String((1 - Math.max(0, Math.min(1, (p - 0.5) / 0.25))) * 60) + 'px');
+      element.style.setProperty('--cue-opacity', String(Math.max(0, Math.min(1, (0.55 - p) / 0.3))));
       if (title) title.inert = p > 0.55;
       if (gates) gates.inert = p < 0.68;
     };
