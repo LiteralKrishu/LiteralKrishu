@@ -62,10 +62,7 @@ export default function HUDLayout({ children }: { children: React.ReactNode }) {
       <header className="expedition-header">
         <Link href="/" className="expedition-mark" aria-label="Sousnigdho Das, home">SD<span>✦</span></Link>
         <nav className="expedition-topnav" aria-label="Featured navigation">
-          <Link href="/archive" aria-current={active('/archive') ? 'page' : undefined}>Projects</Link>
-          <Link href="/identity" aria-current={active('/identity') ? 'page' : undefined}>About</Link>
-          <Link href="/arsenal" aria-current={active('/arsenal') ? 'page' : undefined}>Skills</Link>
-          <Link href="/achievements" aria-current={active('/achievements') ? 'page' : undefined}>Milestones</Link>
+          {isHome ? <><Link href="#about">About</Link><Link href="#selected-work">Work</Link><Link href="#approach">Approach</Link><Link href="#contact">Contact</Link></> : <><Link href="/archive" aria-current={active('/archive') ? 'page' : undefined}>Projects</Link><Link href="/identity" aria-current={active('/identity') ? 'page' : undefined}>About</Link><Link href="/arsenal" aria-current={active('/arsenal') ? 'page' : undefined}>Skills</Link><Link href="/achievements" aria-current={active('/achievements') ? 'page' : undefined}>Milestones</Link></>}
         </nav>
         <a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="expedition-contact">Let&apos;s connect <ArrowUpRight size={15} /></a>
         <button ref={menuButton} className="expedition-menu-button" type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} aria-controls="expedition-menu" onClick={() => setMenuOpen(value => !value)}>{menuOpen ? <X size={23} /> : <Menu size={23} />}</button>
