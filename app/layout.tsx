@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './expedition.css';
 import HUDLayout from '@/components/layout/HUDLayout';
 import {
   LINKEDIN_URL,
@@ -55,7 +56,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <body className="antialiased">
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(t!=='light'&&t!=='dark')t='dark';document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;}catch(e){}})();` }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

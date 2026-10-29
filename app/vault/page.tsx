@@ -1,131 +1,29 @@
-'use client';
-
-import React from 'react';
 import Link from 'next/link';
-import { Settings, Info } from 'lucide-react';
-import AnimatedContent from '@/components/animations/AnimatedContent';
-import DecryptedText from '@/components/animations/DecryptedText';
-import Magnet from '@/components/animations/Magnet';
-import SpotlightCard from '@/components/animations/SpotlightCard';
+import { ArrowUpRight, Compass, Layers3, Sparkles } from 'lucide-react';
+
+const colors = [
+  { name: 'Night', hex: '#0d0b13', use: 'The base behind every scene' },
+  { name: 'Dusk', hex: '#251f2f', use: 'Readable panels and project cards' },
+  { name: 'Ivory', hex: '#f9f0de', use: 'Headlines and key text' },
+  { name: 'Gold', hex: '#f2cb7e', use: 'Navigation and actions' },
+  { name: 'Cloud', hex: '#c8b9b3', use: 'Supporting copy' },
+];
 
 export default function Vault() {
-  const colorsList = [
-    { name: 'Void Background', hex: '#050505', usage: 'Deepest layer, infinite contrast canvas' },
-    { name: 'Console Surface', hex: '#131313', usage: 'Component background, structural containers' },
-    { name: 'Electric Cyan', hex: '#00dddd', usage: 'Primary action color, interactive states' },
-    { name: 'Neon Magenta', hex: '#ff00ff', usage: 'Secondary categories, alert signals' },
-    { name: 'Neon Green', hex: '#00ff00', usage: 'Status indicator, successful syncs' },
-    { name: 'Charcoal Accent', hex: '#1c1b1b', usage: 'Grid line separators, outline borders' }
-  ];
+  return <div className="vault-page">
+    <header className="vault-heading">
+      <p className="vault-kicker">Behind the interface</p>
+      <h1>Made to feel like a journey.</h1>
+      <p>The site opens with an original sky scene. As you scroll, the view moves closer and three paths appear. The rest of the portfolio keeps that atmosphere while giving the projects room to speak.</p>
+    </header>
 
-  return (
-    <div className="pt-8 pb-12 px-6 md:px-12 relative flex flex-col min-h-full">
-      {/* Header Section */}
-      <AnimatedContent className="mb-10">
-      <header className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-outline-variant/20 pb-6 gap-4">
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <Settings className="w-4 h-4 text-magenta animate-spin-slow" />
-            <span className="font-mono text-[9px] text-magenta tracking-widest uppercase">INTERFACE_NOTES // BEHIND THE BUILD</span>
-          </div>
-          <h1 className="font-syne text-3xl md:text-4xl font-extrabold text-primary uppercase tracking-tight neon-text-glow">
-            <DecryptedText text="Behind the Interface" delay={120} />
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-on-surface-variant">
-            I spend a lot of time in terminals, so I borrowed that feel for this site. I also wanted the projects to be easy to find.
-          </p>
-        </div>
-        <div className="font-mono text-[10px] text-on-surface-variant flex flex-col items-end">
-          <span>THEME: SOUSNIGDHO.OS</span>
-          <span>MODE: PERSONAL CONSOLE</span>
-        </div>
-      </header>
-      </AnimatedContent>
+    <section className="vault-principles" aria-label="Design decisions">
+      <article><Compass size={25} /><h2>Find a path</h2><p>The top navigation and side rail lead to work, background, skills, and results.</p></article>
+      <article><Layers3 size={25} /><h2>Show the work</h2><p>Project pages explain what each build does, my role, and where to check the source.</p></article>
+      <article><Sparkles size={25} /><h2>Motion with purpose</h2><p>The opening scene responds to scrolling. A reduced motion setting shows the paths without the camera move.</p></article>
+    </section>
 
-      {/* Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 flex-grow">
-        {/* Colors Table (Left Column) */}
-        <AnimatedContent delay={0.06} className="col-span-1 lg:col-span-7">
-        <SpotlightCard className="h-full" spotlightColor="rgba(0, 221, 221, 0.1)">
-          <div className="hud-corner hud-corner-tl"></div>
-          <div className="hud-corner hud-corner-br"></div>
-          <h3 className="font-mono text-xs text-accent uppercase tracking-widest mb-6 font-bold flex items-center gap-2">
-            <Info className="w-4 h-4" />
-            The palette
-          </h3>
-          <p className="mb-5 text-sm leading-relaxed text-on-surface-variant">These are the colors I started with. The site now has a purple dark mode and a lighter version too.</p>
-          <div className="flex flex-col gap-4">
-            {colorsList.map((c, index) => (
-              <AnimatedContent key={c.name} delay={0.08 + index * 0.04} y={12} className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-outline-variant/10 pb-3 gap-2">
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 shrink-0 border border-outline-variant/30 rounded-sm" style={{ backgroundColor: c.hex }}></div>
-                  <div className="flex flex-col">
-                    <span className="font-syne text-sm font-bold text-primary uppercase tracking-tight">{c.name}</span>
-                    <span className="font-sans text-[11px] text-on-surface-variant">{c.usage}</span>
-                  </div>
-                </div>
-                <span className="font-mono text-xs text-accent bg-accent/5 border border-accent/15 px-2 py-1 select-all">{c.hex}</span>
-              </AnimatedContent>
-            ))}
-          </div>
-        </SpotlightCard>
-        </AnimatedContent>
-
-        {/* UI Primitive Showcases (Right Column) */}
-        <section className="col-span-1 lg:col-span-5 flex flex-col gap-6">
-          {/* Interface rationale */}
-          <AnimatedContent delay={0.12}>
-          <SpotlightCard spotlightColor="rgba(255, 0, 255, 0.1)">
-            <h3 className="font-mono text-xs text-magenta uppercase tracking-widest mb-4 font-bold">Why a console?</h3>
-            <div className="space-y-4 text-sm leading-relaxed text-on-surface-variant">
-              <p>
-                The terminal is familiar to me, and it gives the site a little personality. I kept the main navigation plain so you can get to the work quickly.
-              </p>
-              <p>
-                The brighter details are just decoration. The project pages carry the real story.
-              </p>
-              <p className="font-mono text-xs uppercase tracking-widest text-green">
-                MAKE IT USEFUL // THEN MAKE IT FUN
-              </p>
-            </div>
-          </SpotlightCard>
-          </AnimatedContent>
-
-          {/* Useful shortcuts */}
-          <AnimatedContent delay={0.18}>
-          <SpotlightCard spotlightColor="rgba(0, 255, 0, 0.08)">
-            <h3 className="font-mono text-xs text-green uppercase tracking-widest mb-6 font-bold">Keep exploring</h3>
-            <div className="flex flex-col gap-4">
-              <Magnet>
-                <Link href="/archive" className="block w-full border border-accent bg-background/50 px-4 py-2 text-center font-mono text-[10px] uppercase tracking-widest text-accent transition-colors btn-cut hover:bg-accent hover:text-black">
-                  SEE MY WORK
-                </Link>
-              </Magnet>
-              <Magnet>
-                <Link href="/terminal" className="block w-full bg-magenta px-4 py-2 text-center font-mono text-[10px] uppercase tracking-widest text-white transition-colors btn-cut hover:bg-fuchsia-600">
-                  OPEN TERMINAL
-                </Link>
-              </Magnet>
-              <div className="flex flex-wrap gap-2 pt-2">
-                <span className="rounded-sm border border-green/20 bg-green/10 px-2 py-0.5 font-mono text-[9px] font-bold tracking-wider text-green">CURIOUS</span>
-                <span className="rounded-sm border border-magenta/20 bg-magenta/10 px-2 py-0.5 font-mono text-[9px] font-bold tracking-wider text-magenta">HANDS-ON</span>
-                <span className="rounded-sm border border-accent/20 bg-accent/10 px-2 py-0.5 font-mono text-[9px] font-bold tracking-wider text-accent">STILL BUILDING</span>
-              </div>
-            </div>
-          </SpotlightCard>
-          </AnimatedContent>
-        </section>
-      </div>
-
-      <style jsx global>{`
-        @keyframes spinSlow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .animate-spin-slow {
-          animation: spinSlow 8s linear infinite;
-        }
-      `}</style>
-    </div>
-  );
+    <section className="vault-palette"><div><p className="vault-kicker">Color system</p><h2>Evening light.</h2></div><div className="vault-colors">{colors.map(color => <div key={color.hex} className="vault-color"><span className="vault-swatch" style={{ backgroundColor: color.hex }} /><strong>{color.name}</strong><span>{color.use}</span><code>{color.hex}</code></div>)}</div></section>
+    <div className="vault-end"><p>Want to see what this frame holds?</p><Link href="/archive">Explore the projects <ArrowUpRight size={17} /></Link></div>
+  </div>;
 }
