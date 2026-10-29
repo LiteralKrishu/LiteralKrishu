@@ -62,7 +62,7 @@ export default function FestivalHome() {
         <div className="festival-edition">A portfolio of things built and learned <span>2026</span></div>
         <div className="festival-title">
           <span className="festival-overline">Engineer · builder · team lead</span>
-          <h1>Sousnigdho<br /><em>Das</em><span className="festival-spark">✦</span></h1>
+          <h1>Sousnigdho <em>Das</em><span className="festival-spark">✦</span></h1>
           <p>I write code and help teams bring ideas into the world.</p>
           <Link href="#selected-work" className="festival-intro-link">Explore the work <ArrowUpRight size={17} /></Link>
         </div>
