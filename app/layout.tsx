@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import './expedition.css';
+import './festival-motion.css';
 import HUDLayout from '@/components/layout/HUDLayout';
 import {
   LINKEDIN_URL,

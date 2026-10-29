@@ -12,6 +12,13 @@ const gateways = [
   { title: 'The toolkit', description: 'Code, AI, and product practice.', path: '/arsenal', icon: Code2 },
 ];
 
+const motes = Array.from({ length: 28 }, (_, index) => ({
+  left: `${(index * 37 + 11) % 96}%`,
+  top: `${(index * 23 + 14) % 84}%`,
+  animationDelay: `${-((index * 7) % 19) / 3}s`,
+  animationDuration: `${4 + (index % 5)}s`,
+}));
+
 export default function FestivalHome() {
   const journey = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -24,11 +31,11 @@ export default function FestivalHome() {
     const update = () => {
       frame = 0;
       if (reduced.matches) {
-        element.style.setProperty('--scene-scale', '1');
-        element.style.setProperty('--scene-shift', '0px');
-        element.style.setProperty('--title-opacity', '1');
+        element.style.setProperty('--title-opacity', '0');
         element.style.setProperty('--gate-opacity', '1');
         element.style.setProperty('--gate-shift', '0px');
+        element.style.setProperty('--arrival-shade', '.7');
+        element.style.setProperty('--flight-opacity', '0');
         element.style.setProperty('--cue-opacity', '0');
         if (title) title.inert = true;
         if (gates) gates.inert = false;
@@ -36,14 +43,29 @@ export default function FestivalHome() {
       }
       const range = Math.max(1, element.offsetHeight - innerHeight);
       const p = Math.max(0, Math.min(1, -element.getBoundingClientRect().top / range));
-      element.style.setProperty('--scene-scale', String(1 + p * 0.14));
-      element.style.setProperty('--scene-shift', String(-p * 36) + 'px');
-      element.style.setProperty('--title-opacity', String(Math.max(0, Math.min(1, (0.6 - p) / 0.27))));
-      element.style.setProperty('--gate-opacity', String(Math.max(0, Math.min(1, (p - 0.5) / 0.25))));
-      element.style.setProperty('--gate-shift', String((1 - Math.max(0, Math.min(1, (p - 0.5) / 0.25))) * 60) + 'px');
-      element.style.setProperty('--cue-opacity', String(Math.max(0, Math.min(1, (0.55 - p) / 0.3))));
-      if (title) title.inert = p > 0.55;
-      if (gates) gates.inert = p < 0.68;
+      const ease = (start: number, end: number) => {
+        const t = Math.max(0, Math.min(1, (p - start) / (end - start)));
+        return t * t * (3 - 2 * t);
+      };
+      const arrival = ease(0.57, 0.78);
+      element.style.setProperty('--sky-x', `${-p * innerWidth * 0.045}px`);
+      element.style.setProperty('--sky-y', `${-p * innerHeight * 0.025}px`);
+      element.style.setProperty('--citadel-x', `${-p * innerWidth * 0.16}px`);
+      element.style.setProperty('--citadel-y', `${p * innerHeight * 0.065}px`);
+      element.style.setProperty('--citadel-scale', String(1 + p * 0.13));
+      element.style.setProperty('--cliff-x', `${p * innerWidth * 0.13}px`);
+      element.style.setProperty('--cliff-y', `${p * innerHeight * 0.11}px`);
+      element.style.setProperty('--cliff-scale', String(1 + p * 0.07));
+      element.style.setProperty('--fog-near-x', `${-p * innerWidth * 0.26}px`);
+      element.style.setProperty('--fog-far-x', `${p * innerWidth * 0.11}px`);
+      element.style.setProperty('--title-opacity', String(1 - ease(0.12, 0.29)));
+      element.style.setProperty('--gate-opacity', String(arrival));
+      element.style.setProperty('--gate-shift', `${(1 - arrival) * 45}px`);
+      element.style.setProperty('--arrival-shade', String(arrival * 0.7));
+      element.style.setProperty('--flight-opacity', String(ease(0.2, 0.4) * (1 - ease(0.62, 0.78))));
+      element.style.setProperty('--cue-opacity', String(1 - ease(0.28, 0.48)));
+      if (title) title.inert = p > 0.29;
+      if (gates) gates.inert = p < 0.72;
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
     addEventListener('scroll', onScroll, { passive: true });
@@ -56,7 +78,13 @@ export default function FestivalHome() {
   return <div className="festival-page">
     <section ref={journey} className="festival-journey" aria-label="Introduction">
       <div className="festival-stage">
-        <div className="festival-scene" aria-hidden="true" />
+        <div className="festival-sky" aria-hidden="true" />
+        <div className="festival-citadel" aria-hidden="true" />
+        <div className="festival-fog festival-fog-far" aria-hidden="true" />
+        <div className="festival-cliff" aria-hidden="true" />
+        <div className="festival-fog festival-fog-near" aria-hidden="true" />
+        <div className="festival-motes" aria-hidden="true">{motes.map((style, index) => <i key={index} style={style} />)}</div>
+        <div className="festival-flight-lines" aria-hidden="true" />
         <div className="festival-shade" aria-hidden="true" />
         <div className="festival-atmosphere" aria-hidden="true" />
         <div className="festival-edition">A portfolio of things built and learned <span>2026</span></div>
@@ -67,10 +95,10 @@ export default function FestivalHome() {
           <Link href="#selected-work" className="festival-intro-link">Explore the work <ArrowUpRight size={17} /></Link>
         </div>
         <div className="festival-gates" aria-label="Explore the portfolio">
-          <p className="festival-gates-heading">Choose a path</p>
-          <div className="festival-gates-grid">{gateways.map(({ title, description, path, icon: Icon }) =>
-            <Link key={path} href={path} className="festival-gate"><div className="festival-gate-top"><Icon size={23} strokeWidth={1.4} /><ArrowUpRight size={18} /></div><strong>{title}</strong><span>{description}</span></Link>
-          )}</div>
+          <div className="festival-gates-copy"><span className="festival-gates-kicker">The journey continues / 2026</span><h2 className="festival-gates-heading">Choose a<br /><em> path.</em></h2><p>Explore the projects, the person, and the practice behind the work.</p><span className="festival-gates-count">THREE DIRECTIONS · ONE STORY</span></div>
+          <nav className="festival-gates-grid" aria-label="Portfolio paths">{gateways.map(({ title, description, path, icon: Icon }, index) =>
+            <Link key={path} href={path} className="festival-gate"><span className="festival-gate-number">0{index + 1}</span><Icon className="festival-gate-icon" size={25} strokeWidth={1.35} /><span className="festival-gate-text"><strong>{title}</strong><small>{description}</small></span><ArrowUpRight className="festival-gate-arrow" size={20} /></Link>
+          )}</nav>
         </div>
         <div className="festival-scroll-cue"><span>Scroll to discover</span><i /><ArrowDown size={13} /></div>
         <span className="festival-coordinate">18°31′N / 73°51′E</span>

@@ -14,7 +14,7 @@ export default function Vault() {
     <header className="vault-heading">
       <p className="vault-kicker">Behind the interface</p>
       <h1>Made to feel like a journey.</h1>
-      <p>The site opens with an original sky scene. As you scroll, the view moves closer and three paths appear. The rest of the portfolio keeps that atmosphere while giving the projects room to speak.</p>
+      <p>The site opens with a layered sky scene. As you scroll, the citadel, cliff, clouds, and light move at different speeds before three paths appear. The rest of the portfolio keeps that atmosphere while giving the projects room to speak.</p>
     </header>
 
     <section className="vault-principles" aria-label="Design decisions">

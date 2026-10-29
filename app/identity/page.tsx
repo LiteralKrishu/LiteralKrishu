@@ -56,9 +56,6 @@ export default function Identity() {
             <p>
               I lead SafeCity with StackOverHack. It&apos;s a phone-based safety prototype that looks for signs of possible distress. Our other public work includes TransparAI, SAATHI, and Wobble. I also built NykaaCopilot, a makeup look demo.
             </p>
-            <p>
-              This site is a record of what I&apos;ve built and what I&apos;m still learning.
-            </p>
           </div>
           
           <div className="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">

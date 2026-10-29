@@ -1,0 +1,122 @@
+/* The opening scene has separate sky, architecture, foreground, fog, and light layers. */
+.festival-journey {
+  height: 280vh;
+  --sky-x: 0px;
+  --sky-y: 0px;
+  --citadel-x: 0px;
+  --citadel-y: 0px;
+  --citadel-scale: 1;
+  --cliff-x: 0px;
+  --cliff-y: 0px;
+  --cliff-scale: 1;
+  --fog-near-x: 0px;
+  --fog-far-x: 0px;
+  --title-opacity: 1;
+  --gate-opacity: 0;
+  --gate-shift: 45px;
+  --arrival-shade: 0;
+  --flight-opacity: 0;
+  --cue-opacity: 1;
+}
+.festival-stage { background: #31283d; }
+.festival-sky,.festival-citadel,.festival-cliff,.festival-fog,.festival-motes,.festival-flight-lines,.festival-shade,.festival-atmosphere { position: absolute; pointer-events: none; }
+.festival-sky { inset: -6%; z-index: 0; background: url('/images/journey-sky.webp') center center / cover no-repeat; transform: translate3d(var(--sky-x),var(--sky-y),0); will-change: transform; }
+.festival-citadel { z-index: 1; width: 116%; aspect-ratio: 1915 / 821; top: 5%; left: -8%; background: url('/images/journey-citadel.webp') center / contain no-repeat; transform: translate3d(var(--citadel-x),var(--citadel-y),0) scale(var(--citadel-scale)); transform-origin: 53% 40%; will-change: transform; filter: drop-shadow(0 35px 55px #2a162550); }
+.festival-cliff { z-index: 3; width: 110%; aspect-ratio: 1915 / 821; top: 13%; left: -5%; background: url('/images/journey-cliff.webp') center / contain no-repeat; transform: translate3d(var(--cliff-x),var(--cliff-y),0) scale(var(--cliff-scale)); transform-origin: 76% 60%; will-change: transform; filter: drop-shadow(-25px 24px 60px #130c2580); }
+.festival-fog { left: -35%; right: -35%; border-radius: 50%; will-change: transform; }
+.festival-fog-far { z-index: 2; height: 38%; bottom: 12%; opacity: .68; background: radial-gradient(ellipse at 23% 73%,#f6d5ca9e 0%,transparent 51%),radial-gradient(ellipse at 70% 63%,#fff3d673 0%,transparent 54%); filter: blur(36px); transform: translate3d(var(--fog-far-x),0,0); animation: festival-fog-breathe 9s ease-in-out infinite alternate; }
+.festival-fog-near { z-index: 4; height: 44%; bottom: -20%; opacity: .9; background: radial-gradient(ellipse at 20% 30%,#e2b9c09e 0%,transparent 56%),radial-gradient(ellipse at 66% 40%,#b895b0a8 0%,transparent 58%),linear-gradient(0deg,#17101fdb,transparent 80%); filter: blur(30px); transform: translate3d(var(--fog-near-x),0,0); animation: festival-fog-breathe 7s ease-in-out infinite alternate-reverse; }
+.festival-motes { inset: 0; z-index: 5; overflow: hidden; }
+.festival-motes i { position: absolute; display: block; width: 2px; height: 2px; border-radius: 50%; background: #ffe8b3; box-shadow: 0 0 10px 2px #ffe4aeaa; animation: festival-mote-drift linear infinite; }
+.festival-motes i:nth-child(4n) { width: 3px; height: 3px; opacity: .7; }
+.festival-flight-lines { inset: 0; z-index: 5; opacity: var(--flight-opacity); background: repeating-linear-gradient(114deg,transparent 0 8%,#fff5da00 8.1%,#fff5da3b 8.15%,transparent 8.22%,transparent 18%); background-size: 180% 180%; mask-image: linear-gradient(90deg,transparent,#000 20% 80%,transparent); animation: festival-flight 6s linear infinite; }
+.festival-shade { inset: 0; z-index: 6; background: linear-gradient(90deg,#120e1ebd 0%,#130f1b72 42%,#17101c12 77%),linear-gradient(0deg,#110d1ad9 0%,transparent 30%,transparent 62%,#0b0919a8 100%); }
+.festival-atmosphere { inset: 0; z-index: 7; background: radial-gradient(ellipse at 57% 40%,#0a081100 0%,#100b1dcc 100%),linear-gradient(90deg,#100d1af0,#171120af); opacity: var(--arrival-shade); }
+.festival-edition,.festival-title,.festival-scroll-cue,.festival-coordinate { z-index: 10; }
+.festival-title { top: 48%; }
+.festival-title h1 { font-size: clamp(34px,7.3vw,138px); }
+.festival-gates { z-index: 11; display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1fr); align-items: center; gap: clamp(30px,6vw,90px); top: 53%; width: min(1120px,calc(100% - 220px)); max-height: calc(100dvh - 125px); overflow-y: auto; transform: translate(-50%,calc(-50% + var(--gate-shift))); opacity: var(--gate-opacity); scrollbar-width: thin; scrollbar-color: #f0d19a55 transparent; }
+.festival-gates-copy { color: #fff2de; text-shadow: 0 3px 24px #0009; }
+.festival-gates-kicker { display: block; color: #f1d0a0; font: 700 10px Arial,Helvetica,sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+.festival-gates-heading { margin: 22px 0 20px; text-align: left; font: 400 clamp(52px,6.5vw,90px)/.96 Georgia,serif; letter-spacing: -.065em; }
+.festival-gates-heading em { color: #f3cf91; font-style: normal; }
+.festival-gates-copy > p { max-width: 340px; color: #f0ded0; font-size: 15px; line-height: 1.7; }
+.festival-gates-count { display: inline-block; margin-top: 42px; padding-top: 13px; border-top: 1px solid #f5d7a370; color: #d9c6b5; font: 10px Arial,Helvetica,sans-serif; letter-spacing: .18em; }
+.festival-gates-grid { display: flex; flex-direction: column; gap: 0; padding: 9px 25px; border: 1px solid #e9c99b99; border-radius: 13px; background: linear-gradient(145deg,#1c1727e8,#13111fe0); box-shadow: 0 28px 80px #0a0714a3,inset 0 1px #fff3d536; backdrop-filter: blur(22px); }
+.festival-gate { display: grid; grid-template-columns: 32px 38px minmax(0,1fr) 24px; align-items: center; gap: 15px; min-height: 106px; padding: 15px 5px; border: 0; border-bottom: 1px solid #e3c99842; border-radius: 0; background: transparent; box-shadow: none; clip-path: none; color: #fff1df; transition: transform .22s,color .22s,background .22s; }
+.festival-gate:last-child { border-bottom: 0; }
+.festival-gate::after { display: none; }
+.festival-gate:hover,.festival-gate:focus-visible { transform: translateX(5px); background: #f6d99a11; border-color: #e3c99842; }
+.festival-gate > .festival-gate-number { align-self: start; margin-top: 11px; color: #d9b87d; font: 10px Arial,Helvetica,sans-serif; letter-spacing: .08em; }
+.festival-gate-icon,.festival-gate-arrow { color: #f2cb7e; }
+.festival-gate > .festival-gate-text { display: flex; flex-direction: column; gap: 6px; min-width: 0; margin-top: 0; color: #fff1df; }
+.festival-gate-text strong { margin: 0; font: 400 30px/1.05 Georgia,serif; letter-spacing: -.035em; }
+.festival-gate-text small { color: #cbbab4; font-size: 12px; line-height: 1.4; }
+.festival-gate-arrow { justify-self: end; transition: transform .22s; }
+.festival-gate:hover .festival-gate-arrow { transform: translate(3px,-3px); }
+.festival-content { border-top: 1px solid #d8b8895c; }
+.festival-content::before { background: radial-gradient(ellipse 80% 330px at 50% 0,#58405c80,transparent),linear-gradient(#21182e,transparent 380px); opacity: 1; }
+@keyframes festival-mote-drift { 0% { transform: translate3d(0,22px,0); opacity: 0; } 15% { opacity: .75; } 80% { opacity: .45; } 100% { transform: translate3d(25px,-55px,0); opacity: 0; } }
+@keyframes festival-fog-breathe { to { translate: 3% -2%; opacity: .55; } }
+@keyframes festival-flight { to { background-position: 180% -180%; } }
+@media (max-width: 1000px) {
+  .festival-gates { width: calc(100% - 160px); gap: 28px; }
+  .festival-gates-heading { font-size: clamp(48px,7vw,72px); }
+  .festival-gate-text strong { font-size: 27px; }
+}
+@media (max-width: 800px) {
+  .festival-gates { width: calc(100% - 64px); grid-template-columns: 1fr; gap: 18px; top: 52%; }
+  .festival-gates-copy { text-align: center; }
+  .festival-gates-heading { margin: 9px 0 6px; text-align: center; font-size: 48px; }
+  .festival-gates-heading br { display: none; }
+  .festival-gates-copy > p { max-width: 530px; margin: 0 auto; font-size: 13px; }
+  .festival-gates-count { display: none; }
+  .festival-gates-grid { padding: 5px 18px; }
+  .festival-gate { min-height: 88px; }
+  .festival-citadel { width: 170%; left: -38%; top: 13%; }
+  .festival-cliff { width: 150%; left: -21%; top: 29%; }
+}
+@media (max-width: 600px) {
+  .festival-journey { height: 245vh; }
+  .festival-sky { background-position: 60% center; }
+  .festival-citadel { width: 235%; left: -66%; top: 17%; }
+  .festival-cliff { width: 225%; left: -98%; top: 40%; }
+  .festival-fog-far { bottom: 19%; }
+  .festival-fog-near { bottom: -12%; }
+  .festival-title { top: 42%; }
+  .festival-gates { width: calc(100% - 36px); top: 52%; max-height: calc(100dvh - 115px); }
+  .festival-gates-kicker { font-size: 8px; }
+  .festival-gates-heading { font-size: 39px; }
+  .festival-gates-copy > p { max-width: 310px; font-size: 11px; }
+  .festival-gates-grid { padding: 4px 13px; }
+  .festival-gate { grid-template-columns: 22px 24px minmax(0,1fr) 17px; gap: 10px; min-height: 78px; padding: 10px 4px; }
+  .festival-gate > .festival-gate-number { margin-top: 7px; font-size: 8px; }
+  .festival-gate-icon { width: 21px; height: 21px; }
+  .festival-gate-arrow { width: 17px; height: 17px; }
+  .festival-gate-text strong { font-size: 22px; }
+  .festival-gate-text small { font-size: 10px; }
+}
+@media (max-height: 650px) and (min-width: 801px) {
+  .festival-gates { top: 55%; max-height: calc(100dvh - 105px); }
+  .festival-gates-heading { font-size: 48px; margin: 10px 0; }
+  .festival-gates-copy > p { font-size: 12px; }
+  .festival-gates-count { margin-top: 20px; }
+  .festival-gate { min-height: 75px; padding: 8px 5px; }
+  .festival-gate-text strong { font-size: 24px; }
+  .festival-gate-text small { font-size: 10px; }
+}
+@media (max-height: 620px) and (max-width: 800px) {
+  .festival-gates { top: 54%; gap: 8px; }
+  .festival-gates-heading { font-size: 31px; margin: 3px 0; }
+  .festival-gates-copy > p { display: none; }
+  .festival-gate { min-height: 63px; }
+  .festival-gate-text strong { font-size: 19px; }
+  .festival-gate-text small { font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .festival-journey { height: 100dvh; }
+  .festival-title,.festival-edition,.festival-scroll-cue,.festival-coordinate { display: none; }
+  .festival-gates { opacity: 1 !important; transform: translate(-50%,-50%) !important; pointer-events: auto; }
+  .festival-fog,.festival-motes i,.festival-flight-lines { animation: none !important; }
+  .festival-sky,.festival-citadel,.festival-cliff { transform: none !important; }
+}
