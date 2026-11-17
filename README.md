@@ -14,11 +14,11 @@
 
 ## About
 
-**Software engineering management** · **B.Tech in CSE (AI/ML) at Newton School of Technology** · **StackOverHack™** · **COO at Vedonyx and ODT**
+I am Sousnigdho Das. Pursuing B.Tech in CSE (AI/ML) at Newton School of Technology (NST). Working as Chief Operating Officer at Vedonyx & ODT, I plan multi-stage software projects and coordinate cross-functional teams.
 
-I am Sousnigdho Das. I am pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology (NST). As Chief Operating Officer at Vedonyx and ODT, I plan multi-stage software projects and coordinate cross-functional teams.
+Guiding software architecture across the full project lifecycle. I help teams keep technical decisions aligned with long-term roadmaps and turn algorithmic research into practical, production-ready systems. I also build with [StackOverHack™](https://github.com/StackOverHack-Hub).
 
-I guide software architecture across the full project lifecycle. I help teams keep technical decisions aligned with long-term roadmaps and turn algorithmic research into practical, production-ready systems. I also build with [StackOverHack™](https://github.com/StackOverHack-Hub).
+**Software engineering management** | **B.Tech in CSE (AI/ML) at Newton School of Technology** · **StackOverHack™** | **COO at Vedonyx and ODT**
 
 ### Open for collaboration
 
