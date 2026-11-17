@@ -48,30 +48,29 @@
   max-width: 100%;
   margin: 0 auto;
   isolation: isolate;
-  font: 400 clamp(38px,10vw,164px)/1.05 'MedievalSharp',Georgia,serif;
+  font: 400 clamp(38px,8vw,132px)/1.05 'MedievalSharp',Georgia,serif;
   letter-spacing: -.035em;
   white-space: nowrap;
   text-transform: uppercase;
-  filter: drop-shadow(0 10px 20px #130b1fcf);
+  filter: drop-shadow(0 2px 0 #100b15) drop-shadow(0 7px 6px #070813d9);
 }
 .festival-wordmark::before {
   content: attr(data-text);
   position: absolute;
   inset: 0;
   z-index: -1;
-  color: #1b1524;
-  -webkit-text-stroke: .055em #251b28;
-  text-shadow: 0 .045em .07em #080511,0 0 .12em #071a2a;
+  color: #181923;
+  -webkit-text-stroke: .03em #11121c;
 }
 .festival-wordmark span {
   display: block;
-  background: linear-gradient(175deg,#fff2bf 5%,#71532d 19%,#e8c47d 30%,#b5d8d2 43%,#5f9bb8 50%,#d5ad66 57%,#fff0bd 70%,#936436 84%,#e8c387 97%);
+  background: linear-gradient(180deg,#f9eac1 0%,#b2843d 16%,#40302a 22%,#e8c27a 30%,#263344 42%,#287fa4 46%,#9be4f5 49%,#133850 52%,#d7a95a 59%,#fff0b7 63%,#684328 71%,#bb8540 80%,#30272a 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: .003em #e8cc91;
-  text-shadow: 0 .012em #fff6ce61,0 .042em .035em #0b1624b5,0 0 .19em #6bd5ff5e;
+  -webkit-text-stroke: .005em #c89955;
+  text-shadow: 0 .012em 0 #fff0c49c,0 .025em 0 #1f2a38;
 }
 .festival-gates { z-index: 11; display: grid; grid-template-columns: minmax(0,.82fr) minmax(0,1fr); align-items: center; gap: clamp(30px,6vw,90px); top: 53%; width: min(1120px,calc(100% - 220px)); max-height: calc(100dvh - 125px); overflow-y: auto; transform: translate(-50%,calc(-50% + var(--gate-shift))); opacity: var(--gate-opacity); scrollbar-width: thin; scrollbar-color: #f0d19a55 transparent; }
 .festival-gates-copy { color: #fff2de; text-shadow: 0 3px 24px #0009; }
@@ -122,7 +121,7 @@
   .festival-fog-far { bottom: 19%; }
   .festival-fog-near { bottom: -12%; }
   .festival-title { top: 42%; }
-  .festival-title .festival-wordmark { font-size: clamp(32px,10.2vw,62px); letter-spacing: -.05em; }
+  .festival-title .festival-wordmark { font-size: clamp(30px,9.2vw,56px); letter-spacing: -.05em; }
   .festival-gates { width: calc(100% - 36px); top: 52%; max-height: calc(100dvh - 115px); }
   .festival-gates-kicker { font-size: 8px; }
   .festival-gates-heading { font-size: 39px; }
