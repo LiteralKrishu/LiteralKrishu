@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUpRight, Code2, Compass, Layers3 } from 'lucide-react';
 import ProjectVisual from '@/components/ui/ProjectVisual';
-import { LINKEDIN_URL, PROFILE_LAST_REVIEWED, projects, type PortfolioProject } from '@/app/data/portfolio';
+import { LINKEDIN_URL, PROFILE_LAST_REVIEWED, STACKOVERHACK_GITHUB_URL, projects, type PortfolioProject } from '@/app/data/portfolio';
 
 const gateways = [
   { title: 'The work', description: 'Projects built with purpose and people.', path: '/archive', icon: Layers3 },
@@ -118,7 +118,7 @@ export default function FestivalHome() {
     <div className="festival-content">
       <section className="festival-introduction">
         <div className="festival-story-art" aria-hidden="true"><span className="festival-story-orbit" /><span className="festival-story-art-index">FIELD NOTE / 01</span><span className="festival-story-art-caption">Ideas find their shape through use.</span></div>
-        <div className="festival-story-copy"><div className="festival-section-index"><span>01</span><i />The story so far</div><p className="festival-chapter-kicker">The person behind the projects</p><h2>Curiosity,<br /><em>put to work.</em></h2><p>I&apos;m Sousnigdho, a developer and COO at Vedonyx. I work across AI, web, and product operations. With StackOverHack, I lead SafeCity and help turn rough ideas into working projects.</p><div className="festival-story-facts"><span>AI + web</span><span>Product operations</span><span>Team leadership</span></div><Link href="/identity" className="festival-text-link">More about me <ArrowUpRight size={17} /></Link></div>
+        <div className="festival-story-copy"><div className="festival-section-index"><span>01</span><i />The story so far</div><p className="festival-chapter-kicker">The person behind the projects</p><h2>Curiosity,<br /><em>put to work.</em></h2><p>I&apos;m Sousnigdho, a developer and COO at Vedonyx. I work across AI, web, and product operations. With <Link href={STACKOVERHACK_GITHUB_URL} target="_blank" rel="noreferrer" className="festival-org-link">StackOverHack</Link>, I lead SafeCity and help turn rough ideas into working projects.</p><div className="festival-story-facts"><span>AI + web</span><span>Product operations</span><span>Team leadership</span></div><Link href="/identity" className="festival-text-link">More about me <ArrowUpRight size={17} /></Link></div>
       </section>
 
       <section id="selected-work" className="festival-work">

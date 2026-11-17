@@ -16,7 +16,7 @@
 
 I like taking an idea far enough that someone can use it. That usually means writing code, making product decisions, and helping the team get unstuck.
 
-I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOverHack](https://www.linkedin.com/company/stackoverhack/), and study **B.Tech CSE (AI/ML) at Newton School of Technology**. The projects below are the ones I point people to first.
+I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOverHack](https://github.com/StackOverHack-Hub), and study **B.Tech CSE (AI/ML) at Newton School of Technology**. The projects below are the ones I point people to first.
 
 ## Find me online
 
@@ -24,6 +24,7 @@ I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOve
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00B8B8?style=for-the-badge&logo=vercel&logoColor=white)](https://literalkrishu-portfolio.vercel.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sousnigdho_Das-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sousnigdho-das/)
+[![StackOverHack GitHub](https://img.shields.io/badge/GitHub-StackOverHack-24292F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/StackOverHack-Hub)
 [![StackOverHack](https://img.shields.io/badge/LinkedIn-StackOverHack-228B22?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/company/stackoverhack/)
 [![Vedonyx](https://img.shields.io/badge/Vedonyx-COO-6D28D9?style=for-the-badge&logo=briefcase&logoColor=white)](https://www.vedonyx.com/team)
 [![Unstop](https://img.shields.io/badge/Unstop-Certificates-1C4980?style=for-the-badge&logo=files&logoColor=white)](https://unstop.com/u/sousndas69815)

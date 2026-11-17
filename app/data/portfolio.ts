@@ -2,6 +2,7 @@ export const SITE_URL = "https://sousnigdhodas.vedonyx.in";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/sousnigdho-das/";
 export const STACKOVERHACK_LINKEDIN_URL =
   "https://www.linkedin.com/company/stackoverhack/";
+export const STACKOVERHACK_GITHUB_URL = "https://github.com/StackOverHack-Hub";
 export const GITHUB_URL = "https://github.com/LiteralKrishu";
 export const UNSTOP_URL = "https://unstop.com/u/sousndas69815";
 export const VEDONYX_URL = "https://www.vedonyx.com/";

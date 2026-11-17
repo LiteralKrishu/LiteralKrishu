@@ -11,7 +11,7 @@ import {
   EDUCATION_SUMMARY,
   GITHUB_URL,
   LINKEDIN_URL,
-  STACKOVERHACK_LINKEDIN_URL,
+  STACKOVERHACK_GITHUB_URL,
   UNSTOP_URL,
 } from '@/app/data/portfolio';
 
@@ -158,9 +158,9 @@ export default function Identity() {
             </Link>
           </Magnet>
           <Magnet className="w-full sm:w-auto">
-            <Link href={STACKOVERHACK_LINKEDIN_URL} target="_blank" rel="noreferrer" className="flex w-full items-center justify-center gap-2 border border-green bg-background/30 px-5 py-3 font-mono text-xs tracking-widest text-green backdrop-blur-sm transition-all duration-300 btn-cut glitch-hover sm:w-auto">
-              <Network className="w-4 h-4" />
-              STACKOVERHACK
+            <Link href={STACKOVERHACK_GITHUB_URL} target="_blank" rel="noreferrer" className="flex w-full items-center justify-center gap-2 border border-green bg-background/30 px-5 py-3 font-mono text-xs tracking-widest text-green backdrop-blur-sm transition-all duration-300 btn-cut glitch-hover sm:w-auto">
+              <Github className="w-4 h-4" />
+              STACKOVERHACK GITHUB
             </Link>
           </Magnet>
           <Magnet className="w-full sm:w-auto">

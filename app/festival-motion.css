@@ -178,6 +178,8 @@
 .festival-story-copy h2 { margin: 0; font: 400 clamp(43px,4.7vw,68px)/1.04 Georgia,serif; letter-spacing: -.055em; }
 .festival-story-copy h2 em { color: #f2ce92; font-style: normal; }
 .festival-story-copy > p:not(.festival-chapter-kicker) { max-width: 550px; margin: 28px 0 25px; color: #d7c9c2; font-size: 15px; line-height: 1.8; }
+.festival-org-link { color: #f3cf91; text-decoration: underline; text-decoration-color: #f3cf9180; text-underline-offset: .22em; }
+.festival-org-link:hover { color: #fff0c7; text-decoration-color: currentColor; }
 .festival-story-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 27px; }
 .festival-story-facts span { padding: 9px 12px; border: 1px solid #d6b37a4d; border-radius: 999px; color: #ecd5b5; background: #e9c48a0d; font-size: 11px; }
 .festival-story-copy .festival-text-link { margin-top: 0; }
