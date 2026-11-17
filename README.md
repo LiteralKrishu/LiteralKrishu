@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://literalkrishu-portfolio.vercel.app/">
-  <img src="./assets/sousnigdho-header.svg" width="100%" alt="Sousnigdho Das, AI/ML developer, full-stack engineer, and COO at Vedonyx" />
+  <img src="./assets/sousnigdho-header.svg" width="100%" alt="Sousnigdho Das, software engineering management, B.Tech AI/ML student, and COO at Vedonyx and ODT" />
 </a>
 
 </div>
@@ -14,9 +14,15 @@
 
 ## About
 
-I like taking an idea far enough that someone can use it. That usually means writing code, making product decisions, and helping the team get unstuck.
+**Software engineering management** · **B.Tech in CSE (AI/ML) at Newton School of Technology** · **StackOverHack™** · **COO at Vedonyx and ODT**
 
-I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOverHack](https://github.com/StackOverHack-Hub), and study **B.Tech CSE (AI/ML) at Newton School of Technology**. The projects below are the ones I point people to first.
+I am Sousnigdho Das. I am pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology (NST). As Chief Operating Officer at Vedonyx and ODT, I plan multi-stage software projects and coordinate cross-functional teams.
+
+I guide software architecture across the full project lifecycle. I help teams keep technical decisions aligned with long-term roadmaps and turn algorithmic research into practical, production-ready systems. I also build with [StackOverHack™](https://github.com/StackOverHack-Hub).
+
+### Open for collaboration
+
+I am open to working with teams and individuals to plan, build, and deliver projects from research through production. [Get in touch](mailto:sousnigdhodas@gmail.com).
 
 ## Find me online
 
@@ -36,9 +42,10 @@ I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOve
 
 | Area | What I am doing |
 | --- | --- |
-| Building | Leading SafeCity, a phone-based safety prototype |
-| At work | Helping Vedonyx decide what to build and get it shipped |
-| Studying | B.Tech CSE (AI/ML) at Newton School of Technology |
+| Architecture | Guiding multi-stage software projects and cross-functional teams |
+| At work | Chief Operating Officer at Vedonyx and ODT |
+| Building | Working with StackOverHack™ on practical software projects |
+| Studying | B.Tech in CSE (AI/ML) at Newton School of Technology |
 | Curious about | On-device AI, privacy, and useful public-interest software |
 
 ## Selected work

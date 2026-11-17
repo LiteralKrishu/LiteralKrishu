@@ -27,7 +27,7 @@ export default function Identity() {
           <DecryptedText text="SOUSNIGDHO DAS" delay={120} />
         </h1>
         <p className="font-mono text-xs text-secondary tracking-widest mt-1 uppercase">
-          COO @ VEDONYX // AI/ML DEVELOPER // FULL-STACK ENGINEER
+          SOFTWARE ENGINEERING MANAGEMENT // COO @ VEDONYX &amp; ODT // AI/ML @ NST
         </p>
       </AnimatedContent>
 
@@ -46,16 +46,24 @@ export default function Identity() {
             <span className="font-mono text-[9px] text-outline">@LITERALKRISHU</span>
           </div>
           
-          <div className="mb-6 space-y-4 text-sm leading-relaxed text-text-primary md:text-base">
-            <p>
-              I&apos;m Sousnigdho. I work as COO at Vedonyx, but I still like writing code. I enjoy the stretch between a rough idea and something that runs: deciding what matters, building it, and helping the team get it out.
-            </p>
-            <p>
-              I&apos;m also studying computer science and AI/ML at Newton School of Technology. Hackathons and side projects give me somewhere to test what I learn.
-            </p>
-            <p>
-              I lead SafeCity with StackOverHack. It&apos;s a phone-based safety prototype that looks for signs of possible distress. Our other public work includes TransparAI, SAATHI, and Wobble. I also built NykaaCopilot, a makeup look demo.
-            </p>
+          <div className="mb-6 space-y-5 text-sm leading-relaxed text-text-primary md:text-base">
+            <div>
+              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">Roles and study</h4>
+              <p>I&apos;m Sousnigdho, Chief Operating Officer at Vedonyx and ODT. I&apos;m pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology (NST).</p>
+            </div>
+            <div>
+              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">What I lead</h4>
+              <p>I guide software architecture across multi-stage projects and coordinate cross-functional teams. I help teams keep technical decisions aligned with long-term roadmaps.</p>
+            </div>
+            <div>
+              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">How I build</h4>
+              <p>I connect algorithmic research with practical implementation. With StackOverHack™, I help move ideas toward production-ready software.</p>
+            </div>
+          </div>
+
+          <div className="mb-6 border border-accent/25 bg-accent/5 p-4">
+            <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-accent">Open for collaboration</h4>
+            <p className="mt-2 text-sm leading-relaxed text-text-primary">I work with teams and individuals to plan and deliver projects from research through deployment.</p>
           </div>
           
           <div className="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
@@ -92,8 +100,8 @@ export default function Identity() {
             </div>
             <div className="relative">
               <div className="absolute w-2 h-2 bg-outline rounded-full -left-[21px] top-1.5"></div>
-              <h4 className="font-mono text-xs text-primary font-bold uppercase tracking-wider">Chief Operating Officer — Vedonyx</h4>
-              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Helping the team make decisions and ship</p>
+              <h4 className="font-mono text-xs text-primary font-bold uppercase tracking-wider">Chief Operating Officer — Vedonyx and ODT</h4>
+              <p className="font-mono text-[10px] text-on-surface-variant uppercase mt-0.5">Guiding architecture, teams, and delivery</p>
             </div>
             <div className="relative">
               <div className="absolute w-2 h-2 bg-outline rounded-full -left-[21px] top-1.5"></div>
@@ -120,7 +128,7 @@ export default function Identity() {
             <span className="w-2 h-2 rounded-full bg-green animate-pulse shadow-[0_0_8px_rgba(0,255,0,0.8)]"></span>
           </div>
           <p className="font-mono text-xs text-accent border border-outline-variant/20 p-4 bg-background/50 leading-relaxed">
-            &gt; Working at Vedonyx, leading SafeCity with StackOverHack, and still writing code.
+            &gt; Guiding multi-stage projects at Vedonyx and ODT; building with StackOverHack™.
           </p>
         </SpotlightCard>
         </AnimatedContent>
@@ -130,8 +138,8 @@ export default function Identity() {
           <AnimatedContent delay={0.22}>
           <SpotlightCard className="bg-surface-container border-outline-variant/20 p-4 relative flex flex-col items-center justify-center text-center group hover:border-accent transition-colors duration-300">
             <User className="w-6 h-6 text-accent mb-2 group-hover:scale-115 transition-transform" />
-            <span className="font-mono text-[9px] text-outline mb-1 block tracking-wider">LEADERSHIP</span>
-            <span className="font-mono text-xs text-primary font-bold uppercase tracking-widest">COO · VEDONYX</span>
+            <span className="font-mono text-[9px] text-outline mb-1 block tracking-wider">CHIEF OPERATING OFFICER</span>
+            <span className="font-mono text-xs text-primary font-bold uppercase tracking-widest">VEDONYX + ODT</span>
           </SpotlightCard>
           </AnimatedContent>
           <AnimatedContent delay={0.26}>

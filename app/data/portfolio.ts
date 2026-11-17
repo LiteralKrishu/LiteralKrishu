@@ -7,9 +7,9 @@ export const GITHUB_URL = "https://github.com/LiteralKrishu";
 export const UNSTOP_URL = "https://unstop.com/u/sousndas69815";
 export const VEDONYX_URL = "https://www.vedonyx.com/";
 export const VEDONYX_PROFILE_URL = "https://www.vedonyx.com/team/sousnigdho-das";
-export const PROFILE_LAST_REVIEWED = "2026-10-28";
+export const PROFILE_LAST_REVIEWED = "2026-11-17";
 export const EDUCATION_SUMMARY =
-  "Pursuing B.Tech CSE (AI/ML) at Newton School of Technology";
+  "Pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology";
 
 export const IIT_MANDI_ORGANISER_RESULT_URL =
   "https://www.linkedin.com/posts/ihubiitmandi_multimodalai-hackathon-iitmandi-activity-7406989681428656128-irXj";
@@ -21,7 +21,7 @@ export const IIT_MANDI_UNSTOP_CERTIFICATE_URL =
   "https://unstop.com/api/certificate/0e618c71-4433-4612-a55f-252784ce6776";
 
 export const PROFILE_DESCRIPTION =
-  "Sousnigdho Das is an AI/ML developer, full-stack engineer and COO at Vedonyx, pursuing B.Tech CSE (AI/ML) at Newton School of Technology.";
+  "Sousnigdho Das specializes in software engineering management, serves as COO at Vedonyx and ODT, and is pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology.";
 
 export interface EvidenceLink {
   label: string;

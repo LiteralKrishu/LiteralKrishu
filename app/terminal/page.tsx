@@ -31,15 +31,15 @@ const quickCommands = ['help', 'profile', 'projects', 'achievements', 'credentia
 const fileSystem = {
   'about.txt': [
     'Sousnigdho Das',
-    'AI/ML developer, full-stack engineer, and COO at Vedonyx.',
-    'I write code and help teams ship it.',
-    'I lead SafeCity with StackOverHack and publish code as @LiteralKrishu.'
+    'Software engineering management; COO at Vedonyx and ODT.',
+    'Pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology.',
+    'I guide architecture and teams from research to deployment with StackOverHack™.'
   ],
   'skills.json': [
     '{',
     '  "build_with": ["TypeScript", "Python", "Next.js / React", "Streamlit"],',
     '  "care_about": ["useful AI", "clear ownership", "shared credit"],',
-    '  "current": ["SafeCity", "Vedonyx", "StackOverHack"]',
+    '  "current": ["Vedonyx", "ODT", "StackOverHack"]',
     '}'
   ],
   'routes.md': ['/identity', '/arsenal', '/archive', '/achievements', '/credentials', '/terminal']
@@ -192,8 +192,8 @@ export default function Terminal() {
         appendLines([
           inputLine,
           { text: 'I’m Sousnigdho Das.', type: 'system' },
-          { text: 'AI/ML developer, full-stack engineer, and COO at Vedonyx.', type: 'output' },
-          { text: 'I lead SafeCity with StackOverHack and keep my public code at @LiteralKrishu.', type: 'output' },
+          { text: 'I specialize in software engineering management and serve as COO at Vedonyx and ODT.', type: 'output' },
+          { text: 'I am pursuing a B.Tech in CSE (AI/ML) at NST and build with StackOverHack™.', type: 'output' },
           { text: 'I have also worked on TransparAI, SAATHI, NykaaCopilot, and Wobble.', type: 'success' }
         ]);
         break;
@@ -202,8 +202,8 @@ export default function Terminal() {
         appendLines([
           inputLine,
           { text: 'What I work on', type: 'system' },
-          { text: '  Engineering      Full-stack products and applied AI', type: 'output' },
-          { text: '  Operations       Teams, priorities, and delivery at Vedonyx', type: 'output' },
+          { text: '  Engineering      Architecture, applied AI, and project lifecycles', type: 'output' },
+          { text: '  Operations       Teams, roadmaps, and delivery at Vedonyx and ODT', type: 'output' },
           { text: '  Current build    SafeCity with StackOverHack', type: 'output' },
           { text: '  Other work       SAATHI, NykaaCopilot, and Wobble', type: 'output' }
         ]);

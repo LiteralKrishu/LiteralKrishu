@@ -21,10 +21,13 @@ const profileSchema = {
     url: SITE_URL + '/',
     description: PROFILE_DESCRIPTION,
     jobTitle: 'Chief Operating Officer',
-    worksFor: { '@type': 'Organization', '@id': VEDONYX_URL + '#organization', name: 'Vedonyx', url: VEDONYX_URL },
+    worksFor: [
+      { '@type': 'Organization', '@id': VEDONYX_URL + '#organization', name: 'Vedonyx', url: VEDONYX_URL },
+      { '@type': 'Organization', name: 'ODT' },
+    ],
     affiliation: { '@type': 'CollegeOrUniversity', name: 'Newton School of Technology' },
     memberOf: { '@type': 'Organization', name: 'StackOverHack', url: STACKOVERHACK_GITHUB_URL, sameAs: [STACKOVERHACK_GITHUB_URL, STACKOVERHACK_LINKEDIN_URL] },
-    knowsAbout: ['Artificial intelligence', 'Machine learning', 'Full-stack web development', 'Software engineering', 'Product operations'],
+    knowsAbout: ['Software engineering management', 'Software architecture', 'Artificial intelligence', 'Machine learning', 'Product operations'],
     sameAs: [LINKEDIN_URL, GITHUB_URL, UNSTOP_URL, VEDONYX_PROFILE_URL],
   },
 };

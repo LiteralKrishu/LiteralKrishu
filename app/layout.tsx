@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Sousnigdho Das | AI/ML Developer, Full-Stack Engineer & COO',
+    default: 'Sousnigdho Das | Software Engineering Management & AI/ML',
     template: '%s | Sousnigdho Das',
   },
   description: PROFILE_DESCRIPTION,
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     type: 'profile',
     locale: 'en_IN',
     url: SITE_URL,
-    title: 'Sousnigdho Das | AI/ML Developer, Full-Stack Engineer & COO',
+    title: 'Sousnigdho Das | Software Engineering Management & AI/ML',
     description: PROFILE_DESCRIPTION,
     siteName: 'Sousnigdho Das',
   },
   twitter: {
     card: 'summary',
-    title: 'Sousnigdho Das | AI/ML Developer, Full-Stack Engineer & COO',
+    title: 'Sousnigdho Das | Software Engineering Management & AI/ML',
     description: PROFILE_DESCRIPTION,
   },
   robots: {
