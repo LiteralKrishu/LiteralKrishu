@@ -9,6 +9,7 @@ import Magnet from '@/components/animations/Magnet';
 import SpotlightCard from '@/components/animations/SpotlightCard';
 import {
   EDUCATION_SUMMARY,
+  EMAIL_URL,
   GITHUB_URL,
   LINKEDIN_URL,
   STACKOVERHACK_GITHUB_URL,
@@ -27,7 +28,7 @@ export default function Identity() {
           <DecryptedText text="SOUSNIGDHO DAS" delay={120} />
         </h1>
         <p className="font-mono text-xs text-secondary tracking-widest mt-1 uppercase">
-          SOFTWARE ENGINEERING MANAGEMENT // COO @ VEDONYX &amp; ODT // AI/ML @ NST
+          SOFTWARE ENGINEERING MANAGEMENT // B.TECH CSE (AI/ML) @ NST // STACKOVERHACK™ // COO @ VEDONYX &amp; ODT
         </p>
       </AnimatedContent>
 
@@ -48,22 +49,18 @@ export default function Identity() {
           
           <div className="mb-6 space-y-5 text-sm leading-relaxed text-text-primary md:text-base">
             <div>
-              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">Roles and study</h4>
-              <p>I&apos;m Sousnigdho, Chief Operating Officer at Vedonyx and ODT. I&apos;m pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology (NST).</p>
+              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">About</h4>
+              <p>I am Sousnigdho Das. Pursuing B.Tech in CSE (AI/ML) at Newton School of Technology (NST). Working as Chief Operating Officer at Vedonyx &amp; ODT, I plan multi-stage software projects and coordinate cross-functional teams.</p>
             </div>
             <div>
-              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">What I lead</h4>
-              <p>I guide software architecture across multi-stage projects and coordinate cross-functional teams. I help teams keep technical decisions aligned with long-term roadmaps.</p>
-            </div>
-            <div>
-              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">How I build</h4>
-              <p>I connect algorithmic research with practical implementation. With StackOverHack™, I help move ideas toward production-ready software.</p>
+              <h4 className="mb-1 font-mono text-[10px] uppercase tracking-wider text-accent">How I work</h4>
+              <p>Guiding software architecture across the full project lifecycle. I help teams keep technical decisions aligned with long-term roadmaps and turn algorithmic research into practical, production-ready systems. I also build with <Link href={STACKOVERHACK_GITHUB_URL} target="_blank" rel="noreferrer" className="text-accent underline underline-offset-4">StackOverHack™</Link>.</p>
             </div>
           </div>
 
           <div className="mb-6 border border-accent/25 bg-accent/5 p-4">
             <h4 className="font-mono text-[10px] font-bold uppercase tracking-widest text-accent">Open for collaboration</h4>
-            <p className="mt-2 text-sm leading-relaxed text-text-primary">I work with teams and individuals to plan and deliver projects from research through deployment.</p>
+            <p className="mt-2 text-sm leading-relaxed text-text-primary">I am open to working with teams and individuals to plan, build, and deliver projects from research through production. <a href={EMAIL_URL} className="text-accent underline underline-offset-4">Get in touch</a>.</p>
           </div>
           
           <div className="grid grid-cols-2 gap-4 border-t border-outline-variant/10 pt-4">
@@ -128,7 +125,7 @@ export default function Identity() {
             <span className="w-2 h-2 rounded-full bg-green animate-pulse shadow-[0_0_8px_rgba(0,255,0,0.8)]"></span>
           </div>
           <p className="font-mono text-xs text-accent border border-outline-variant/20 p-4 bg-background/50 leading-relaxed">
-            &gt; Guiding multi-stage projects at Vedonyx and ODT; building with StackOverHack™.
+            &gt; Planning multi-stage software projects and coordinating cross-functional teams at Vedonyx &amp; ODT.
           </p>
         </SpotlightCard>
         </AnimatedContent>

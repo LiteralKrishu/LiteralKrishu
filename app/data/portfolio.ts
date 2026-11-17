@@ -4,12 +4,13 @@ export const STACKOVERHACK_LINKEDIN_URL =
   "https://www.linkedin.com/company/stackoverhack/";
 export const STACKOVERHACK_GITHUB_URL = "https://github.com/StackOverHack-Hub";
 export const GITHUB_URL = "https://github.com/LiteralKrishu";
+export const EMAIL_URL = "mailto:sousnigdhodas@gmail.com";
 export const UNSTOP_URL = "https://unstop.com/u/sousndas69815";
 export const VEDONYX_URL = "https://www.vedonyx.com/";
 export const VEDONYX_PROFILE_URL = "https://www.vedonyx.com/team/sousnigdho-das";
 export const PROFILE_LAST_REVIEWED = "2026-11-17";
 export const EDUCATION_SUMMARY =
-  "Pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology";
+  "Pursuing B.Tech in CSE (AI/ML) at Newton School of Technology";
 
 export const IIT_MANDI_ORGANISER_RESULT_URL =
   "https://www.linkedin.com/posts/ihubiitmandi_multimodalai-hackathon-iitmandi-activity-7406989681428656128-irXj";

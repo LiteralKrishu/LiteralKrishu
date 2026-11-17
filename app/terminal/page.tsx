@@ -31,9 +31,11 @@ const quickCommands = ['help', 'profile', 'projects', 'achievements', 'credentia
 const fileSystem = {
   'about.txt': [
     'Sousnigdho Das',
-    'Software engineering management; COO at Vedonyx and ODT.',
-    'Pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology.',
-    'I guide architecture and teams from research to deployment with StackOverHack™.'
+    'Pursuing B.Tech in CSE (AI/ML) at Newton School of Technology (NST).',
+    'Working as Chief Operating Officer at Vedonyx & ODT.',
+    'Planning multi-stage software projects and coordinating cross-functional teams.',
+    'Guiding software architecture from research through production.',
+    'I also build with StackOverHack™ and am open for collaboration.'
   ],
   'skills.json': [
     '{',
@@ -191,9 +193,11 @@ export default function Terminal() {
       case 'whoami':
         appendLines([
           inputLine,
-          { text: 'I’m Sousnigdho Das.', type: 'system' },
-          { text: 'I specialize in software engineering management and serve as COO at Vedonyx and ODT.', type: 'output' },
-          { text: 'I am pursuing a B.Tech in CSE (AI/ML) at NST and build with StackOverHack™.', type: 'output' },
+          { text: 'I am Sousnigdho Das.', type: 'system' },
+          { text: 'Pursuing B.Tech in CSE (AI/ML) at Newton School of Technology (NST).', type: 'output' },
+          { text: 'Working as Chief Operating Officer at Vedonyx & ODT.', type: 'output' },
+          { text: 'I plan multi-stage software projects and coordinate cross-functional teams.', type: 'output' },
+          { text: 'I guide software architecture from research through production with StackOverHack™.', type: 'output' },
           { text: 'I have also worked on TransparAI, SAATHI, NykaaCopilot, and Wobble.', type: 'success' }
         ]);
         break;

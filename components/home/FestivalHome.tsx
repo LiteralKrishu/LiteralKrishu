@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUpRight, Code2, Compass, Layers3 } from 'lucide-react';
 import ProjectVisual from '@/components/ui/ProjectVisual';
-import { LINKEDIN_URL, PROFILE_LAST_REVIEWED, STACKOVERHACK_GITHUB_URL, projects, type PortfolioProject } from '@/app/data/portfolio';
+import { EMAIL_URL, PROFILE_LAST_REVIEWED, STACKOVERHACK_GITHUB_URL, projects, type PortfolioProject } from '@/app/data/portfolio';
 
 const gateways = [
   { title: 'The work', description: 'Projects built with purpose and people.', path: '/archive', icon: Layers3 },
@@ -99,9 +99,9 @@ export default function FestivalHome() {
         <div className="festival-atmosphere" aria-hidden="true" />
         <div className="festival-edition">A portfolio of things built and learned <span>2026</span></div>
         <div className="festival-title">
-          <span className="festival-overline">Software engineering management · AI/ML</span>
+          <span className="festival-overline">Software engineering management · StackOverHack™</span>
           <h1 className="festival-wordmark" data-text="SOUSNIGDHO DAS" aria-label="Sousnigdho Das"><span>SOUSNIGDHO DAS</span></h1>
-          <p>I guide teams from research to production-ready software.</p>
+          <p>B.Tech in CSE (AI/ML) at NST · COO at Vedonyx &amp; ODT</p>
           <Link href="#selected-work" className="festival-intro-link">Explore the work <ArrowUpRight size={17} /></Link>
         </div>
         <div className="festival-gates" aria-label="Explore the portfolio">
@@ -120,10 +120,10 @@ export default function FestivalHome() {
         <div className="festival-story-art" aria-hidden="true"><span className="festival-story-orbit" /><span className="festival-story-art-index">FIELD NOTE / 01</span><span className="festival-story-art-caption">Ideas find their shape through use.</span></div>
         <div className="festival-story-copy">
           <div className="festival-section-index"><span>01</span><i />The story so far</div>
-          <p className="festival-chapter-kicker">Architecture · operations · AI/ML</p>
+          <p className="festival-chapter-kicker">Software engineering management</p>
           <h2>From research,<br /><em>to reality.</em></h2>
-          <p>I&apos;m Sousnigdho. I serve as COO at Vedonyx and ODT while pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology. I lead architecture for multi-stage software projects, coordinate cross-functional teams, and build with <Link href={STACKOVERHACK_GITHUB_URL} target="_blank" rel="noreferrer" className="festival-org-link">StackOverHack™</Link>.</p>
-          <div className="festival-story-facts"><span>Software architecture</span><span>Engineering management</span><span>AI/ML at NST</span></div>
+          <p>I am Sousnigdho Das. Pursuing B.Tech in CSE (AI/ML) at Newton School of Technology (NST). Working as Chief Operating Officer at Vedonyx &amp; ODT, I plan multi-stage software projects and coordinate cross-functional teams.</p>
+          <div className="festival-story-facts"><span>Software engineering management</span><span>B.Tech in CSE (AI/ML) · NST</span><span>StackOverHack™</span><span>COO · Vedonyx &amp; ODT</span></div>
           <Link href="/identity" className="festival-text-link">More about me <ArrowUpRight size={17} /></Link>
         </div>
       </section>
@@ -139,12 +139,12 @@ export default function FestivalHome() {
 
       <section className="festival-practice">
         <div className="festival-section-index"><span>03</span><i />The practice</div>
-        <div className="festival-practice-head"><div><p className="festival-chapter-kicker">How the work moves</p><h2>Between an idea<br />and a release.</h2></div><p>I keep technical decisions aligned with long-term roadmaps while connecting algorithmic research to practical, production-ready releases.</p></div>
+        <div className="festival-practice-head"><div><p className="festival-chapter-kicker">How the work moves</p><h2>Between an idea<br />and a release.</h2></div><p>Guiding software architecture across the full project lifecycle. I help teams keep technical decisions aligned with long-term roadmaps and turn algorithmic research into practical, production-ready systems. I also build with <Link href={STACKOVERHACK_GITHUB_URL} target="_blank" rel="noreferrer" className="festival-org-link">StackOverHack™</Link>.</p></div>
         <div className="festival-process">{practiceSteps.map(step => <div key={step.number} className="festival-process-step"><span>{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></div>)}</div>
         <Link href="/arsenal" className="festival-text-link">Explore my skills <ArrowUpRight size={17} /></Link>
       </section>
 
-      <section className="festival-contact"><div className="festival-contact-panel"><div className="festival-section-index"><span>04</span><i />A new chapter</div><div className="festival-contact-inner"><div><p className="festival-chapter-kicker">Open for collaboration</p><h2>Have something<br /><em>in mind?</em></h2></div><div><p>I&apos;m open to working with teams and individuals on complete project lifecycles, from research to deployment.</p><a href={LINKEDIN_URL} target="_blank" rel="me noreferrer" className="festival-contact-link">Connect on LinkedIn <ArrowUpRight size={20} /></a></div></div><span className="festival-contact-foot">SOUSNIGDHO DAS / BUILDING WHAT COMES NEXT</span></div></section>
+      <section className="festival-contact"><div className="festival-contact-panel"><div className="festival-section-index"><span>04</span><i />A new chapter</div><div className="festival-contact-inner"><div><p className="festival-chapter-kicker">Open for collaboration</p><h2>Have something<br /><em>in mind?</em></h2></div><div><p>I am open to working with teams and individuals to plan, build, and deliver projects from research through production.</p><a href={EMAIL_URL} className="festival-contact-link">Get in touch <ArrowUpRight size={20} /></a></div></div><span className="festival-contact-foot">SOUSNIGDHO DAS / BUILDING WHAT COMES NEXT</span></div></section>
       <p className="festival-review">Project details link to public code, live work, or source records. Last reviewed {PROFILE_LAST_REVIEWED}.</p>
     </div>
   </div>;
