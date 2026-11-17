@@ -67,11 +67,11 @@ export const projects: PortfolioProject[] = [
     sources: [
       {
         label: "Public SafeCity repository",
-        url: "https://github.com/LiteralKrishu/SafeCity",
+        url: "https://github.com/StackOverHack-Hub/SafeCity",
       },
       {
         label: "SafeCity architecture and release status",
-        url: "https://github.com/LiteralKrishu/SafeCity/blob/main/docs/ARCHITECTURE.md",
+        url: "https://github.com/StackOverHack-Hub/SafeCity/blob/main/docs/ARCHITECTURE.md",
       },
       {
         label: "StackOverHack on LinkedIn",
@@ -96,7 +96,7 @@ export const projects: PortfolioProject[] = [
     ],
     sourceNote:
       "The organiser confirms the placement, and the SmallAI programme names me as team leader. Our team name appears in a few forms across those records. The repository calls SafeCity a prototype awaiting release certification.",
-    repositoryUrl: "https://github.com/LiteralKrishu/SafeCity",
+    repositoryUrl: "https://github.com/StackOverHack-Hub/SafeCity",
     liveUrl: "https://safe-city-one.vercel.app/",
     programmingLanguages: ["TypeScript"],
   },
@@ -121,7 +121,7 @@ export const projects: PortfolioProject[] = [
     sources: [
       {
         label: "Public TransparAI repository",
-        url: "https://github.com/LiteralKrishu/TransparAI",
+        url: "https://github.com/StackOverHack-Hub/TransparAI",
       },
       {
         label: "StackOverHack on LinkedIn",
@@ -138,7 +138,7 @@ export const projects: PortfolioProject[] = [
     ],
     sourceNote:
       "SFLC.in confirms our team's third-place finish but does not name the project in its recap. TransparAI was team work.",
-    repositoryUrl: "https://github.com/LiteralKrishu/TransparAI",
+    repositoryUrl: "https://github.com/StackOverHack-Hub/TransparAI",
     liveUrl: "https://transparai.streamlit.app/",
     programmingLanguages: ["Python"],
   },
@@ -167,7 +167,7 @@ export const projects: PortfolioProject[] = [
       },
       {
         label: "SAATHI backend repository",
-        url: "https://github.com/LiteralKrishu/saathi-backend",
+        url: "https://github.com/StackOverHack-Hub/saathi-backend",
       },
     ],
     sourceNote:
@@ -196,7 +196,7 @@ export const projects: PortfolioProject[] = [
     sources: [
       {
         label: "SAATHI backend repository",
-        url: "https://github.com/LiteralKrishu/saathi-backend",
+        url: "https://github.com/StackOverHack-Hub/saathi-backend",
       },
       {
         label: "SAATHI frontend repository",
@@ -205,7 +205,7 @@ export const projects: PortfolioProject[] = [
     ],
     sourceNote:
       "The backend README calls this a controlled prototype. It has no approval as an emergency dispatch or clinical AI system.",
-    repositoryUrl: "https://github.com/LiteralKrishu/saathi-backend",
+    repositoryUrl: "https://github.com/StackOverHack-Hub/saathi-backend",
     programmingLanguages: ["Python"],
   },
   {

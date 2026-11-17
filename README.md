@@ -44,10 +44,10 @@ I'm the **Chief Operating Officer at Vedonyx**, lead **SafeCity** with [StackOve
 
 | Project | What it does | My part |
 | --- | --- | --- |
-| [SafeCity](https://github.com/LiteralKrishu/SafeCity) · [Site](https://safe-city-one.vercel.app/) | Phone-based safety prototype that uses sound, motion, and other cues to flag possible distress. | Team lead; architecture, backend, and development |
-| [TransparAI](https://github.com/LiteralKrishu/TransparAI) | Streamlit dashboard that flags unusual patterns in public procurement data for people to review. | Built with StackOverHack for the SFLC.in hackathon |
+| [SafeCity](https://github.com/StackOverHack-Hub/SafeCity) · [Site](https://safe-city-one.vercel.app/) | Phone-based safety prototype that uses sound, motion, and other cues to flag possible distress. | Team lead; architecture, backend, and development |
+| [TransparAI](https://github.com/StackOverHack-Hub/TransparAI) | Streamlit dashboard that flags unusual patterns in public procurement data for people to review. | Built with StackOverHack for the SFLC.in hackathon |
 | [SAATHI frontend](https://github.com/LiteralKrishu/saathi) | React screens for case intake and coordination, connected to the Django API. | Frontend and API integration with StackOverHack |
-| [SAATHI backend](https://github.com/LiteralKrishu/saathi-backend) | Django API behind SAATHI, with role checks and documented endpoints. | Backend and API work with StackOverHack |
+| [SAATHI backend](https://github.com/StackOverHack-Hub/saathi-backend) | Django API behind SAATHI, with role checks and documented endpoints. | Backend and API work with StackOverHack |
 | [NykaaCopilot](https://github.com/LiteralKrishu/NykaaCopilot) | Matches colors from a makeup photo to a sample catalog and previews them in a 2D try-on. | Built the Next.js demo and its analysis and try-on flow |
 | [Wobble](https://github.com/LiteralKrishu/Wobble) | Python CLI that finds pytest failures caused by test order and checks proposed fixes. | Built the test hunt, Docker runner, and repair flow with StackOverHack |
 
