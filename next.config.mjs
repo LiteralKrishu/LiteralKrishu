@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      { source: '/projects/saathi-backend', destination: '/projects/saathi', permanent: true },
+    ];
+  },
   images: {
     remotePatterns: [
       {

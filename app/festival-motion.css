@@ -80,7 +80,7 @@
 .festival-gates-copy > p { max-width: 340px; color: #f0ded0; font-size: 15px; line-height: 1.7; }
 .festival-gates-count { display: inline-block; margin-top: 42px; padding-top: 13px; border-top: 1px solid #f5d7a370; color: #d9c6b5; font: 10px Arial,Helvetica,sans-serif; letter-spacing: .18em; }
 .festival-gates-grid { display: flex; flex-direction: column; gap: 0; padding: 9px 25px; border: 1px solid #e9c99b99; border-radius: 13px; background: linear-gradient(145deg,#1c1727e8,#13111fe0); box-shadow: 0 28px 80px #0a0714a3,inset 0 1px #fff3d536; backdrop-filter: blur(22px); }
-.festival-gate { display: grid; grid-template-columns: 32px 38px minmax(0,1fr) 24px; align-items: center; gap: 15px; min-height: 106px; padding: 15px 5px; border: 0; border-bottom: 1px solid #e3c99842; border-radius: 0; background: transparent; box-shadow: none; clip-path: none; color: #fff1df; transition: transform .22s,color .22s,background .22s; }
+.festival-gate { display: grid; grid-template-columns: 38px minmax(0,1fr) 24px; align-items: center; gap: 15px; min-height: 106px; padding: 15px 5px; border: 0; border-bottom: 1px solid #e3c99842; border-radius: 0; background: transparent; box-shadow: none; clip-path: none; color: #fff1df; transition: transform .22s,color .22s,background .22s; }
 .festival-gate:last-child { border-bottom: 0; }
 .festival-gate::after { display: none; }
 .festival-gate:hover,.festival-gate:focus-visible { transform: translateX(5px); background: #f6d99a11; border-color: #e3c99842; }
@@ -90,7 +90,7 @@
 .festival-gate-text strong { margin: 0; font: 400 30px/1.05 Georgia,serif; letter-spacing: -.035em; }
 .festival-gate-text small { color: #cbbab4; font-size: 12px; line-height: 1.4; }
 .festival-gate-arrow { justify-self: end; transition: transform .22s; }
-.festival-gate:hover .festival-gate-arrow { transform: translate(3px,-3px); }
+.festival-gate:is(:hover,:focus-visible) .festival-gate-arrow { transform: translate(3px,-3px); }
 .festival-content { border-top: 1px solid #d8b8895c; }
 .festival-content::before { background: radial-gradient(ellipse 80% 330px at 50% 0,#58405c80,transparent),linear-gradient(#21182e,transparent 380px); opacity: 1; }
 @keyframes festival-mote-drift { 0% { transform: translate3d(0,22px,0); opacity: 0; } 15% { opacity: .75; } 80% { opacity: .45; } 100% { transform: translate3d(25px,-55px,0); opacity: 0; } }
@@ -127,7 +127,7 @@
   .festival-gates-heading { font-size: 39px; }
   .festival-gates-copy > p { max-width: 310px; font-size: 11px; }
   .festival-gates-grid { padding: 4px 13px; }
-  .festival-gate { grid-template-columns: 22px 24px minmax(0,1fr) 17px; gap: 10px; min-height: 78px; padding: 10px 4px; }
+  .festival-gate { grid-template-columns: 24px minmax(0,1fr) 17px; gap: 10px; min-height: 78px; padding: 10px 4px; }
   .festival-gate > .festival-gate-number { margin-top: 7px; font-size: 8px; }
   .festival-gate-icon { width: 21px; height: 21px; }
   .festival-gate-arrow { width: 17px; height: 17px; }
@@ -272,4 +272,140 @@
   .festival-contact h2 { font-size: clamp(48px,11vw,68px); }
   .festival-contact-inner > div:last-child p { font-size: 14px; }
   .festival-contact-foot { margin-top: 40px; line-height: 1.5; }
+}
+
+/* The opening hands off to the first chapter, with a visible route at each section break. */
+.festival-journey { height: 178svh; }
+.festival-scroll-cue {
+  bottom: max(16px, env(safe-area-inset-bottom));
+  flex-direction: row;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 15px;
+  border: 1px solid #f2d29a73;
+  border-radius: 999px;
+  background: #1a1324d9;
+  opacity: 1;
+  pointer-events: auto;
+  white-space: nowrap;
+}
+.festival-scroll-cue:hover, .festival-scroll-cue:focus-visible { background: #39293a; }
+.festival-page :is(.festival-scroll-cue,.festival-next-chapter) svg { transition: transform .22s ease; }
+.festival-page :is(.festival-scroll-cue,.festival-next-chapter):is(:hover,:focus-visible) svg { transform: translateY(3px); }
+.festival-chapter-nav {
+  position: sticky;
+  top: 88px;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  width: min(100%, 420px);
+  margin: 0 auto;
+  padding-inline: 7px;
+  border: 1px solid #e8c38b5e;
+  border-radius: 8px;
+  background: #201a2cf2;
+  box-shadow: 0 8px 24px #0d0b1366;
+}
+.festival-chapter-nav a {
+  flex: 1;
+  padding: 14px 6px 12px;
+  border-bottom: 2px solid transparent;
+  text-align: center;
+  color: #d7c7bf;
+  font-size: 12px;
+  transition: color .2s, border-color .2s;
+}
+.festival-chapter-nav a:is(:hover,:focus-visible,[aria-current='location']) { color: #ffe6b9; }
+.festival-chapter-nav a[aria-current='location'] { border-bottom-color: #f2cb7e; }
+.festival-content > section { scroll-margin-top: 32px; }
+.festival-introduction,.festival-work,.festival-practice {
+  border-bottom: 0;
+  padding-block: clamp(55px,7vw,96px) clamp(36px,5vw,70px);
+}
+.festival-introduction { row-gap: 30px; }
+.festival-next-chapter {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 28px;
+  color: #eed2a4;
+  font-size: 12px;
+  text-decoration: none;
+}
+.festival-next-chapter::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  margin-left: 8px;
+  background: linear-gradient(90deg,#eac58f80,transparent);
+}
+.festival-next-chapter:hover,.festival-next-chapter:focus-visible { color: #fff5de; }
+.festival-process-step details { margin-top: 11px; color: #f2ce92; font-size: 12px; }
+.festival-process-step summary { min-height: 44px; padding: 12px 0; cursor: pointer; }
+.festival-process-step summary:hover { color: #fff3d8; }
+.festival-process-step details p { color: #ecd8bd; animation: festival-step-open .25s ease-out; }
+.festival-featured-card:focus-within { border-color: #f2cf91c4; box-shadow: 0 28px 70px #080711a6; }
+@keyframes festival-step-open { from { opacity: .45; transform: translateY(-4px); } }
+
+@media (max-width: 700px) {
+  .festival-journey { height: 155svh; }
+  .festival-next-chapter { margin-top: 18px; }
+  .festival-introduction .festival-next-chapter { order: 2; margin-top: 0; }
+}
+@media (max-width: 900px) {
+  .festival-chapter-nav { top: 72px; }
+}
+@media (max-height: 620px) {
+  .festival-gates { max-height: calc(100dvh - 160px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .festival-journey { height: auto; }
+  .festival-stage { position: relative; display: grid; align-content: center; gap: 32px; min-height: 100svh; height: auto; padding: 108px clamp(18px,8vw,120px) 34px; }
+  .festival-title,.festival-gates,.festival-scroll-cue { position: relative; inset: auto; display: block; width: 100%; max-height: none; opacity: 1 !important; transform: none !important; margin: 0 auto; }
+  .festival-title { width: auto; }
+  .festival-gates { display: grid; max-width: 1120px; overflow: visible; }
+  .festival-scroll-cue { display: inline-flex; width: auto; justify-self: center; }
+  .festival-atmosphere { opacity: .7; }
+}
+
+.festival-project-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 8px;
+  margin: 0 0 18px;
+  border: 0;
+  padding: 0;
+}
+.festival-project-picker label { position: relative; cursor: pointer; }
+.festival-project-picker label > span {
+  display: grid;
+  min-height: 44px;
+  place-items: center;
+  padding: 0 14px;
+  border: 1px solid #d7b98b50;
+  border-radius: 6px;
+  color: #e7d8c8;
+  font-size: 13px;
+  transition: background-color .18s, color .18s, border-color .18s;
+}
+.festival-project-picker label:hover > span { border-color: #f2cf91; }
+.festival-project-picker input:checked + span { background: #f2cf91; border-color: #f2cf91; color: #211822; }
+.festival-project-picker input:focus-visible + span { outline: 2px solid #ffedd4; outline-offset: 3px; }
+@media (max-width: 700px) {
+  .festival-project-picker { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .festival-project-picker label > span { padding-inline: 2px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #featured-project-preview .project-art-stage,
+  #featured-project-preview .festival-featured-body { animation: festival-project-enter .32s ease-out; }
+  #featured-project-preview .festival-featured-link svg { transition: transform .18s ease-out; }
+  #featured-project-preview .festival-featured-link:is(:hover,:focus-visible) svg { transform: translate(2px,-2px); }
+  @keyframes festival-project-enter {
+    from { opacity: .55; translate: 0 8px; }
+    to { opacity: 1; translate: 0 0; }
+  }
 }

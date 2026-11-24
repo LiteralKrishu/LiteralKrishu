@@ -17,7 +17,7 @@ import {
 import AnimatedContent from '@/components/animations/AnimatedContent';
 import DecryptedText from '@/components/animations/DecryptedText';
 import Magnet from '@/components/animations/Magnet';
-import { GITHUB_URL, LINKEDIN_URL, SITE_URL, UNSTOP_URL } from '@/app/data/portfolio';
+import { credentials, GITHUB_URL, LINKEDIN_URL, projects, SITE_URL, UNSTOP_URL } from '@/app/data/portfolio';
 
 type LineType = 'system' | 'input' | 'output' | 'error' | 'success' | 'muted';
 
@@ -178,7 +178,7 @@ export default function Terminal() {
           { text: '  focus              What I build and how I work.', type: 'output' },
           { text: '  projects           Code and projects you can look through.', type: 'output' },
           { text: '  achievements       Hackathon results and programme listings.', type: 'output' },
-          { text: '  credentials        Hackathons and challenges I have taken part in.', type: 'output' },
+          { text: '  credentials        Certifications and competition certificates.', type: 'output' },
           { text: '  approach           How I work with a team.', type: 'output' },
           { text: '  links              Show contact and route shortcuts.', type: 'output' },
           { text: '  open <route>       Navigate: home, identity, arsenal, archive, achievements, credentials, terminal.', type: 'output' },
@@ -216,11 +216,7 @@ export default function Terminal() {
         appendLines([
           inputLine,
           { text: 'Projects', type: 'system' },
-          { text: '  SafeCity       Multimodal safety prototype I lead with StackOverHack', type: 'output' },
-          { text: '  TransparAI     Open-source procurement-transparency prototype', type: 'output' },
-          { text: '  SAATHI         Case-coordination frontend and backend', type: 'success' },
-          { text: '  NykaaCopilot   Makeup look analysis and browser-side try-on', type: 'success' },
-          { text: '  Wobble         Finds pytest failures caused by test order', type: 'success' },
+          ...projects.map(project => ({ text: `  ${project.shortTitle.padEnd(16)} ${project.category}`, type: 'output' as const })),
           { text: 'Run "open archive" for code links and my role in each project.', type: 'muted' }
         ]);
         break;
@@ -239,11 +235,10 @@ export default function Terminal() {
       case 'certificates':
         appendLines([
           inputLine,
-          { text: 'Hackathons and challenges', type: 'system' },
-          { text: '  Seven certificates are collected under /credentials.', type: 'output' },
-          { text: '  IIT Mandi, IIT Madras, ATLAS SkillTech, CodeTantra2K25, and more.', type: 'output' },
-          { text: '  Participation and placements are listed separately.', type: 'success' },
-          { text: 'Run "open credentials" for certificates and event links.', type: 'muted' }
+          { text: 'Hackathons and certificates', type: 'system' },
+          { text: `  ${credentials.length} credentials are collected under /credentials.`, type: 'output' },
+          { text: '  Includes Oracle certifications, WorldQuant Challenge levels, and hackathon certificates.', type: 'output' },
+          { text: 'Run "open credentials" for certificates and source links.', type: 'muted' }
         ]);
         break;
       case 'architecture':

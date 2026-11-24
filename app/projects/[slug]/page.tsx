@@ -104,7 +104,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </header>
       </AnimatedContent>
 
-      {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-detail-preview mt-8" aria-label={`Open ${project.shortTitle} live website`}><ProjectCover title={project.shortTitle} url={project.liveUrl} /></a>}
+      {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-detail-preview mt-8" aria-label={`Open ${project.shortTitle} live website`}><ProjectCover slug={project.slug} title={project.shortTitle} url={project.liveUrl} /></a>}
       {!project.liveUrl && <ProjectVisual slug={project.slug} title={project.shortTitle} className="project-detail-visual mt-8" />}
 
       <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">

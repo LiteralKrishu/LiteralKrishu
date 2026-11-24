@@ -9,7 +9,7 @@ export default function ProjectShowcase() {
   return <div className="project-showcase">{projects.map((project, index) => {
     return <AnimatedContent key={project.slug} variant="scroll-card" direction={index % 2 === 0 ? 1 : -1} className={`project-card ${index === 0 ? 'project-featured' : ''}`}>
       {project.liveUrl
-        ? <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-visual-link" aria-label={`Open ${project.shortTitle} live website`}><ProjectCover title={project.shortTitle} url={project.liveUrl} /></a>
+        ? <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-visual-link" aria-label={`Open ${project.shortTitle} live website`}><ProjectCover slug={project.slug} title={project.shortTitle} url={project.liveUrl} /></a>
         : <Link href={`/projects/${project.slug}`} className="project-visual-link" aria-label={`Read about ${project.shortTitle}`}><ProjectVisual slug={project.slug} title={project.shortTitle} /></Link>}
       <div className="project-card-body"><div className="project-meta"><span>{String(index + 1).padStart(2, '0')} / {project.year}</span><span className="project-status">{project.status}</span></div><p className="eyebrow project-category">{project.category}</p><h2><Link href={`/projects/${project.slug}`}>{project.shortTitle}<ArrowUpRight size={24} /></Link></h2><p className="project-summary">{project.summary}</p>
         <details className="project-role"><summary>My role</summary><p>{project.role}</p></details>

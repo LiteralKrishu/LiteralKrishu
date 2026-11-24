@@ -1,0 +1,100 @@
+.project-art {
+  --art-ink: #e3d0ff;
+  --art-bg: #211a38;
+  display: grid;
+  place-items: center;
+  color: var(--art-ink);
+  background:
+    radial-gradient(ellipse at var(--art-light-x, 50%) var(--art-light-y, 45%), color-mix(in srgb,var(--art-ink) 22%,transparent), transparent 68%),
+    var(--art-bg);
+  font: 12px/1.4 ui-monospace, monospace;
+}
+.project-art::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background-image: linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse,#0008,transparent 78%);
+}
+.project-art-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(82%,420px);
+  transform: translate3d(var(--art-x,0),var(--art-y,0),0);
+  transition: transform .22s ease-out;
+}
+.project-art-window {
+  width: min(100%,320px);
+  padding: clamp(14px,3vw,23px);
+  border: 1px solid color-mix(in srgb,var(--art-ink) 45%,transparent);
+  border-radius: 12px;
+  background: linear-gradient(155deg,color-mix(in srgb,var(--art-ink) 13%,#121626),#11141f 68%);
+  box-shadow: 0 20px 38px #05061288,inset 0 1px #fff3;
+}
+.project-art-heading,.project-art-row,.project-art-workflow { display: flex; align-items: center; gap: 8px; }
+.project-art-heading { font-weight: 700; }
+.project-art-heading svg:nth-child(2) { margin-left: auto; }
+.project-art-row {
+  margin-top: 11px;
+  padding: 8px 10px;
+  border: 1px solid #fff2;
+  border-radius: 5px;
+  background: #fff1;
+}
+.project-art-row svg { flex-shrink: 0; }
+.project-art .project-art-screen {
+  width: min(87%,660px);
+  aspect-ratio: 1.92;
+  overflow: hidden;
+  border: 1px solid #d8c1ff80;
+  border-radius: 12px;
+  background: #171325;
+  box-shadow: 0 20px 40px #0a071ddd;
+}
+.project-art-screenshot { object-fit: cover; object-position: top center; }
+.project-art.visual-transparai { --art-ink: #a4e8ff; --art-bg: #102333; }
+.project-art.visual-agent-extension { --art-ink: #b4ccff; --art-bg: #161f39; }
+.project-art-editor { margin-top: 12px; padding: 9px 10px; background: #0c101be6; border-radius: 5px; }
+.project-art-editor span { color: #bac4df; font-size: 10px; }
+.project-art-editor code { display: block; margin-top: 9px; color: #e2d0ff; font-size: 11px; }
+.project-art-diff { display: grid; gap: 2px; margin-top: 8px; font-size: 10px; }
+.project-art-diff code { padding: 2px 7px; background: #632c4559; color: #ffc5cd; }
+.project-art-diff code + code { background: #28594573; color: #adf1cc; }
+.project-art.visual-scopecheck { --art-ink: #ffe2aa; --art-bg: #332515; }
+.project-art.visual-namma-space { --art-ink: #91eee4; --art-bg: #102b2e; }
+.project-art-clauses { display: grid; grid-template-columns: auto 1fr; gap: 7px 13px; padding-block: 15px 6px; }
+.project-art-clauses dt { color: #d2bfa4; }
+.project-art-clauses dd { color: #fff3d8; }
+.project-art.visual-saathi { --art-ink: #9ce8d0; --art-bg: #122e2a; }
+.project-art-workflow { justify-content: space-between; flex-wrap: wrap; margin-top: 17px; }
+.project-art-workflow span { padding: 4px 6px; border: 1px solid #9ce8d05e; border-radius: 4px; }
+.project-art.visual-nykaa-copilot { --art-ink: #ffd4e9; --art-bg: #392139; }
+.project-art-makeup { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: center; }
+.project-art-makeup > div:first-child { display: grid; justify-items: center; gap: 6px; }
+.project-art-swatches { display: flex; gap: 4px; margin-top: 9px; }
+.project-art-swatches i { width: clamp(13px,3vw,25px); aspect-ratio: 1; border-radius: 50%; background: #a9576c; }
+.project-art-swatches i:nth-child(2) { background: #d9928f; }
+.project-art-swatches i:nth-child(3) { background: #e2aa92; }
+.project-art-swatches i:nth-child(4) { background: #7a3c68; }
+.project-art.visual-wobble { --art-ink: #ffe1a5; --art-bg: #352b1a; }
+.project-art-terminal { display: grid; gap: 7px; }
+.project-art-terminal .project-art-heading { padding-bottom: 6px; border-bottom: 1px solid #fff3; }
+.project-art-terminal i { color: #9fedbc; font-style: normal; }
+@media (hover: hover) and (pointer: fine) {
+  :is(.project-visual-link,.festival-featured-visual):is(:hover,:focus-visible) .project-art-stage {
+    scale: 1.035;
+  }
+  .project-art-stage { transition: transform .22s ease-out, scale .22s ease-out; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-art-stage { transform: none; scale: 1 !important; }
+}
+.project-art.live-preview-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}

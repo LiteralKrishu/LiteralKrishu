@@ -54,8 +54,9 @@ I am open to working with teams and individuals to plan, build, and deliver proj
 | --- | --- | --- |
 | [SafeCity](https://github.com/StackOverHack-Hub/SafeCity) · [Site](https://safe-city-one.vercel.app/) | Phone-based safety prototype that uses sound, motion, and other cues to flag possible distress. | Team lead; architecture, backend, and development |
 | [TransparAI](https://github.com/StackOverHack-Hub/TransparAI) | Streamlit dashboard that flags unusual patterns in public procurement data for people to review. | Built with StackOverHack for the SFLC.in hackathon |
-| [SAATHI frontend](https://github.com/LiteralKrishu/saathi) | React screens for case intake and coordination, connected to the Django API. | Frontend and API integration with StackOverHack |
-| [SAATHI backend](https://github.com/StackOverHack-Hub/saathi-backend) | Django API behind SAATHI, with role checks and documented endpoints. | Backend and API work with StackOverHack |
+| [AgentExtension](https://github.com/StackOverHack-Hub/AgentExtension) | VS Code coding agent built on TrueForge, with inline edits and hunk-by-hunk review. | Built with StackOverHack |
+| [ScopeCheck](https://github.com/StackOverHack-Hub/ScopeCheck) · [Site](https://scope-check.replit.app/) | Reviews client requests against agreements and keeps the decisions and approvals together. | Built with StackOverHack |
+| [NammaSpace](https://github.com/LiteralKrishu/NammaSpace) · [Demo](https://nammaspace-brown.vercel.app/) | Explore a scanned classroom in 3D and find walking routes between rooms on the floor map. | Developed for IIT Bombay Techfest 2026–27 |
 | [NykaaCopilot](https://github.com/LiteralKrishu/NykaaCopilot) | Matches colors from a makeup photo to a sample catalog and previews them in a 2D try-on. | Built the Next.js demo and its analysis and try-on flow |
 | [Wobble](https://github.com/LiteralKrishu/Wobble) | Python CLI that finds pytest failures caused by test order and checks proposed fixes. | Built the test hunt, Docker runner, and repair flow with StackOverHack |
 

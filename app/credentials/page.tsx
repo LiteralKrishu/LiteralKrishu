@@ -11,7 +11,7 @@ import {
 } from '@/app/data/portfolio';
 
 const pageDescription =
-  'Hackathons, coding challenges, and quizzes Sousnigdho Das has taken part in, with certificates and event links.';
+  'Professional certifications, hackathons, coding challenges, and quizzes, with certificates and supporting records.';
 
 export const metadata: Metadata = {
   title: 'Hackathons & Certificates',
@@ -44,11 +44,8 @@ const credentialsSchema = {
         '@id': `${SITE_URL}/credentials#credential-${index + 1}`,
         name: credential.title,
         url: `${SITE_URL}/credentials#credential-${index + 1}`,
-        sameAs: [
-          credential.certificateUrl,
-          credential.eventUrl,
-          ...(credential.linkedinPosts?.map((post) => post.url) ?? []),
-        ],
+        sameAs: [credential.certificateUrl, ...(credential.additionalCertificates?.map((certificate) => certificate.url) ?? [])],
+        ...(credential.eventUrl ? { subjectOf: credential.eventUrl } : {}),
         ...(credential.team
           ? {
               about: {
@@ -58,11 +55,8 @@ const credentialsSchema = {
               },
             }
           : {}),
-        credentialCategory: 'Certificate of Participation',
-        recognizedBy: {
-          '@type': 'Organization',
-          name: credential.issuer,
-        },
+        credentialCategory: credential.category,
+        ...(credential.issuer ? { recognizedBy: { '@type': 'Organization', name: credential.issuer } } : {}),
       },
     })),
   },
@@ -83,13 +77,13 @@ export default function CredentialsPage() {
           <div>
             <div className="mb-2 flex items-center gap-2">
               <BadgeCheck className="h-4 w-4 text-accent" />
-              <span className="font-mono text-[9px] uppercase tracking-widest text-accent">LEARNING // HACKATHONS // CHALLENGES</span>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-accent">Credentials</span>
             </div>
             <h1 className="font-syne text-3xl font-extrabold uppercase tracking-tight text-primary neon-text-glow md:text-4xl">
               Hackathons &amp; Certificates
             </h1>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-on-surface-variant">
-              These are the hackathons, challenges, and quizzes I&apos;ve taken part in. Each entry links to a certificate and an event page. I keep competition results on the Wins page.
+              Professional certifications, competition results, and participation records. Open a certificate to see the original award.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -110,24 +104,15 @@ export default function CredentialsPage() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {credentials.map((credential, index) => (
-          <AnimatedContent key={credential.certificateUrl} delay={index * 0.05} className="h-full">
+          <AnimatedContent key={credential.certificateUrl} delay={(index % 2) * 0.07} className="h-full">
             <SpotlightCard className="flex h-full flex-col" spotlightColor="rgba(0, 221, 221, 0.1)">
-              <div className="flex items-start justify-between gap-5">
-                <span className="font-mono text-[9px] text-outline-variant">ENTRY-{String(index + 1).padStart(2, '0')}</span>
-                <span className="font-mono text-[9px] uppercase text-green">PARTICIPATED</span>
-              </div>
-              <h2 id={`credential-${index + 1}`} className="mt-5 font-syne text-xl font-bold uppercase text-primary">{credential.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">{credential.issuer}</p>
-              <div className="mt-5 grid gap-3 border-t border-outline-variant/20 pt-5 font-mono text-[10px] uppercase tracking-wider sm:grid-cols-2">
-                <div>
-                  <span className="block text-outline">Format</span>
-                  <span className="mt-1 block text-accent">{credential.category}</span>
-                </div>
-                <div>
-                  <span className="block text-outline">Certificate issued</span>
-                  <span className="mt-1 block text-accent">{credential.certificateRecordDate}</span>
-                </div>
-              </div>
+              <p className="font-mono text-[10px] uppercase tracking-wider text-accent">{credential.category}</p>
+              <h2 id={`credential-${index + 1}`} className="mt-3 scroll-mt-4 font-syne text-xl font-bold text-primary">{credential.title}</h2>
+              {credential.issuer && <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">{credential.issuer}</p>}
+              {credential.distinction && <p className="mt-3 text-sm font-medium text-accent">{credential.distinction}</p>}
+              {credential.certificateRecordDate && (
+                <p className="mt-3 text-xs text-outline">Issued {credential.certificateRecordDate}</p>
+              )}
               {credential.note && (
                 <p className="mt-5 border-l-2 border-magenta/60 pl-4 text-xs leading-relaxed text-outline">{credential.note}</p>
               )}
@@ -141,15 +126,18 @@ export default function CredentialsPage() {
                   Certificate
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
-                <a
-                  href={credential.eventUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-magenta hover:text-primary"
-                >
-                  Event page
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
+                {credential.additionalCertificates?.map(({ label, url }) => (
+                  <a key={url} href={url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-accent hover:text-primary">
+                    {label}
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                ))}
+                {credential.eventUrl && (
+                  <a href={credential.eventUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-magenta hover:text-primary">
+                    Event page
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                )}
                 {credential.team && (
                   <a
                     href={credential.team.url}
@@ -179,9 +167,6 @@ export default function CredentialsPage() {
         ))}
       </div>
 
-      <p className="mt-8 max-w-4xl text-xs leading-relaxed text-outline">
-        Certificate dates come from Unstop and may differ from event dates. I list placements only when an organiser published them.
-      </p>
     </div>
   );
 }

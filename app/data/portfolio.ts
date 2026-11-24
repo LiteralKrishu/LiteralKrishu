@@ -8,7 +8,7 @@ export const EMAIL_URL = "mailto:sousnigdhodas@gmail.com";
 export const UNSTOP_URL = "https://unstop.com/u/sousndas69815";
 export const VEDONYX_URL = "https://www.vedonyx.com/";
 export const VEDONYX_PROFILE_URL = "https://www.vedonyx.com/team/sousnigdho-das";
-export const PROFILE_LAST_REVIEWED = "2026-11-17";
+export const PROFILE_LAST_REVIEWED = "2026-11-25";
 export const EDUCATION_SUMMARY =
   "Pursuing B.Tech in CSE (AI/ML) at Newton School of Technology";
 
@@ -20,6 +20,8 @@ export const IIT_MANDI_CERTIFICATE_POST_URL =
   "https://www.linkedin.com/posts/sousnigdho-das_stackoverhack-multimodalai-iitmandi-activity-7432093419520499712-hOQg";
 export const IIT_MANDI_UNSTOP_CERTIFICATE_URL =
   "https://unstop.com/api/certificate/0e618c71-4433-4612-a55f-252784ce6776";
+const SFLC_RECAP_URL = "https://sflc.in/sflc-in-hackathon-2025-celebrating-open-collaboration-and-digital-freedom/";
+const SFLC_CERTIFICATE_URL = driveCertificate("1yoBQ9fvF0CEuJCRweWv4tcGmeQOlen_7");
 
 export const PROFILE_DESCRIPTION =
   "Sousnigdho Das specializes in software engineering management, serves as COO at Vedonyx and ODT, and is pursuing a B.Tech in CSE (AI/ML) at Newton School of Technology.";
@@ -131,7 +133,7 @@ export const projects: PortfolioProject[] = [
       },
       {
         label: "Official SFLC.in hackathon recap",
-        url: "https://sflc.in/sflc-in-hackathon-2025-celebrating-open-collaboration-and-digital-freedom/",
+        url: SFLC_RECAP_URL,
       },
       {
         label: "Sousnigdho Das on LinkedIn",
@@ -145,70 +147,105 @@ export const projects: PortfolioProject[] = [
     programmingLanguages: ["Python"],
   },
   {
+    slug: "agent-extension",
+    title: "AgentExtension — Coding Agent for VS Code",
+    shortTitle: "AgentExtension",
+    year: "2026",
+    status: "PUBLIC RELEASE",
+    category: "DEVELOPER TOOLS",
+    summary:
+      "A VS Code extension that uses TrueForge to edit selections or propose changes across a repository. Changes can be reviewed hunk by hunk in the editor.",
+    seoDescription:
+      "AgentExtension is a VS Code coding agent built on TrueForge with inline edits, repository-wide drafts, and per-hunk review.",
+    role: "Built with StackOverHack.",
+    details: [
+      "Inline edits open in VS Code’s native diff view.",
+      "Repository-wide tasks can use file and symbol context, then stage proposed changes for review.",
+      "The extension supports local and hosted model connections. The repository publishes a VSIX release for Apple Silicon.",
+    ],
+    sources: [
+      { label: "AgentExtension repository", url: "https://github.com/StackOverHack-Hub/AgentExtension" },
+      { label: "Latest VSIX release", url: "https://github.com/StackOverHack-Hub/AgentExtension/releases/latest" },
+    ],
+    sourceNote: "The repository documents model connections, editor review, and builds for other platforms.",
+    repositoryUrl: "https://github.com/StackOverHack-Hub/AgentExtension",
+    programmingLanguages: ["TypeScript"],
+  },
+  {
+    slug: "scopecheck",
+    title: "ScopeCheck — Client Change Control",
+    shortTitle: "ScopeCheck",
+    year: "2026",
+    status: "PUBLIC REPOSITORY",
+    category: "CHANGE MANAGEMENT",
+    summary:
+      "ScopeCheck helps teams compare client requests with their agreements and preserve the exact clauses, decisions, and written approvals behind each change.",
+    seoDescription:
+      "ScopeCheck is a change-control workspace for reviewing client requests against agreements, drafting change requests, and recording approvals.",
+    role: "Built with StackOverHack.",
+    details: [
+      "Import a PDF or text agreement, review the extracted clauses, and save a version.",
+      "Check each request against that version and record the scope decision.",
+      "Draft time and price changes, record the written response, and export the review history.",
+    ],
+    sources: [
+      { label: "ScopeCheck repository", url: "https://github.com/StackOverHack-Hub/ScopeCheck" },
+      { label: "Release guide", url: "https://github.com/StackOverHack-Hub/ScopeCheck/blob/main/docs/release.md" },
+    ],
+    sourceNote: "The README documents the review flow. A person confirms each scope decision.",
+    repositoryUrl: "https://github.com/StackOverHack-Hub/ScopeCheck",
+    liveUrl: "https://scope-check.replit.app/",
+    programmingLanguages: ["TypeScript"],
+  },
+  {
+    slug: "namma-space",
+    title: "NammaSpace — Indoor 3D Navigation",
+    shortTitle: "NammaSpace",
+    year: "2026",
+    status: "TECHFEST PROJECT",
+    category: "SPATIAL COMPUTING",
+    summary:
+      "NammaSpace turns smartphone-captured interiors into interactive 3D scenes you can walk through. Searchable points of interest give you routes around furniture and walls.",
+    seoDescription:
+      "NammaSpace is a Three.js indoor digital twin and navigation platform with GLB and Gaussian splat imports, first-person movement, and obstacle-aware wayfinding.",
+    role: "I developed NammaSpace for IIT Bombay Techfest 2026–27.",
+    details: [
+      "Explore the Classroom 504 scan and use the first-floor map to plan a walking route between rooms.",
+      "Walk and look around in first person using a keyboard and mouse or the mobile touch controls.",
+      "Search for points of interest and follow an obstacle-aware route through the room.",
+    ],
+    sources: [
+      { label: "NammaSpace repository", url: "https://github.com/LiteralKrishu/NammaSpace" },
+    ],
+    sourceNote: "The README documents the capture formats, movement controls, and wayfinding.",
+    repositoryUrl: "https://github.com/LiteralKrishu/NammaSpace",
+    liveUrl: "https://nammaspace-brown.vercel.app/",
+    programmingLanguages: ["JavaScript"],
+  },
+  {
     slug: "saathi",
-    title: "SAATHI — Case Coordination Frontend",
-    shortTitle: "SAATHI Frontend",
+    title: "SAATHI — Case Coordination Platform",
+    shortTitle: "SAATHI",
     year: "2026",
     status: "CONTROLLED PROTOTYPE",
     category: "CASE COORDINATION",
     summary:
-      "SAATHI's React app lets authorized staff open cases and follow their progress. It connects to a Django API. A separate demo mode uses made-up records.",
+      "SAATHI combines a React workspace and a Django REST API for role-scoped case intake and coordination. A separate demo mode uses synthetic records.",
     seoDescription:
-      "SAATHI is a React case-coordination frontend connected to a Django REST backend. It is a controlled prototype, not an approved emergency dispatch system.",
-    role:
-      "I work on the frontend and how it talks to the backend with StackOverHack.",
+      "SAATHI is StackOverHack’s case-coordination prototype with a React frontend, a Django REST API, and role-scoped case intake.",
+    role: "I work on the frontend, API, and the integration between them with StackOverHack.",
     details: [
       "District officers and state and national administrators see routes matched to their roles.",
-      "In connected mode, the case form sends new records to the backend. Demo records stay in browser memory.",
-      "Authentication, pagination, and automated tests still need work before release.",
+      "The Django API checks roles and district access for case intake. Demo records stay in browser memory.",
+      "The backend uses PostgreSQL and supports Redis and Celery for background work.",
     ],
     sources: [
-      {
-        label: "SAATHI frontend repository",
-        url: "https://github.com/LiteralKrishu/saathi",
-      },
-      {
-        label: "SAATHI backend repository",
-        url: "https://github.com/StackOverHack-Hub/saathi-backend",
-      },
+      { label: "SAATHI frontend repository", url: "https://github.com/LiteralKrishu/saathi" },
+      { label: "SAATHI backend repository", url: "https://github.com/StackOverHack-Hub/saathi-backend" },
     ],
-    sourceNote:
-      "The frontend README calls this a controlled prototype. It does not claim that a police, ambulance, or other outside service received a case without an acknowledgement.",
+    sourceNote: "Both repositories document the prototype and the checks needed before release.",
     repositoryUrl: "https://github.com/LiteralKrishu/saathi",
-    programmingLanguages: ["TypeScript"],
-  },
-  {
-    slug: "saathi-backend",
-    title: "SAATHI Backend — Case Coordination API",
-    shortTitle: "SAATHI Backend",
-    year: "2026",
-    status: "CONTROLLED PROTOTYPE",
-    category: "DJANGO REST API",
-    summary:
-      "The Django API behind SAATHI checks roles, accepts case intake, and documents its endpoints. Its container setup includes PostgreSQL plus Redis and Celery for background work.",
-    seoDescription:
-      "SAATHI's Django REST Framework backend is a controlled case-coordination prototype with role-scoped intake and a documented API contract.",
-    role:
-      "I work on the API with StackOverHack and keep it aligned with the frontend.",
-    details: [
-      "The /api/v1 endpoints cover login, case intake, health checks, and API documentation.",
-      "Case creation checks the caller's role and district and uses pseudonymous records.",
-      "Demo endpoints and synthetic AI adapters stay off in production settings. Integration and recovery tests are still needed.",
-    ],
-    sources: [
-      {
-        label: "SAATHI backend repository",
-        url: "https://github.com/StackOverHack-Hub/saathi-backend",
-      },
-      {
-        label: "SAATHI frontend repository",
-        url: "https://github.com/LiteralKrishu/saathi",
-      },
-    ],
-    sourceNote:
-      "The backend README calls this a controlled prototype. It has no approval as an emergency dispatch or clinical AI system.",
-    repositoryUrl: "https://github.com/StackOverHack-Hub/saathi-backend",
-    programmingLanguages: ["Python"],
+    programmingLanguages: ["TypeScript", "Python"],
   },
   {
     slug: "nykaa-copilot",
@@ -322,8 +359,9 @@ export const achievements: Achievement[] = [
     sources: [
       {
         label: "Official SFLC.in recap",
-        url: "https://sflc.in/sflc-in-hackathon-2025-celebrating-open-collaboration-and-digital-freedom/",
+        url: SFLC_RECAP_URL,
       },
+      { label: "Third-place certificate", url: SFLC_CERTIFICATE_URL },
     ],
     note:
       "The organiser wrote my name as “Sousnigdha Das.” The team and teammates match; the first name appears to be a typo.",
@@ -372,14 +410,20 @@ export const achievements: Achievement[] = [
 
 export interface Credential {
   title: string;
-  issuer: string;
+  issuer?: string;
   category: string;
-  certificateRecordDate: string;
+  certificateRecordDate?: string;
   certificateUrl: string;
-  eventUrl: string;
+  eventUrl?: string;
+  distinction?: string;
+  additionalCertificates?: EvidenceLink[];
   team?: EvidenceLink;
   linkedinPosts?: EvidenceLink[];
   note?: string;
+}
+
+function driveCertificate(id: string) {
+  return `https://drive.google.com/file/d/${id}/view`;
 }
 
 export const credentials: Credential[] = [
@@ -421,6 +465,11 @@ export const credentials: Credential[] = [
     certificateRecordDate: "24 February 2026",
     certificateUrl: "https://unstop.com/api/certificate/271909d1-a41c-4e02-9559-64431c81757f",
     eventUrl: "https://unstop.com/competitions/atlas-ai-trailblazers-ignite-the-future-of-ai-atlas-skilltech-university-maharashtra-1581128",
+    distinction: "Top 10 among 2,314 participants",
+    additionalCertificates: [
+      { label: "Grand finale certificate", url: driveCertificate("1ghEqNH5l08iO_vU59B7Vo6k6dRM_ntpX") },
+    ],
+    note: "The grand finale took place at ATLAS SkillTech University, Mumbai, on 24 January 2026.",
   },
   {
     title: "CodeTantra2K25",
@@ -455,6 +504,118 @@ export const credentials: Credential[] = [
     certificateUrl: "https://unstop.com/api/certificate/b9ea2a12-a13c-4a26-9c0b-2c89d6e1bb14",
     eventUrl: "https://unstop.com/hackathons/linkenite-hackathon-challenge-ai-powered-business-automation-platform-linkenite-1548651",
     note: "This certificate records participation in the challenge.",
+  },
+  {
+    title: "VESTRA: The Last Market",
+    issuer: "Shark Sphere, Newton School of Technology, Pune",
+    category: "Trading simulation participation",
+    certificateUrl: driveCertificate("1-MhfCRTtlMAMa1KRLJ5vhHDYulknJoyB"),
+  },
+  {
+    title: "Tough Tongue AI Coding Challenge",
+    issuer: "Tough Tongue AI",
+    category: "Coding challenge participation",
+    certificateUrl: driveCertificate("1kEp8RXLbWdTPvG1nTJncTaGbZIjLQu4B"),
+  },
+  {
+    title: "NextGen Hackathon 2025",
+    issuer: "ACM Fremont Chapter",
+    category: "Hackathon participation",
+    certificateUrl: driveCertificate("1DekWaIoyRk5wyj1d6NfG451NeUI4EH78"),
+    team: { label: "StackOverHack", url: STACKOVERHACK_LINKEDIN_URL },
+    note: "StackOverHack participated on 20–21 September 2025.",
+  },
+  {
+    title: "HackSpark — Codeathon",
+    category: "Coding challenge",
+    certificateUrl: driveCertificate("1PmAnXZWtZEg7DJJSvVMuXin0XtOhjcVw"),
+  },
+  {
+    title: "HackOverFlow — Cultrang",
+    category: "Hackathon",
+    certificateUrl: driveCertificate("1QJiQRBJSPdeLS_BO2sCA92fBDxrFxypg"),
+  },
+  {
+    title: "DSA Week: Hashing Unlocked",
+    category: "Coding challenge",
+    certificateUrl: driveCertificate("1Ll2j6QymaKScUXwikcwxtMSgzJFnll8A"),
+  },
+  {
+    title: "CodeRush Weekly — 10th Edition",
+    category: "Coding challenge",
+    certificateUrl: driveCertificate("1EOi7o_VNzgx9ygWv2_VyA4XrWrKKEne9"),
+  },
+  {
+    title: "Pixel to Page — 24 Hours Build Challenge",
+    issuer: "Web Developer Student Community",
+    category: "Certificate of excellence",
+    certificateUrl: driveCertificate("1S2ZilHoZFloCmpKSY4gbsbPrz8hQREpf"),
+  },
+  {
+    title: "GEC Siwan — Assessment and Submission Rounds",
+    issuer: "Developer Community, GEC Siwan",
+    category: "Certificates of excellence",
+    certificateUrl: driveCertificate("1WEG11kYkFGeUF6QPZBvhjilCfQIOvyZU"),
+    additionalCertificates: [
+      { label: "Submission round certificate", url: driveCertificate("1ZMXtOLmIDridske7_tzjC4E507p0tZT_") },
+    ],
+  },
+  {
+    title: "CodeSpark — 72 Hour Build Challenge",
+    issuer: "Web Developer Student Community, GEC Siwan",
+    category: "Certificate of excellence",
+    certificateUrl: driveCertificate("1sTk18Jn2ldGfSEMItgD_hVHlG-8PeKlu"),
+  },
+  {
+    title: "CodeClash: The August Arena",
+    issuer: "Lets Code Community",
+    category: "Coding challenge participation",
+    distinction: "245th in the Foundations round",
+    certificateUrl: driveCertificate("1GwpWiGv-v2SD_RjCNHSmHB4k_romYajV"),
+    additionalCertificates: [
+      { label: "Foundations round certificate", url: driveCertificate("10YfudD56ClSRx4d01cODQRn58Gqh3OqU") },
+    ],
+  },
+  {
+    title: "WorldQuant Challenge",
+    issuer: "WorldQuant",
+    category: "Certificates of accomplishment",
+    distinction: "Gold level",
+    certificateUrl: driveCertificate("1nvLK81qGDmuNmgntWmWp9kRpwqUO8J_a"),
+    additionalCertificates: [
+      { label: "Silver certificate", url: driveCertificate("1x0n2xYvq0GfpM6gY24PDZSTtUna-rnI8") },
+      { label: "Bronze certificate", url: driveCertificate("13TIhU91LU40LCAMaNR9HQDvYMegHpMtc") },
+    ],
+  },
+  {
+    title: "SFLC.in Hackathon 2025",
+    issuer: "SFLC.in",
+    category: "Hackathon award",
+    distinction: "Third place",
+    certificateUrl: SFLC_CERTIFICATE_URL,
+    eventUrl: SFLC_RECAP_URL,
+    team: { label: "StackOverHack", url: STACKOVERHACK_LINKEDIN_URL },
+  },
+  {
+    title: "Oracle Data Platform 2025 Certified Foundations Associate",
+    issuer: "Oracle",
+    category: "Professional certification",
+    certificateUrl: driveCertificate("1w20hiMW-AK1F8ahxPUTDIhl1eCVj4aQu"),
+    additionalCertificates: [{ label: "Oracle badge", url: driveCertificate("1CxNfh28ek4WyJ2iKwCkvpyE616RFG2Hw") }],
+  },
+  {
+    title: "Oracle Cloud Infrastructure 2025 Certified Developer Professional",
+    issuer: "Oracle",
+    category: "Professional certification",
+    certificateUrl: driveCertificate("1l7Ty3GdLtpLjYmOJkAO-ypmqzE9GmYUm"),
+    additionalCertificates: [{ label: "Oracle badge", url: driveCertificate("1M6yztSd5EIvpT4K3NPZtJ8kBzKGndUVq") }],
+  },
+  {
+    title: "Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
+    issuer: "Oracle",
+    category: "Professional certification",
+    certificateUrl: driveCertificate("1dZiehoQhDgi49QczP1KiHPH49uCiK-1P"),
+    additionalCertificates: [{ label: "Oracle badge", url: driveCertificate("1N4S6F1W6gaVakiK8cMGkEP9ZyHazETt8") }],
   },
 ];
 

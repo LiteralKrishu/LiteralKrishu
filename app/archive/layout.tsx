@@ -1,14 +1,17 @@
 import type { Metadata } from 'next';
+import { projects } from '@/app/data/portfolio';
+
+const description = `Explore ${projects.map(project => project.shortTitle).join(', ')}. Each project includes the code and Sousnigdho Das’s role.`;
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Explore SafeCity, TransparAI, SAATHI, NykaaCopilot, and Wobble, with links to the code and Sousnigdho Das’s role in each project.',
+  description,
   alternates: { canonical: '/archive' },
   openGraph: {
     type: 'website',
     url: '/archive',
     title: 'Projects | Sousnigdho Das',
-    description: 'Explore SafeCity, TransparAI, SAATHI, NykaaCopilot, and Wobble, with links to the code and Sousnigdho Das’s role in each project.',
+    description,
   },
 };
 
